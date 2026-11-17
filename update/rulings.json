@@ -68,7 +68,7 @@
         {
             "text":"A minion can only perform this special hunt once per turn.",
             "refs":{
-                "RBK action-card-or-card-in-play":"https://www.vekn.net/rulebook#action-card-or-card-in-play"
+                "RBK action-card-or-card-in-play":"https://archon.vekn.net/help/rules#action-card-or-card-in-play"
             }
         }
     ],
@@ -308,7 +308,7 @@
         {
             "text":"You still gain the trifle master phase action, even if this card contests when played.",
             "refs":{
-                "RBK contested-cards":"https://www.vekn.net/rulebook#Contested-cards"
+                "RBK contested-cards":"https://archon.vekn.net/help/rules#advanced-rules-contested-cards"
             }
         }
     ],
@@ -351,9 +351,9 @@
         {
             "text":"Cards requiring a discipline come in play at the inferior version.",
             "refs":{
-                "RBK equip":"https://www.vekn.net/rulebook#equip",
-                "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
-                "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+                "RBK equip":"https://archon.vekn.net/help/rules#equip",
+                "RBK recruit-ally":"https://archon.vekn.net/help/rules#recruit-ally",
+                "RBK employ-retainer":"https://archon.vekn.net/help/rules#employ-retainer"
             }
         },
         {
@@ -790,7 +790,7 @@
             "text":"[PRE] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -805,7 +805,7 @@
             "text":"[PRE] The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -1004,7 +1004,7 @@
             "text":"[for] If played by an ally, the ally is burned instead of going to torpor.",
             "refs":{
                 "ANK 20170412":"https://www.vekn.net/forum/rules-questions/75723-pressing-flesh-ashes-to-ashes#81448",
-                "RBK allies":"https://www.vekn.net/rulebook#allies"
+                "RBK allies":"https://archon.vekn.net/help/rules#advanced-rules-allies"
             }
         },
         {
@@ -1099,7 +1099,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -1114,7 +1114,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -1133,7 +1133,7 @@
         {
             "text":"If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects"
             }
         },
         {
@@ -1169,7 +1169,7 @@
         {
             "text":"The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {100598|Eagle's Sight} to block a Wraith or zombie while {201726|Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {100598|Eagle's Sight} was canceled)",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
@@ -1213,7 +1213,7 @@
             "text":"The bearer (if he unlocks normally) unlocks at the beginning of the unlock phase, before this effect can be used.",
             "refs":{
                 "PIB 20151009":"https://www.vekn.net/forum/rules-questions/73577-baleful-doll#73580",
-                "RBK unlock-phase":"https://www.vekn.net/rulebook#unlock-phase"
+                "RBK unlock-phase":"https://archon.vekn.net/help/rules#1-unlock-phase"
             }
         }
     ],
@@ -1324,7 +1324,7 @@
         {
             "text":"If an acting minion leaves the ready region before block resolution, the action ends immediately and the blocking minion is not locked.",
             "refs":{
-                "RBK resolve-the-action":"https://www.vekn.net/rulebook#resolve-the-action"
+                "RBK resolve-the-action":"https://archon.vekn.net/help/rules#3-resolve-the-action"
             }
         }
     ],
@@ -1405,9 +1405,9 @@
         {
             "text":"Cards requiring a discipline come in play at the inferior version.",
             "refs":{
-                "RBK equip":"https://www.vekn.net/rulebook#equip",
-                "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
-                "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+                "RBK equip":"https://archon.vekn.net/help/rules#equip",
+                "RBK recruit-ally":"https://archon.vekn.net/help/rules#recruit-ally",
+                "RBK employ-retainer":"https://archon.vekn.net/help/rules#employ-retainer"
             }
         },
         {
@@ -1819,7 +1819,7 @@
             "text":"[val][REFLEX] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -1834,7 +1834,7 @@
             "text":"[val][REFLEX] The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -1866,7 +1866,7 @@
         {
             "text":"[val][REFLEX] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {100598|Eagle's Sight} to block a Wraith or zombie while {201726|Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {100598|Eagle's Sight} was canceled)",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
@@ -1939,7 +1939,7 @@
             "text":"[pre][dom] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -1954,7 +1954,7 @@
             "text":"[pre][dom] The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -1973,7 +1973,7 @@
         {
             "text":"[dom][pre][REACTION] If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects"
             }
         },
         {
@@ -1997,7 +1997,7 @@
         {
             "text":"[dom][pre] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {100598|Eagle's Sight} to block a Wraith or zombie while {201726|Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {100598|Eagle's Sight} was canceled)",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
@@ -2446,7 +2446,7 @@
             "text":"[pre] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -2461,7 +2461,7 @@
             "text":"[pre] The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -2515,7 +2515,7 @@
         {
             "text":"An action directed at a card controlled by another Methuselah is directed at that Methuselah.",
             "refs":{
-                "RBK who-may-attempt-to-block":"https://www.vekn.net/rulebook#who-may-attempt-to-block",
+                "RBK who-may-attempt-to-block":"https://archon.vekn.net/help/rules#who-may-attempt-to-block",
                 "LSJ 20090324":"https://usenet.krcg.org/t/Zc_ogoVhsug/#m8"
             }
         },
@@ -3040,7 +3040,7 @@
             "text":"The effect to burn a hostage counter can be done only once per turn.",
             "refs":{
                 "ANK 20200729":"https://www.vekn.net/forum/rules-questions/78776-is-carver-s-meat-packing-and-storage-burn-hostage-counter-a-during-x-do-y#100448",
-                "RBK wording-templates":"https://www.vekn.net/rulebook#wording-templates"
+                "RBK wording-templates":"https://archon.vekn.net/help/rules#wording-templates"
             }
         }
     ],
@@ -3099,7 +3099,7 @@
         {
             "text":"[ani] Cannot be played if the vampire is in torpor, for example if he went into torpor during the combat resulting from the block.",
             "refs":{
-                "RBK reaction-cards":"https://www.vekn.net/rulebook#reaction-cards"
+                "RBK reaction-cards":"https://archon.vekn.net/help/rules#reaction-cards"
             }
         }
     ],
@@ -3735,7 +3735,7 @@
         {
             "text":"Only effective at close range.",
             "refs":{
-                "RBK resolve-strike":"https://www.vekn.net/rulebook#resolve-strike",
+                "RBK resolve-strike":"https://archon.vekn.net/help/rules#resolve-strike",
                 "LSJ 20000110":"https://usenet.krcg.org/t/e8-mp_OMsjw/#m1"
             }
         },
@@ -3790,9 +3790,9 @@
         {
             "text":"[NEC] Cards requiring a discipline come in play at the inferior version.",
             "refs":{
-                "RBK equip":"https://www.vekn.net/rulebook#equip",
-                "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
-                "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+                "RBK equip":"https://archon.vekn.net/help/rules#equip",
+                "RBK recruit-ally":"https://archon.vekn.net/help/rules#recruit-ally",
+                "RBK employ-retainer":"https://archon.vekn.net/help/rules#employ-retainer"
             }
         },
         {
@@ -3835,7 +3835,7 @@
         {
             "text":"An action directed at a card controlled by another Methuselah is directed at that Methuselah.",
             "refs":{
-                "RBK who-may-attempt-to-block":"https://www.vekn.net/rulebook#who-may-attempt-to-block",
+                "RBK who-may-attempt-to-block":"https://archon.vekn.net/help/rules#who-may-attempt-to-block",
                 "LSJ 20090324":"https://usenet.krcg.org/t/Zc_ogoVhsug/#m8"
             }
         }
@@ -4175,7 +4175,7 @@
         {
             "text":"You still gain the trifle master phase action, even if this card contests when played.",
             "refs":{
-                "RBK contested-cards":"https://www.vekn.net/rulebook#Contested-cards"
+                "RBK contested-cards":"https://archon.vekn.net/help/rules#advanced-rules-contested-cards"
             }
         }
     ],
@@ -4631,7 +4631,7 @@
         {
             "text":"If used to cancel a strike, another strike is chosen.",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 20100206":"https://usenet.krcg.org/t/cAGrXqpO-YQ/#m1"
             }
         },
@@ -4646,7 +4646,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -4661,7 +4661,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -5446,7 +5446,7 @@
         {
             "text":"You cannot lock the card \"in response to\" another copy being played (in order to use it before it becomes contested).",
             "refs":{
-                "RBK 2-card-types":"https://www.vekn.net/rulebook/2-card-types"
+                "RBK 2-card-types":"https://archon.vekn.net/help/rules#2-card-types"
             }
         },
         {
@@ -5939,7 +5939,7 @@
         {
             "text":"Only effective at close range.",
             "refs":{
-                "RBK resolve-strike":"https://www.vekn.net/rulebook#resolve-strike",
+                "RBK resolve-strike":"https://archon.vekn.net/help/rules#resolve-strike",
                 "LSJ 20000110":"https://usenet.krcg.org/t/e8-mp_OMsjw/#m1"
             }
         },
@@ -6107,7 +6107,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -6122,7 +6122,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -6141,7 +6141,7 @@
         {
             "text":"[MAL] If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects"
             }
         },
         {
@@ -6365,7 +6365,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -6380,7 +6380,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -6617,7 +6617,7 @@
         {
             "text":"You still gain the trifle master phase action, even if this card contests when played.",
             "refs":{
-                "RBK contested-cards":"https://www.vekn.net/rulebook#Contested-cards"
+                "RBK contested-cards":"https://archon.vekn.net/help/rules#advanced-rules-contested-cards"
             }
         }
     ],
@@ -7478,7 +7478,7 @@
         {
             "text":"[pot] The action is directed at the Methuselah controlling the location, undirected if you control it.",
             "refs":{
-                "RBK who-may-attempt-to-block":"https://www.vekn.net/rulebook#who-may-attempt-to-block",
+                "RBK who-may-attempt-to-block":"https://archon.vekn.net/help/rules#who-may-attempt-to-block",
                 "LSJ 20090324":"https://usenet.krcg.org/t/Zc_ogoVhsug/#m8"
             }
         },
@@ -7596,9 +7596,9 @@
         {
             "text":"Cards requiring a discipline come in play at the inferior version.",
             "refs":{
-                "RBK equip":"https://www.vekn.net/rulebook#equip",
-                "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
-                "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+                "RBK equip":"https://archon.vekn.net/help/rules#equip",
+                "RBK recruit-ally":"https://archon.vekn.net/help/rules#recruit-ally",
+                "RBK employ-retainer":"https://archon.vekn.net/help/rules#employ-retainer"
             }
         },
         {
@@ -7699,7 +7699,7 @@
         {
             "text":"Is not Anarch (eg. does not benefit from {100053|An Anarch Manifesto}).",
             "refs":{
-                "RBK allies":"https://www.vekn.net/rulebook#allies",
+                "RBK allies":"https://archon.vekn.net/help/rules#advanced-rules-allies",
                 "ANK 20230417":"https://www.vekn.net/forum/rules-questions/80399-an-anarch-manifesto-grey-thorne-vivienne-geroux#107855"
             }
         },
@@ -7783,7 +7783,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -7798,7 +7798,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -7829,7 +7829,7 @@
         {
             "text":"The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {100598|Eagle's Sight} to block a Wraith or zombie while {201726|Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {100598|Eagle's Sight} was canceled)",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
@@ -7991,7 +7991,7 @@
         {
             "text":"[NEC] The action is directed at the Methuselah controlling the location, undirected if you control it.",
             "refs":{
-                "RBK who-may-attempt-to-block":"https://www.vekn.net/rulebook#who-may-attempt-to-block",
+                "RBK who-may-attempt-to-block":"https://archon.vekn.net/help/rules#who-may-attempt-to-block",
                 "LSJ 20090324":"https://usenet.krcg.org/t/Zc_ogoVhsug/#m8"
             }
         },
@@ -8411,7 +8411,7 @@
         {
             "text":"[VAL] To reduce a bleed against another Methuselah, you need to be unlocked.",
             "refs":{
-                "RBK wording-templates":"https://www.vekn.net/rulebook#wording-templates",
+                "RBK wording-templates":"https://archon.vekn.net/help/rules#wording-templates",
                 "ANK 20230817":"https://www.vekn.net/forum/rules-questions/80780-hide-the-heart#109068"
             }
         },
@@ -8469,7 +8469,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -8484,7 +8484,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -8621,7 +8621,7 @@
             "text":"[dai][obf],\u00a0[DAI][OBF] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -8636,7 +8636,7 @@
             "text":"[dai][obf],\u00a0[DAI][OBF] The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -8655,7 +8655,7 @@
         {
             "text":"[dai][obf] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {100598|Eagle's Sight} to block a Wraith or zombie while {201726|Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {100598|Eagle's Sight} was canceled)",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
@@ -9316,7 +9316,7 @@
             "text":"[abo][REFLEX] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -9331,7 +9331,7 @@
             "text":"[abo][REFLEX] The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -9356,7 +9356,7 @@
         {
             "text":"[abo][REFLEX] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {100598|Eagle's Sight} to block a Wraith or zombie while {201726|Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {100598|Eagle's Sight} was canceled)",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
@@ -9372,7 +9372,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -9387,7 +9387,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -9807,7 +9807,7 @@
         {
             "text":"When used by an acting vampire in torpor, there is no opportunity to diablerize the acting vampire, as the action is ended without a successful block.",
             "refs":{
-                "RBK leave-torpor":"https://www.vekn.net/rulebook#leave-torpor",
+                "RBK leave-torpor":"https://archon.vekn.net/help/rules#leave-torpor-see-torpor",
                 "LSJ 19970325":"https://usenet.krcg.org/t/R-t138q8688/#m3"
             }
         },
@@ -10225,7 +10225,7 @@
         {
             "text":"A minion can only perform this special hunt once per turn.",
             "refs":{
-                "RBK action-card-or-card-in-play":"https://www.vekn.net/rulebook#action-card-or-card-in-play"
+                "RBK action-card-or-card-in-play":"https://archon.vekn.net/help/rules#action-card-or-card-in-play"
             }
         }
     ],
@@ -10523,7 +10523,7 @@
         {
             "text":"The equipment need not be declared, it is chosen upon resolution.",
             "refs":{
-                "RBK search":"https://www.vekn.net/rulebook#search"
+                "RBK search":"https://archon.vekn.net/help/rules#quotsearchquot"
             }
         },
         {
@@ -11857,7 +11857,7 @@
             "text":"\"loses the benefit\" means he gets no vote, is not considered titled, and yields the title immediately if it would contest.",
             "refs":{
                 "LSJ 20080602":"https://usenet.krcg.org/t/Y7CLzywq1Lk/#m1",
-                "RBK 6-vampire-sects":"https://www.vekn.net/rulebook/6-vampire-sects"
+                "RBK 6-vampire-sects":"https://archon.vekn.net/help/rules#6-vampire-sects"
             }
         },
         {
@@ -12085,7 +12085,7 @@
             "text":"[PRE][SER] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -12100,7 +12100,7 @@
             "text":"[PRE][SER] The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -12573,7 +12573,7 @@
         {
             "text":"Can provide intercept only once during each action.",
             "refs":{
-                "RBK wording-templates":"https://www.vekn.net/rulebook#wording-templates",
+                "RBK wording-templates":"https://archon.vekn.net/help/rules#wording-templates",
                 "ANK 20230116":"https://www.vekn.net/forum/rules-questions/80266-confirmation-needed-about-phased-motion-detector#107207"
             }
         },
@@ -12588,7 +12588,7 @@
         {
             "text":"When used to recruit an ally, the ally cannot act this turn.",
             "refs":{
-                "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally"
+                "RBK recruit-ally":"https://archon.vekn.net/help/rules#recruit-ally"
             }
         },
         {
@@ -12971,7 +12971,7 @@
             "text":"[abo][REFLEX] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -12986,7 +12986,7 @@
             "text":"[abo][REFLEX] The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -13011,7 +13011,7 @@
         {
             "text":"[abo][REFLEX] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {100598|Eagle's Sight} to block a Wraith or zombie while {201726|Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {100598|Eagle's Sight} was canceled)",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
@@ -13064,9 +13064,9 @@
         {
             "text":"Cards requiring a discipline come in play at the inferior version.",
             "refs":{
-                "RBK equip":"https://www.vekn.net/rulebook#equip",
-                "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
-                "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+                "RBK equip":"https://archon.vekn.net/help/rules#equip",
+                "RBK recruit-ally":"https://archon.vekn.net/help/rules#recruit-ally",
+                "RBK employ-retainer":"https://archon.vekn.net/help/rules#employ-retainer"
             }
         },
         {
@@ -13171,7 +13171,7 @@
         {
             "text":"You still gain the trifle master phase action, even if this card contests when played.",
             "refs":{
-                "RBK contested-cards":"https://www.vekn.net/rulebook#Contested-cards"
+                "RBK contested-cards":"https://archon.vekn.net/help/rules#advanced-rules-contested-cards"
             }
         },
         {
@@ -14133,9 +14133,9 @@
         {
             "text":"[obe],[OBE] Cards requiring a discipline come in play at the inferior version.",
             "refs":{
-                "RBK equip":"https://www.vekn.net/rulebook#equip",
-                "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
-                "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+                "RBK equip":"https://archon.vekn.net/help/rules#equip",
+                "RBK recruit-ally":"https://archon.vekn.net/help/rules#recruit-ally",
+                "RBK employ-retainer":"https://archon.vekn.net/help/rules#employ-retainer"
             }
         },
         {
@@ -14170,7 +14170,7 @@
         {
             "text":"If an acting minion leaves the ready region before block resolution, the action ends immediately and the blocking minion is not locked.",
             "refs":{
-                "RBK resolve-the-action":"https://www.vekn.net/rulebook#resolve-the-action"
+                "RBK resolve-the-action":"https://archon.vekn.net/help/rules#3-resolve-the-action"
             }
         }
     ],
@@ -14927,7 +14927,7 @@
             "text":"[VIS] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -14942,7 +14942,7 @@
             "text":"[VIS] The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -14961,7 +14961,7 @@
         {
             "text":"[VIS] If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects"
             }
         },
         {
@@ -15570,7 +15570,7 @@
         {
             "text":"[ANI] Is directed at all Methuselahs controlling a card requiring Animalism [ani].",
             "refs":{
-                "RBK who-may-attempt-to-block":"https://www.vekn.net/rulebook#who-may-attempt-to-block"
+                "RBK who-may-attempt-to-block":"https://archon.vekn.net/help/rules#who-may-attempt-to-block"
             }
         },
         {
@@ -15868,7 +15868,7 @@
         {
             "text":"An action directed at a card controlled by another Methuselah is directed at that Methuselah.",
             "refs":{
-                "RBK who-may-attempt-to-block":"https://www.vekn.net/rulebook#who-may-attempt-to-block",
+                "RBK who-may-attempt-to-block":"https://archon.vekn.net/help/rules#who-may-attempt-to-block",
                 "LSJ 20090324":"https://usenet.krcg.org/t/Zc_ogoVhsug/#m8"
             }
         },
@@ -16602,14 +16602,14 @@
             "text":"If used to cancel a Trifle, the target does not get an extra Master Phase Action from the canceled Trifle.",
             "refs":{
                 "LSJ 20090626":"https://usenet.krcg.org/t/3Cd-DNfT7yQ/#m4",
-                "RBK trifle":"https://www.vekn.net/rulebook#trifle"
+                "RBK trifle":"https://archon.vekn.net/help/rules#trifle"
             }
         },
         {
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -16624,7 +16624,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -16663,9 +16663,9 @@
         {
             "text":"[tem] Cards requiring a discipline come in play at the inferior version.",
             "refs":{
-                "RBK equip":"https://www.vekn.net/rulebook#equip",
-                "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
-                "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+                "RBK equip":"https://archon.vekn.net/help/rules#equip",
+                "RBK recruit-ally":"https://archon.vekn.net/help/rules#recruit-ally",
+                "RBK employ-retainer":"https://archon.vekn.net/help/rules#employ-retainer"
             }
         },
         {
@@ -16689,7 +16689,7 @@
         {
             "text":"[PRE] The ally cannot act this turn.",
             "refs":{
-                "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally"
+                "RBK recruit-ally":"https://archon.vekn.net/help/rules#recruit-ally"
             }
         },
         {
@@ -16735,7 +16735,7 @@
         {
             "text":"If used to cancel the opposing minion's strike, that minion must still choose a strike and could play the same one again.",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 20090818":"https://usenet.krcg.org/t/jkKBGVLmFHc/#m1"
             }
         },
@@ -16743,7 +16743,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -16758,7 +16758,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -16777,7 +16777,7 @@
         {
             "text":"If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects"
             }
         },
         {
@@ -16971,7 +16971,7 @@
             "text":"[abo][REFLEX] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -16986,7 +16986,7 @@
             "text":"[abo][REFLEX] The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -17011,7 +17011,7 @@
         {
             "text":"[abo][REFLEX] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {100598|Eagle's Sight} to block a Wraith or zombie while {201726|Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {100598|Eagle's Sight} was canceled)",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
@@ -17140,7 +17140,7 @@
             "text":"[abo][REFLEX] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -17155,7 +17155,7 @@
             "text":"[abo][REFLEX] The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -17180,7 +17180,7 @@
         {
             "text":"[abo][REFLEX] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {100598|Eagle's Sight} to block a Wraith or zombie while {201726|Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {100598|Eagle's Sight} was canceled)",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
@@ -17774,7 +17774,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -17789,7 +17789,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -17808,7 +17808,7 @@
         {
             "text":"If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects"
             }
         },
         {
@@ -18779,7 +18779,7 @@
         {
             "text":"Is not Anarch (eg. does not benefit from {100053|An Anarch Manifesto}).",
             "refs":{
-                "RBK allies":"https://www.vekn.net/rulebook#allies",
+                "RBK allies":"https://archon.vekn.net/help/rules#advanced-rules-allies",
                 "ANK 20230417":"https://www.vekn.net/forum/rules-questions/80399-an-anarch-manifesto-grey-thorne-vivienne-geroux#107855"
             }
         },
@@ -18840,7 +18840,7 @@
         {
             "text":"A minion can only perform this special hunt once per turn.",
             "refs":{
-                "RBK action-card-or-card-in-play":"https://www.vekn.net/rulebook#action-card-or-card-in-play"
+                "RBK action-card-or-card-in-play":"https://archon.vekn.net/help/rules#action-card-or-card-in-play"
             }
         },
         {
@@ -19006,7 +19006,7 @@
             "refs":{
                 "ANK 20170124":"https://www.vekn.net/forum/rules-questions/75556-vessel-wash-and-mpa#80362",
                 "LSJ 20090626":"https://usenet.krcg.org/t/3Cd-DNfT7yQ/#m4",
-                "RBK trifle":"https://www.vekn.net/rulebook#trifle"
+                "RBK trifle":"https://archon.vekn.net/help/rules#trifle"
             }
         },
         {
@@ -19034,7 +19034,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -19049,7 +19049,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -19634,7 +19634,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -19649,7 +19649,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -19668,7 +19668,7 @@
         {
             "text":"If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects"
             }
         },
         {
@@ -20308,7 +20308,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -20323,7 +20323,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -20342,7 +20342,7 @@
         {
             "text":"If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects"
             }
         },
         {
@@ -20376,8 +20376,8 @@
         {
             "text":"Can only use her ability once per action if she needs intercept, but she can get more than she needs.",
             "refs":{
-                "RBK wording-templates":"https://www.vekn.net/rulebook#wording-templates",
-                "RBK who-may-attempt-to-block":"https://www.vekn.net/rulebook#who-may-attempt-to-block",
+                "RBK wording-templates":"https://archon.vekn.net/help/rules#wording-templates",
+                "RBK who-may-attempt-to-block":"https://archon.vekn.net/help/rules#who-may-attempt-to-block",
                 "LSJ 20010111":"https://usenet.krcg.org/t/d3WSV1UXBV0/#m5"
             }
         },
@@ -20535,7 +20535,7 @@
                 "LSJ 20011022":"https://usenet.krcg.org/t/KMg4MwD-Jn0/#m1",
                 "LSJ 20100902-2":"https://usenet.krcg.org/t/mFpx91METxM/#m1",
                 "ANK 20180307-2":"https://www.vekn.net/forum/rules-questions/76451-ellison-humboldt-and-matteus-flesh-sculptor?start=0#85598",
-                "RBK wording-templates":"https://www.vekn.net/rulebook#wording-templates"
+                "RBK wording-templates":"https://archon.vekn.net/help/rules#wording-templates"
             }
         },
         {
@@ -20996,7 +20996,7 @@
             "text":"Can use his ability only once per referendum.",
             "refs":{
                 "ANK 20180307-2":"https://www.vekn.net/forum/rules-questions/76451-ellison-humboldt-and-matteus-flesh-sculptor?start=0#85598",
-                "RBK wording-templates":"https://www.vekn.net/rulebook#wording-templates"
+                "RBK wording-templates":"https://archon.vekn.net/help/rules#wording-templates"
             }
         },
         {
@@ -21014,7 +21014,7 @@
                 "LSJ 20011022":"https://usenet.krcg.org/t/KMg4MwD-Jn0/#m1",
                 "LSJ 20100902-2":"https://usenet.krcg.org/t/mFpx91METxM/#m1",
                 "ANK 20180307-2":"https://www.vekn.net/forum/rules-questions/76451-ellison-humboldt-and-matteus-flesh-sculptor?start=0#85598",
-                "RBK wording-templates":"https://www.vekn.net/rulebook#wording-templates"
+                "RBK wording-templates":"https://archon.vekn.net/help/rules#wording-templates"
             }
         }
     ],
@@ -21199,7 +21199,7 @@
         {
             "text":"Her votes and ballots must be cast on the same side (for or against).",
             "refs":{
-                "RBK gaining-votes":"https://www.vekn.net/rulebook#gaining-votes",
+                "RBK gaining-votes":"https://archon.vekn.net/help/rules#gaining-votes",
                 "LSJ 20051113-2":"https://usenet.krcg.org/t/O2cgcyCHBSI/#m3"
             }
         }
@@ -21239,7 +21239,7 @@
         {
             "text":"A minion can only perform this special hunt once per turn.",
             "refs":{
-                "RBK action-card-or-card-in-play":"https://www.vekn.net/rulebook#action-card-or-card-in-play"
+                "RBK action-card-or-card-in-play":"https://archon.vekn.net/help/rules#action-card-or-card-in-play"
             }
         }
     ],
@@ -21269,7 +21269,7 @@
         {
             "text":"The vampire's votes (if any) and ballots must be cast on the same side (for or against).",
             "refs":{
-                "RBK gaining-votes":"https://www.vekn.net/rulebook#gaining-votes",
+                "RBK gaining-votes":"https://archon.vekn.net/help/rules#gaining-votes",
                 "LSJ 20051113-2":"https://usenet.krcg.org/t/O2cgcyCHBSI/#m3"
             }
         }
@@ -21513,7 +21513,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -21528,7 +21528,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -21748,7 +21748,7 @@
                 "LSJ 20011022":"https://usenet.krcg.org/t/KMg4MwD-Jn0/#m1",
                 "LSJ 20100902-2":"https://usenet.krcg.org/t/mFpx91METxM/#m1",
                 "ANK 20180307-2":"https://www.vekn.net/forum/rules-questions/76451-ellison-humboldt-and-matteus-flesh-sculptor?start=0#85598",
-                "RBK wording-templates":"https://www.vekn.net/rulebook#wording-templates"
+                "RBK wording-templates":"https://archon.vekn.net/help/rules#wording-templates"
             }
         }
     ],
@@ -22072,7 +22072,7 @@
             "text":"The stolen equipment cannot be used until the next round.",
             "refs":{
                 "LSJ 19980206":"https://usenet.krcg.org/t/p_uyqQgE9Ms/#m1",
-                "RBK steal-equipment":"https://www.vekn.net/rulebook#steal-equipment"
+                "RBK steal-equipment":"https://archon.vekn.net/help/rules#steal-equipment"
             }
         }
     ],
@@ -22468,7 +22468,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -22483,7 +22483,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -22628,7 +22628,7 @@
                 "LSJ 20011022":"https://usenet.krcg.org/t/KMg4MwD-Jn0/#m1",
                 "LSJ 20100902-2":"https://usenet.krcg.org/t/mFpx91METxM/#m1",
                 "ANK 20180307-2":"https://www.vekn.net/forum/rules-questions/76451-ellison-humboldt-and-matteus-flesh-sculptor?start=0#85598",
-                "RBK wording-templates":"https://www.vekn.net/rulebook#wording-templates"
+                "RBK wording-templates":"https://archon.vekn.net/help/rules#wording-templates"
             }
         },
         {
@@ -22962,7 +22962,7 @@
             "text":"Her ability can be used only once per minion phase.",
             "refs":{
                 "ANK 20190207":"https://www.vekn.net/forum/rules-questions/77344-black-chantry-rulebook-feedback?start=18#93328",
-                "RBK wording-templates":"https://www.vekn.net/rulebook#wording-templates"
+                "RBK wording-templates":"https://archon.vekn.net/help/rules#wording-templates"
             }
         }
     ],
@@ -23098,7 +23098,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -23113,7 +23113,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -23132,7 +23132,7 @@
         {
             "text":"The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {100598|Eagle's Sight} to block a Wraith or zombie while {201726|Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {100598|Eagle's Sight} was canceled)",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
@@ -23378,7 +23378,7 @@
             "text":"Must be unlocked with at least 2 blood to use his ability.",
             "refs":{
                 "ANK 20200508-2":"https://www.vekn.net/forum/rules-questions/78623-locked-t-j-and-referendum#99791",
-                "RBK wording-templates":"https://www.vekn.net/rulebook#wording-templates"
+                "RBK wording-templates":"https://archon.vekn.net/help/rules#wording-templates"
             }
         },
         {
@@ -23870,7 +23870,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -23885,7 +23885,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -24178,7 +24178,7 @@
         {
             "text":"Her ability can only be used once during each of your turns.",
             "refs":{
-                "RBK wording-templates":"https://www.vekn.net/rulebook#wording-templates",
+                "RBK wording-templates":"https://archon.vekn.net/help/rules#wording-templates",
                 "ANK 20230122":"https://www.vekn.net/forum/rules-questions/79926-maila-ability-new-promo-from-ec?start=0#107235"
             }
         }
@@ -24824,7 +24824,7 @@
         {
             "text":"A minion can only perform this special hunt once per turn.",
             "refs":{
-                "RBK action-card-or-card-in-play":"https://www.vekn.net/rulebook#action-card-or-card-in-play"
+                "RBK action-card-or-card-in-play":"https://archon.vekn.net/help/rules#action-card-or-card-in-play"
             }
         },
         {
@@ -24913,9 +24913,9 @@
         {
             "text":"Cards requiring a discipline come in play at the inferior version.",
             "refs":{
-                "RBK equip":"https://www.vekn.net/rulebook#equip",
-                "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
-                "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+                "RBK equip":"https://archon.vekn.net/help/rules#equip",
+                "RBK recruit-ally":"https://archon.vekn.net/help/rules#recruit-ally",
+                "RBK employ-retainer":"https://archon.vekn.net/help/rules#employ-retainer"
             }
         },
         {
@@ -24950,7 +24950,7 @@
         {
             "text":"A minion can only perform this special hunt once per turn.",
             "refs":{
-                "RBK action-card-or-card-in-play":"https://www.vekn.net/rulebook#action-card-or-card-in-play"
+                "RBK action-card-or-card-in-play":"https://archon.vekn.net/help/rules#action-card-or-card-in-play"
             }
         },
         {
@@ -26603,7 +26603,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -26618,7 +26618,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -26637,7 +26637,7 @@
         {
             "text":"If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects"
             }
         },
         {
@@ -27211,7 +27211,7 @@
         {
             "text":"An action directed at a card controlled by another Methuselah is directed at that Methuselah.",
             "refs":{
-                "RBK who-may-attempt-to-block":"https://www.vekn.net/rulebook#who-may-attempt-to-block",
+                "RBK who-may-attempt-to-block":"https://archon.vekn.net/help/rules#who-may-attempt-to-block",
                 "LSJ 20090324":"https://usenet.krcg.org/t/Zc_ogoVhsug/#m8"
             }
         }
@@ -27267,7 +27267,7 @@
         {
             "text":"The card must be present in the ash heap to be redrawn.",
             "refs":{
-                "RBK targeting-of-cards":"https://www.vekn.net/rulebook#targeting-of-cards"
+                "RBK targeting-of-cards":"https://archon.vekn.net/help/rules#targeting-of-cards"
             }
         },
         {
@@ -27609,7 +27609,7 @@
             "text":"[tem] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -27624,7 +27624,7 @@
             "text":"[tem] The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -27990,7 +27990,7 @@
                 "LSJ 20011022":"https://usenet.krcg.org/t/KMg4MwD-Jn0/#m1",
                 "LSJ 20100902-2":"https://usenet.krcg.org/t/mFpx91METxM/#m1",
                 "ANK 20180307-2":"https://www.vekn.net/forum/rules-questions/76451-ellison-humboldt-and-matteus-flesh-sculptor?start=0#85598",
-                "RBK wording-templates":"https://www.vekn.net/rulebook#wording-templates"
+                "RBK wording-templates":"https://archon.vekn.net/help/rules#wording-templates"
             }
         }
     ],
@@ -28055,7 +28055,7 @@
                 "LSJ 20011022":"https://usenet.krcg.org/t/KMg4MwD-Jn0/#m1",
                 "LSJ 20100902-2":"https://usenet.krcg.org/t/mFpx91METxM/#m1",
                 "ANK 20180307-2":"https://www.vekn.net/forum/rules-questions/76451-ellison-humboldt-and-matteus-flesh-sculptor?start=0#85598",
-                "RBK wording-templates":"https://www.vekn.net/rulebook#wording-templates"
+                "RBK wording-templates":"https://archon.vekn.net/help/rules#wording-templates"
             }
         }
     ],
@@ -28545,9 +28545,9 @@
         {
             "text":"Cards requiring a discipline come in play at the inferior version.",
             "refs":{
-                "RBK equip":"https://www.vekn.net/rulebook#equip",
-                "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
-                "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+                "RBK equip":"https://archon.vekn.net/help/rules#equip",
+                "RBK recruit-ally":"https://archon.vekn.net/help/rules#recruit-ally",
+                "RBK employ-retainer":"https://archon.vekn.net/help/rules#employ-retainer"
             }
         },
         {
@@ -28665,7 +28665,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -28680,7 +28680,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -29039,9 +29039,9 @@
         {
             "text":"[spi],[SPI] Cards requiring a discipline come in play at the inferior version.",
             "refs":{
-                "RBK equip":"https://www.vekn.net/rulebook#equip",
-                "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
-                "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+                "RBK equip":"https://archon.vekn.net/help/rules#equip",
+                "RBK recruit-ally":"https://archon.vekn.net/help/rules#recruit-ally",
+                "RBK employ-retainer":"https://archon.vekn.net/help/rules#employ-retainer"
             }
         },
         {
@@ -29353,7 +29353,7 @@
         {
             "text":"An action directed at a card controlled by another Methuselah is directed at that Methuselah.",
             "refs":{
-                "RBK who-may-attempt-to-block":"https://www.vekn.net/rulebook#who-may-attempt-to-block",
+                "RBK who-may-attempt-to-block":"https://archon.vekn.net/help/rules#who-may-attempt-to-block",
                 "LSJ 20090324":"https://usenet.krcg.org/t/Zc_ogoVhsug/#m8"
             }
         },
@@ -29442,7 +29442,7 @@
         {
             "text":"An action directed at a card controlled by another Methuselah is directed at that Methuselah.",
             "refs":{
-                "RBK who-may-attempt-to-block":"https://www.vekn.net/rulebook#who-may-attempt-to-block",
+                "RBK who-may-attempt-to-block":"https://archon.vekn.net/help/rules#who-may-attempt-to-block",
                 "LSJ 20090324":"https://usenet.krcg.org/t/Zc_ogoVhsug/#m8"
             }
         }
@@ -29451,7 +29451,7 @@
         {
             "text":"An action directed at a card controlled by another Methuselah is directed at that Methuselah.",
             "refs":{
-                "RBK who-may-attempt-to-block":"https://www.vekn.net/rulebook#who-may-attempt-to-block",
+                "RBK who-may-attempt-to-block":"https://archon.vekn.net/help/rules#who-may-attempt-to-block",
                 "LSJ 20090324":"https://usenet.krcg.org/t/Zc_ogoVhsug/#m8"
             }
         }
@@ -29460,7 +29460,7 @@
         {
             "text":"An action directed at a card controlled by another Methuselah is directed at that Methuselah.",
             "refs":{
-                "RBK who-may-attempt-to-block":"https://www.vekn.net/rulebook#who-may-attempt-to-block",
+                "RBK who-may-attempt-to-block":"https://archon.vekn.net/help/rules#who-may-attempt-to-block",
                 "LSJ 20090324":"https://usenet.krcg.org/t/Zc_ogoVhsug/#m8"
             }
         }
@@ -29469,7 +29469,7 @@
         {
             "text":"An action directed at a card controlled by another Methuselah is directed at that Methuselah.",
             "refs":{
-                "RBK who-may-attempt-to-block":"https://www.vekn.net/rulebook#who-may-attempt-to-block",
+                "RBK who-may-attempt-to-block":"https://archon.vekn.net/help/rules#who-may-attempt-to-block",
                 "LSJ 20090324":"https://usenet.krcg.org/t/Zc_ogoVhsug/#m8"
             }
         }
@@ -29478,7 +29478,7 @@
         {
             "text":"An action directed at a card controlled by another Methuselah is directed at that Methuselah.",
             "refs":{
-                "RBK who-may-attempt-to-block":"https://www.vekn.net/rulebook#who-may-attempt-to-block",
+                "RBK who-may-attempt-to-block":"https://archon.vekn.net/help/rules#who-may-attempt-to-block",
                 "LSJ 20090324":"https://usenet.krcg.org/t/Zc_ogoVhsug/#m8"
             }
         },
@@ -31028,7 +31028,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -31043,7 +31043,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -31065,7 +31065,7 @@
             "text":"[aus][pre] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -31080,7 +31080,7 @@
             "text":"[aus][pre] The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -31114,7 +31114,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -31129,7 +31129,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -31151,7 +31151,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -31166,7 +31166,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -31185,7 +31185,7 @@
         {
             "text":"If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects"
             }
         },
         {
@@ -31206,7 +31206,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -31221,7 +31221,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -31240,7 +31240,7 @@
         {
             "text":"[dom][for] If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects"
             }
         },
         {
@@ -31267,7 +31267,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -31282,7 +31282,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -31301,7 +31301,7 @@
         {
             "text":"If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects"
             }
         },
         {
@@ -31328,7 +31328,7 @@
             "text":"[abo][REFLEX] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -31343,7 +31343,7 @@
             "text":"[abo][REFLEX] The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -31380,7 +31380,7 @@
         {
             "text":"[abo][REFLEX] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {100598|Eagle's Sight} to block a Wraith or zombie while {201726|Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {100598|Eagle's Sight} was canceled)",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
@@ -31390,7 +31390,7 @@
             "text":"[abo][REFLEX] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -31405,7 +31405,7 @@
             "text":"[abo][REFLEX] The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -31436,7 +31436,7 @@
         {
             "text":"[abo][REFLEX] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {100598|Eagle's Sight} to block a Wraith or zombie while {201726|Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {100598|Eagle's Sight} was canceled)",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
@@ -31446,7 +31446,7 @@
             "text":"[abo][REFLEX] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -31461,7 +31461,7 @@
             "text":"[abo][REFLEX] The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -31486,7 +31486,7 @@
         {
             "text":"[abo][REFLEX] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {100598|Eagle's Sight} to block a Wraith or zombie while {201726|Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {100598|Eagle's Sight} was canceled)",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
@@ -31496,7 +31496,7 @@
             "text":"[abo][REFLEX] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -31511,7 +31511,7 @@
             "text":"[abo][REFLEX] The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -31536,7 +31536,7 @@
         {
             "text":"[abo][REFLEX] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {100598|Eagle's Sight} to block a Wraith or zombie while {201726|Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {100598|Eagle's Sight} was canceled)",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
@@ -31546,7 +31546,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -31561,7 +31561,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -31580,7 +31580,7 @@
         {
             "text":"If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects"
             }
         },
         {
@@ -31601,7 +31601,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -31616,7 +31616,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -31650,7 +31650,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -31665,7 +31665,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -31684,7 +31684,7 @@
         {
             "text":"The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {100598|Eagle's Sight} to block a Wraith or zombie while {201726|Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {100598|Eagle's Sight} was canceled)",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
@@ -31694,7 +31694,7 @@
             "text":"[PRE][POT] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -31709,7 +31709,7 @@
             "text":"[PRE][POT] The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -31728,7 +31728,7 @@
         {
             "text":"[POT][PRE] If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects"
             }
         },
         {
@@ -31746,7 +31746,7 @@
         {
             "text":"[POT][PRE] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {100598|Eagle's Sight} to block a Wraith or zombie while {201726|Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {100598|Eagle's Sight} was canceled)",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
@@ -31756,7 +31756,7 @@
             "text":"[myt][REFLEX] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -31771,7 +31771,7 @@
             "text":"[myt][REFLEX] The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -31800,7 +31800,7 @@
             "text":"[CHI] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -31815,7 +31815,7 @@
             "text":"[CHI] The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -31849,7 +31849,7 @@
             "text":"[abo] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -31864,7 +31864,7 @@
             "text":"[abo] The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -31889,7 +31889,7 @@
         {
             "text":"[abo][REFLEX] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {100598|Eagle's Sight} to block a Wraith or zombie while {201726|Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {100598|Eagle's Sight} was canceled)",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
@@ -31899,7 +31899,7 @@
             "text":"[SER] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -31914,7 +31914,7 @@
             "text":"[SER] The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -31942,7 +31942,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -31957,7 +31957,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -31979,7 +31979,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -31994,7 +31994,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -32013,7 +32013,7 @@
         {
             "text":"If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects"
             }
         },
         {
@@ -32034,7 +32034,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -32049,7 +32049,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -32071,7 +32071,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -32086,7 +32086,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -32105,7 +32105,7 @@
         {
             "text":"If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects"
             }
         },
         {
@@ -32150,7 +32150,7 @@
         {
             "text":"The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {100598|Eagle's Sight} to block a Wraith or zombie while {201726|Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {100598|Eagle's Sight} was canceled)",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
@@ -32160,7 +32160,7 @@
             "text":"[abo][REFLEX] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -32175,7 +32175,7 @@
             "text":"[abo][REFLEX] The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -32200,7 +32200,7 @@
         {
             "text":"[abo][REFLEX] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {100598|Eagle's Sight} to block a Wraith or zombie while {201726|Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {100598|Eagle's Sight} was canceled)",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
@@ -32210,7 +32210,7 @@
             "text":"[abo][REFLEX] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -32225,7 +32225,7 @@
             "text":"[abo][REFLEX] The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -32250,7 +32250,7 @@
         {
             "text":"[abo][REFLEX] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {100598|Eagle's Sight} to block a Wraith or zombie while {201726|Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {100598|Eagle's Sight} was canceled)",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
@@ -32260,7 +32260,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -32275,7 +32275,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -32300,7 +32300,7 @@
         {
             "text":"[chi] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {100598|Eagle's Sight} to block a Wraith or zombie while {201726|Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {100598|Eagle's Sight} was canceled)",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
@@ -32310,7 +32310,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -32325,7 +32325,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -32344,7 +32344,7 @@
         {
             "text":"[tem] If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects"
             }
         },
         {
@@ -32390,7 +32390,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -32405,7 +32405,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -32433,7 +32433,7 @@
             "text":"[OBF][VIC] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -32448,7 +32448,7 @@
             "text":"[OBF][VIC] The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -32470,7 +32470,7 @@
             "text":"[abo][REFLEX] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -32485,7 +32485,7 @@
             "text":"[abo][REFLEX] The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -32510,7 +32510,7 @@
         {
             "text":"[abo][REFLEX] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {100598|Eagle's Sight} to block a Wraith or zombie while {201726|Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {100598|Eagle's Sight} was canceled)",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
@@ -32520,7 +32520,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -32535,7 +32535,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -32563,7 +32563,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -32578,7 +32578,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -32606,7 +32606,7 @@
             "text":"[OBE][REACTION] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -32621,7 +32621,7 @@
             "text":"[OBE][REACTION] The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -32640,7 +32640,7 @@
         {
             "text":"[OBE] If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects"
             }
         },
         {
@@ -32683,7 +32683,7 @@
         {
             "text":"[OBE] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {100598|Eagle's Sight} to block a Wraith or zombie while {201726|Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {100598|Eagle's Sight} was canceled)",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
@@ -32693,7 +32693,7 @@
             "text":"[abo][REFLEX] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -32708,7 +32708,7 @@
             "text":"[abo][REFLEX] The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -32733,7 +32733,7 @@
         {
             "text":"[abo][REFLEX] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {100598|Eagle's Sight} to block a Wraith or zombie while {201726|Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {100598|Eagle's Sight} was canceled)",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         },
@@ -32772,7 +32772,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -32787,7 +32787,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -32806,7 +32806,7 @@
         {
             "text":"The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {100598|Eagle's Sight} to block a Wraith or zombie while {201726|Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {100598|Eagle's Sight} was canceled)",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
@@ -32816,7 +32816,7 @@
             "text":"[abo][REFLEX] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -32831,7 +32831,7 @@
             "text":"[abo][REFLEX] The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -32856,7 +32856,7 @@
         {
             "text":"[abo][REFLEX] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {100598|Eagle's Sight} to block a Wraith or zombie while {201726|Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {100598|Eagle's Sight} was canceled)",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
@@ -32866,7 +32866,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -32881,7 +32881,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -32900,7 +32900,7 @@
         {
             "text":"If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects"
             }
         },
         {
@@ -32918,7 +32918,7 @@
         {
             "text":"The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {100598|Eagle's Sight} to block a Wraith or zombie while {201726|Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {100598|Eagle's Sight} was canceled)",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
@@ -32928,7 +32928,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -32943,7 +32943,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -32965,7 +32965,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -32980,7 +32980,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -33002,7 +33002,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -33017,7 +33017,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -33039,7 +33039,7 @@
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{100135|The Barrens}\u00a0nor {100588|Dreams of the Sphinx}\u00a0can be used).",
             "refs":{
                 "LSJ 20061207":"https://usenet.krcg.org/t/nqcrJlhg4Ng/#m2",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "RBK playing-a-card":"https://archon.vekn.net/help/rules#playing-a-card",
                 "LSJ 20061013":"https://usenet.krcg.org/t/6w8K3yDtBH0/#m16"
             }
         },
@@ -33054,7 +33054,7 @@
             "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
             "refs":{
                 "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "LSJ 19980212":"https://usenet.krcg.org/t/fLFLlXZXHqA/#m0"
             }
         },
@@ -33075,7 +33075,7 @@
         {
             "text":"A minion can only perform this special hunt once per turn.",
             "refs":{
-                "RBK action-card-or-card-in-play":"https://www.vekn.net/rulebook#action-card-or-card-in-play"
+                "RBK action-card-or-card-in-play":"https://archon.vekn.net/help/rules#action-card-or-card-in-play"
             }
         }
     ],
@@ -33083,7 +33083,7 @@
         {
             "text":"A minion can only perform this special hunt once per turn.",
             "refs":{
-                "RBK action-card-or-card-in-play":"https://www.vekn.net/rulebook#action-card-or-card-in-play"
+                "RBK action-card-or-card-in-play":"https://archon.vekn.net/help/rules#action-card-or-card-in-play"
             }
         },
         {
@@ -33126,7 +33126,7 @@
         {
             "text":"A minion can only perform this special hunt once per turn.",
             "refs":{
-                "RBK action-card-or-card-in-play":"https://www.vekn.net/rulebook#action-card-or-card-in-play"
+                "RBK action-card-or-card-in-play":"https://archon.vekn.net/help/rules#action-card-or-card-in-play"
             }
         }
     ],
@@ -33134,7 +33134,7 @@
         {
             "text":"A minion can only perform this special hunt once per turn.",
             "refs":{
-                "RBK action-card-or-card-in-play":"https://www.vekn.net/rulebook#action-card-or-card-in-play"
+                "RBK action-card-or-card-in-play":"https://archon.vekn.net/help/rules#action-card-or-card-in-play"
             }
         },
         {
@@ -33183,7 +33183,7 @@
         {
             "text":"A minion can only perform this special hunt once per turn.",
             "refs":{
-                "RBK action-card-or-card-in-play":"https://www.vekn.net/rulebook#action-card-or-card-in-play"
+                "RBK action-card-or-card-in-play":"https://archon.vekn.net/help/rules#action-card-or-card-in-play"
             }
         },
         {
@@ -33204,7 +33204,7 @@
         {
             "text":"A minion can only perform this special hunt once per turn.",
             "refs":{
-                "RBK action-card-or-card-in-play":"https://www.vekn.net/rulebook#action-card-or-card-in-play"
+                "RBK action-card-or-card-in-play":"https://archon.vekn.net/help/rules#action-card-or-card-in-play"
             }
         },
         {
@@ -34520,7 +34520,7 @@
         {
             "text":"[THA] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {100598|Eagle's Sight} to block a Wraith or zombie while {201726|Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {100598|Eagle's Sight} was canceled)",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
@@ -34734,7 +34734,7 @@
         {
             "text":"You still gain the trifle master phase action, even if this card contests when played.",
             "refs":{
-                "RBK contested-cards":"https://www.vekn.net/rulebook#Contested-cards"
+                "RBK contested-cards":"https://archon.vekn.net/help/rules#advanced-rules-contested-cards"
             }
         }
     ],
@@ -34742,7 +34742,7 @@
         {
             "text":"You still gain the trifle master phase action, even if this card contests when played.",
             "refs":{
-                "RBK contested-cards":"https://www.vekn.net/rulebook#Contested-cards"
+                "RBK contested-cards":"https://archon.vekn.net/help/rules#advanced-rules-contested-cards"
             }
         }
     ],
@@ -34750,7 +34750,7 @@
         {
             "text":"You still gain the trifle master phase action, even if this card contests when played.",
             "refs":{
-                "RBK contested-cards":"https://www.vekn.net/rulebook#Contested-cards"
+                "RBK contested-cards":"https://archon.vekn.net/help/rules#advanced-rules-contested-cards"
             }
         },
         {
@@ -35122,7 +35122,7 @@
         {
             "text":"If an acting minion leaves the ready region before block resolution, the action ends immediately and the blocking minion is not locked.",
             "refs":{
-                "RBK resolve-the-action":"https://www.vekn.net/rulebook#resolve-the-action"
+                "RBK resolve-the-action":"https://archon.vekn.net/help/rules#3-resolve-the-action"
             }
         }
     ],
@@ -35204,9 +35204,9 @@
         {
             "text":"[TEM] Cards requiring a discipline come in play at the inferior version.",
             "refs":{
-                "RBK equip":"https://www.vekn.net/rulebook#equip",
-                "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
-                "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+                "RBK equip":"https://archon.vekn.net/help/rules#equip",
+                "RBK recruit-ally":"https://archon.vekn.net/help/rules#recruit-ally",
+                "RBK employ-retainer":"https://archon.vekn.net/help/rules#employ-retainer"
             }
         },
         {
@@ -35879,7 +35879,7 @@
         {
             "text":"The card must be present in the ash heap to be redrawn.",
             "refs":{
-                "RBK targeting-of-cards":"https://www.vekn.net/rulebook#targeting-of-cards"
+                "RBK targeting-of-cards":"https://archon.vekn.net/help/rules#targeting-of-cards"
             }
         },
         {
@@ -36656,7 +36656,7 @@
         {
             "text":"The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {100598|Eagle's Sight} to block a Wraith or zombie while {201726|Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {100598|Eagle's Sight} was canceled)",
             "refs":{
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "RBK cancel-a-card":"https://archon.vekn.net/help/rules#advanced-rules-cancellation-effects",
                 "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
@@ -36795,9 +36795,9 @@
         {
             "text":"Cards requiring a discipline come in play at the inferior version.",
             "refs":{
-                "RBK equip":"https://www.vekn.net/rulebook#equip",
-                "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
-                "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+                "RBK equip":"https://archon.vekn.net/help/rules#equip",
+                "RBK recruit-ally":"https://archon.vekn.net/help/rules#recruit-ally",
+                "RBK employ-retainer":"https://archon.vekn.net/help/rules#employ-retainer"
             }
         },
         {
@@ -36813,9 +36813,9 @@
         {
             "text":"Cards requiring a discipline come in play at the inferior version.",
             "refs":{
-                "RBK equip":"https://www.vekn.net/rulebook#equip",
-                "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
-                "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+                "RBK equip":"https://archon.vekn.net/help/rules#equip",
+                "RBK recruit-ally":"https://archon.vekn.net/help/rules#recruit-ally",
+                "RBK employ-retainer":"https://archon.vekn.net/help/rules#employ-retainer"
             }
         },
         {
