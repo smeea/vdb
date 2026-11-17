@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, createRoutesFromElements, Navigate, Route } from "react-router";
 import { PlaytestManage, PlaytestReportsAll } from "@/components";
-import { DECKID, DECKID_FROM, DECKID_TO, EVENT, ID } from "@/constants";
+import { DECKID, DECKID_FROM, DECKID_TO, EVENT, OLD_EVENT, ID } from "@/constants";
 import { useApp } from "@/context";
 import { deckServices, miscServices } from "@/services";
 import About from "./pages/About.jsx";
@@ -20,7 +20,6 @@ const Pda = lazy(() => import("./pages/Pda.jsx"));
 const Playtest = lazy(() => import("./pages/Playtest.jsx"));
 const Review = lazy(() => import("./pages/Review.jsx"));
 const Tda = lazy(() => import("./pages/Tda.jsx"));
-const Tdaa = lazy(() => import("./pages/Tdaa.jsx"));
 const Twd = lazy(() => import("./pages/Twd.jsx"));
 const TwdCardsHistory = lazy(() => import("./pages/TwdCardsHistory.jsx"));
 const TwdCheck = lazy(() => import("./pages/TwdCheck.jsx"));
@@ -202,25 +201,16 @@ const router = createBrowserRouter(
             </Suspense>
           }
         />
-      </Route>
-      <Route
-        path="tdaa"
-        element={
-          <Suspense fallback={<div />}>
-            <Tdaa />
-          </Suspense>
-        }
-      >
         <Route
-          path={`:${EVENT}`}
+          path={`old/:${OLD_EVENT}`}
           element={
             <Suspense fallback={<div />}>
-              <Tdaa />
+              <Tda />
             </Suspense>
           }
         />
       </Route>
-    </Route>,
+    </Route>
   ),
 );
 

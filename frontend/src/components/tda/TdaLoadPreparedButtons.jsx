@@ -21,7 +21,7 @@ const TdaLoadPreparedButtons = ({ setTempDecks, setTempArchon, setError }) => {
     setTdaInfo();
     setTdaDecks();
     setTdaResults();
-    navigate(`/tda/${id}`);
+    navigate(`/tda/old/${id}`);
   };
 
   return (

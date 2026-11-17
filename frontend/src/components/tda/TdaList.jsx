@@ -22,7 +22,7 @@ const TdaLoadPreparedButtons = ({ setError }) => {
     setTdaInfo();
     setTdaDecks();
     setTdaResults();
-    navigate(`/tdaa/${id}`);
+    navigate(`/tda/${id}`);
   };
 
   useEffect(() => {

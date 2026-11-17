@@ -8,21 +8,50 @@ import {
   ErrorMessage,
   FlexGapped,
   Header,
+  Hr,
   TdaCharts,
   TdaInfo,
-  TdaLoadCustomButtons,
   TdaLoadPreparedButtons,
+  TdaList,
   TdaResult,
   TdaSearchForm,
 } from "@/components";
-import { AUTHOR, CRYPT, DECKS, EVENT, INFO, LIBRARY, NAME, RESULTS, TAGS } from "@/constants";
+import {
+  AUTHOR,
+  CITY,
+  COUNTRY,
+  CRYPT,
+  DATE,
+  DECK,
+  DECKS,
+  DESCRIPTION,
+  EVENT,
+  GW,
+  INFO,
+  LIBRARY,
+  NAME,
+  OLD_EVENT,
+  PLAYERS,
+  RANK,
+  RESULTS,
+  ROUNDS,
+  SCORE,
+  TAGS,
+  VP,
+} from "@/constants";
 import { clearTdaForm, setTdaDecks, setTdaInfo, setTdaResults, tdaStore, useApp } from "@/context";
-import { getTags, importDeck, parseArchon } from "@/utils";
+import { getCountryName, parseDeck, getTags, importDeck, parseArchon } from "@/utils";
+import { archiveServices } from "@/services";
 
-const TESTERS = ["1", "crauseon"];
+const MEDIAN_RANK = "median_rank";
+const MEDIAN_GW = "median_gw";
+const MEDIAN_VP = "median_vp";
+const TOTAL_GW = "total_gw";
+const TOTAL_VP = "total_vp";
+
 
 const Tda = () => {
-  const { username, cryptCardBase, libraryCardBase, isMobile } = useApp();
+  const { cryptCardBase, libraryCardBase, isMobile } = useApp();
   const { [DECKS]: decks, [RESULTS]: results, [INFO]: info } = useSnapshot(tdaStore);
   const params = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -33,7 +62,55 @@ const Tda = () => {
   const [tempArchon, setTempArchon] = useState();
   const [error, setError] = useState(false);
 
-  const getDeck = async (data) => {
+  const getDecks = (value) => {
+    const d = {};
+
+    Object.entries(value[PLAYERS]).forEach(([k, v]) => {
+      if (v[DECK]) {
+        const { [CRYPT]: crypt, [LIBRARY]: library } = parseDeck(cryptCardBase, libraryCardBase, v[DECK]);
+
+        d[k] = {
+          [NAME]: v[NAME],
+          [AUTHOR]: v[AUTHOR],
+          [DESCRIPTION]: `${v[GW]}GW ${v[VP]}VP`,
+          [CRYPT]: crypt,
+          [LIBRARY]: library,
+          [TAGS]: getTags(crypt, library),
+          [SCORE]: {
+            [GW]: v[GW],
+            [VP]: v[VP],
+            [RANK]: Number(k) + 1,
+          },
+        };
+      }
+    })
+
+    return d;
+  };
+
+  const getInfo = (value) => {
+    // TODO add matches info
+    return {
+      // avgMatchGw: 0.6,
+      // avgMatchVp: 4.1,
+      // matches: "16",
+      date: value[INFO][DATE],
+      event: value[INFO][NAME],
+      location: `${value[INFO][CITY]}, ${getCountryName(value[INFO][COUNTRY])}`,
+      medianPlayerGw: value[INFO][MEDIAN_GW],
+      medianPlayerVp: value[INFO][MEDIAN_VP],
+      medianReportedRank: value[INFO][MEDIAN_RANK],
+      players: value[INFO][PLAYERS],
+      rounds: value[INFO][ROUNDS],
+      totalGw: value[INFO][TOTAL_GW],
+      totalVp: value[INFO][TOTAL_VP],
+    }
+  };
+
+
+  // OLD <---
+
+  const getDeckOld = async (data) => {
     const deck = await importDeck(data, cryptCardBase, libraryCardBase);
     deck[TAGS] = await getTags(deck[CRYPT], deck[LIBRARY]);
     return deck;
@@ -65,7 +142,7 @@ const Tda = () => {
           .filter((f) => !f[NAME].includes(".xlsx"))
           .map(async (f) => {
             const d = await f.async("string");
-            return getDeck(d);
+            return getDeckOld(d);
           });
 
         Promise.all(fetchedDecks).then((v) => {
@@ -86,6 +163,8 @@ const Tda = () => {
     setTdaInfo(info);
     setTdaDecks(tdaDecks);
   };
+
+  // OLD --->
 
   const handleCloseEvent = () => {
     clearTdaForm();
@@ -111,54 +190,45 @@ const Tda = () => {
   }, [tempDecks, tempArchon]);
 
   useEffect(() => {
-    if (params[EVENT] && !(tdaStore[DECKS] || tdaStore[INFO]) && cryptCardBase && libraryCardBase) {
-      loadPrepared(params[EVENT]);
-    }
-  }, [params[EVENT], cryptCardBase, libraryCardBase]);
+    if (
+      (params[EVENT] || params[OLD_EVENT]) &&
+      !(tdaStore[DECKS] || tdaStore[INFO]) &&
+      cryptCardBase &&
+      libraryCardBase
+    ) {
+      setError(false);
 
-  console.log({ info, decks });
+      if (params[EVENT]) {
+        (async () => {
+          const t = await archiveServices.getTda(params[EVENT]);
+          setTdaInfo(getInfo(t));
+          setTdaDecks(getDecks(t));
+        })();
+      } else {
+        loadPrepared(params[OLD_EVENT]);
+      }
+    }
+  }, [params[EVENT], params[OLD_EVENT], cryptCardBase, libraryCardBase]);
+
+  console.log(params)
 
   return (
     <div className="twd-container mx-auto flex flex-col gap-2">
-      <Activity mode={!(info && decks) ? "visible" : "hidden"}>
-        <Header>
-          <div className="flex w-full flex-col p-2 text-lg max-sm:gap-2">
-            <div className="flex sm:justify-center">
-              Want more Tournaments here? Help your organizer to collect the data!
-            </div>
-            <div className="flex gap-1.5 sm:justify-center">
-              More details:
-              <a
-                target="_blank"
-                rel="noreferrer"
-                className="underline"
-                href="https://garourimgazette.wordpress.com/vtes-discussions/vtes-tournament-archive/"
-              >
-                TOURNAMENTS DECKS ARCHIVE
-              </a>
-            </div>
-          </div>
-        </Header>
-      </Activity>
       {error && <ErrorMessage>NO DATA AVAILABLE FOR EVENT #{error}</ErrorMessage>}
       <FlexGapped className="flex-col">
         {!(info && decks) && (
           <div className="flex min-h-[70vh] flex-col place-items-center justify-center max-sm:px-2">
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-4">
+              <TdaList setError={setError} />
+              <Hr />
+              <Header className="justify-center p-2">
+                Below are manually collected events, prior Online Archon
+              </Header>
               <TdaLoadPreparedButtons
                 setTempDecks={setTempDecks}
                 setTempArchon={setTempArchon}
                 setError={setError}
               />
-              {TESTERS.includes(username) && (
-                <TdaLoadCustomButtons
-                  tempDecks={tempDecks}
-                  setTempDecks={setTempDecks}
-                  setTempArchon={setTempArchon}
-                  getDeck={getDeck}
-                  setError={setError}
-                />
-              )}
             </div>{" "}
             {decks && info && (
               <FlexGapped className="basis-3/12 flex-col max-sm:p-2">

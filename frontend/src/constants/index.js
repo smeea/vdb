@@ -335,3 +335,4 @@ export const SEATING_PLAYERS = "seatingPlayers";
 export const INVENTORY_CATEGORY = "inventoryCategory";
 export const SHOW_PLAYTEST_NAMES = "showPlaytestNames";
 export const SHOW_PLAYTEST_IMAGES = "showPlaytestImages";
+export const OLD_EVENT = "oldEvent";
