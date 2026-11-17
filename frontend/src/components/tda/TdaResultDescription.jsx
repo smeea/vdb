@@ -29,7 +29,7 @@ const TdaResultDescription = ({ deck }) => {
               iconed={isMobile}
               title={isMobile ? <StarFill /> : "Score:"}
             >
-              {deck[SCORE][GW]}GW + {deck[SCORE][VP]}VP
+              {deck[SCORE][GW]}GW {deck[SCORE][VP]}VP
             </TwdResultDescriptionTextTr>
           </tbody>
         </table>

@@ -1,4 +1,3 @@
-import ky from "ky";
 import { Activity, useEffect, useState } from "react";
 import { useNavigate, useParams, useSearchParams } from "react-router";
 import { useSnapshot } from "valtio";
@@ -13,9 +12,16 @@ import {
   TdaResult,
   TdaSearchForm,
 } from "@/components";
-import { AUTHOR, CRYPT, DECKS, EVENT, INFO, LIBRARY, NAME, RESULTS, TAGS } from "@/constants";
+import { DATE, COUNTRY, CITY, ROUNDS, GW, VP, RANK, PLAYERS, SCORE, DESCRIPTION, AUTHOR, DECK, CRYPT, DECKS, EVENT, INFO, LIBRARY, NAME, RESULTS, TAGS } from "@/constants";
 import { clearTdaForm, setTdaDecks, setTdaInfo, setTdaResults, tdaStore, useApp } from "@/context";
-import { getTags, importDeck, parseArchon } from "@/utils";
+import { getCountryName, parseDeck, getTags, } from "@/utils";
+import { archiveServices } from "@/services";
+
+const MEDIAN_RANK = "median_rank"
+const MEDIAN_GW = "median_gw"
+const MEDIAN_VP = "median_vp"
+const TOTAL_GW = "total_gw";
+const TOTAL_VP = "total_vp";
 
 const Tda = () => {
   const { cryptCardBase, libraryCardBase, isMobile } = useApp();
@@ -25,74 +31,61 @@ const Tda = () => {
   const query = JSON.parse(searchParams.get("q"));
   const navigate = useNavigate();
   const [showForm, setShowForm] = useState();
-  const [tempDecks, setTempDecks] = useState();
-  const [tempArchon, setTempArchon] = useState();
   const [error, setError] = useState(false);
 
-  const getDeck = async (data) => {
-    const deck = await importDeck(data, cryptCardBase, libraryCardBase);
-    deck[TAGS] = await getTags(deck[CRYPT], deck[LIBRARY]);
-    return deck;
+  const getDecks = (value) => {
+    const d = {};
+
+    Object.entries(value[PLAYERS]).forEach(([k, v]) => {
+      if (v[DECK]) {
+        const { [CRYPT]: crypt, [LIBRARY]: library } = parseDeck(cryptCardBase, libraryCardBase, v[DECK]);
+
+        d[k] = {
+          [NAME]: v[NAME],
+          [AUTHOR]: v[AUTHOR],
+          [DESCRIPTION]: `${v[GW]}GW ${v[VP]}VP`,
+          [CRYPT]: crypt,
+          [LIBRARY]: library,
+          [TAGS]: getTags(crypt, library),
+          [SCORE]: {
+            [GW]: v[GW],
+            [VP]: v[VP],
+            [RANK]: Number(k) + 1,
+          },
+        };
+      }
+    })
+
+    return d;
   };
 
-  const loadPrepared = async (id) => {
-    const { default: JSZip } = await import("jszip");
-    setError(false);
-
-    const url = `${import.meta.env.VITE_BASE_URL}/tournaments/${id}.zip`;
-
-    ky.get(url)
-      .then((response) => {
-        if (response.status === 200 || response.status === 0) {
-          return Promise.resolve(response.blob());
-        }
-        return Promise.reject(new Error(response.statusText));
-      })
-      .then(JSZip.loadAsync)
-      .then((zip) => {
-        Object.values(zip.files).forEach(async (f) => {
-          if (f[NAME].includes(".xlsx")) {
-            const archon = await f.async("base64");
-            setTempArchon(archon);
-          }
-        });
-
-        const fetchedDecks = Object.values(zip.files)
-          .filter((f) => !f[NAME].includes(".xlsx"))
-          .map(async (f) => {
-            const d = await f.async("string");
-            return getDeck(d);
-          });
-
-        Promise.all(fetchedDecks).then((v) => {
-          const d = {};
-          v.forEach((i) => {
-            d[i[AUTHOR]] = i;
-          });
-
-          setTempDecks(d);
-        });
-      })
-      .catch(() => setError(id));
-  };
-
-  const loadArchon = async (file) => {
-    const { info, tdaDecks } = await parseArchon(file, tempDecks);
-
-    setTdaInfo(info);
-    setTdaDecks(tdaDecks);
+  const getInfo = (value) => {
+    // TODO add matches info
+    return {
+      // avgMatchGw: 0.6,
+      // avgMatchVp: 4.1,
+      // matches: "16",
+      date: value[INFO][DATE],
+      event: value[INFO][NAME],
+      location: `${value[INFO][CITY]}, ${getCountryName(value[INFO][COUNTRY])}`,
+      medianPlayerGw: value[INFO][MEDIAN_GW],
+      medianPlayerVp: value[INFO][MEDIAN_VP],
+      medianReportedRank: value[INFO][MEDIAN_RANK],
+      players: value[INFO][PLAYERS],
+      rounds: value[INFO][ROUNDS],
+      totalGw: value[INFO][TOTAL_GW],
+      totalVp: value[INFO][TOTAL_VP],
+    }
   };
 
   const handleCloseEvent = () => {
     clearTdaForm();
     setShowForm();
     setError(false);
-    setTempArchon();
-    setTempDecks();
     setTdaInfo();
     setTdaDecks();
     setTdaResults();
-    navigate("/tda");
+    navigate("/tdaa");
   };
 
   const handleClear = () => {
@@ -101,14 +94,14 @@ const Tda = () => {
   };
 
   useEffect(() => {
-    if (tempDecks && tempArchon) {
-      loadArchon(tempArchon);
-    }
-  }, [tempDecks, tempArchon]);
-
-  useEffect(() => {
     if (params[EVENT] && !(tdaStore[DECKS] || tdaStore[INFO]) && cryptCardBase && libraryCardBase) {
-      loadPrepared(params[EVENT]);
+      setError(false);
+
+      (async () => {
+        const t = await archiveServices.getTda(params[EVENT]);
+        setTdaInfo(getInfo(t));
+        setTdaDecks(getDecks(t));
+      })();
     }
   }, [params[EVENT], cryptCardBase, libraryCardBase]);
 
@@ -119,11 +112,7 @@ const Tda = () => {
         {!(info && decks) && (
           <div className="flex min-h-[70vh] flex-col place-items-center justify-center max-sm:px-2">
             <div className="flex flex-col gap-2">
-              <TdaList
-                setTempDecks={setTempDecks}
-                setTempArchon={setTempArchon}
-                setError={setError}
-              />
+              <TdaList setError={setError} />
             </div>{" "}
             {decks && info && (
               <FlexGapped className="basis-3/12 flex-col max-sm:p-2">

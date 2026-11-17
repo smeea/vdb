@@ -116,6 +116,8 @@ const Tda = () => {
     }
   }, [params[EVENT], cryptCardBase, libraryCardBase]);
 
+  console.log({ info, decks });
+
   return (
     <div className="twd-container mx-auto flex flex-col gap-2">
       <Activity mode={!(info && decks) ? "visible" : "hidden"}>

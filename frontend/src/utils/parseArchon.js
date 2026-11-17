@@ -117,7 +117,6 @@ const parseArchon = async (file, decks) => {
     avgMatchVp: Math.round((totalVp / totalMatches) * 10) / 10,
     medianPlayerGw: medianGw,
     medianPlayerVp: medianVp,
-    medianRank: totalPlayers / 2,
     medianReportedRank: medianReportedRank,
   };
 

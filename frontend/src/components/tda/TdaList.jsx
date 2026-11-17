@@ -10,26 +10,24 @@ import { archiveServices } from "@/services";
 import { getCountryName } from "@/utils";
 
 
-const TdaLoadPreparedButtons = ({ setTempDecks, setTempArchon, setError }) => {
+const TdaLoadPreparedButtons = ({ setError }) => {
   const navigate = useNavigate();
-  const [loadingDeck, setLoadingDeck] = useState();
+  const [loadingEvent, setLoadingEvent] = useState();
   const [tournaments, setTournaments] = useState({})
 
   const handlePrepared = (id) => {
-    setLoadingDeck(id);
+    setLoadingEvent(id);
     clearTdaForm();
     setError(false);
-    setTempArchon();
-    setTempDecks();
     setTdaInfo();
     setTdaDecks();
     setTdaResults();
-    navigate(`/tda/${id}`);
+    navigate(`/tdaa/${id}`);
   };
 
   useEffect(() => {
     (async () => {
-      const t = await archiveServices.getAllTdaDecks()
+      const t = await archiveServices.getAllTda()
       setTournaments(t);
     })()
   }, []);
@@ -37,19 +35,19 @@ const TdaLoadPreparedButtons = ({ setTempDecks, setTempArchon, setError }) => {
 
   return (
     <div className="flex flex-col gap-2">
-      {Object.values(tournaments).map((v) => {
+      {Object.entries(tournaments).toSorted(([_a, vA], [_b, vB]) => vB[DATE] > vA[DATE]).map(([id, v]) => {
         return (
           <Button
-            key={v[ID]}
+            key={id}
             className="w-full"
-            onClick={() => handlePrepared(v[ID])}
+            onClick={() => handlePrepared(id)}
             title={v[NAME]}
           >
             <div className="flex w-full items-center justify-between gap-2 sm:gap-5">
               <div className="flex items-center justify-between max-sm:text-sm">{v[DATE]}</div>
               <div className="flex w-full flex-col items-center gap-1">
                 <div className="flex items-center gap-1">
-                  {loadingDeck === v[ID] ? <Spinner /> : v.isNC ? <StarFill /> : null}
+                  {loadingEvent === id ? <Spinner /> : v.isNC ? <StarFill /> : null}
                   {v[NAME]}
                 </div>
                 <div className="flex w-full items-center justify-center gap-1 text-sm">

@@ -1,10 +1,13 @@
 # FIX
+- PT PDF export in br-pt
 
 # FIX ON HOLD
 
 # FEATURES
 - Inventory target documentation
 - Grab TWD data from archon, including decklists
+- Translated card text
+- Translated card images
 
 # FEATURES ON HOLD
 - Draft Cube support -> when draft cube info is available
