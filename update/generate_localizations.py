@@ -10,10 +10,11 @@ for lang in languages:
         filename_out = f"cardbase_{i}.{lang}.json"
         filename_out_min = f"cardbase_{i}.{lang}.min.json"
 
-        with open(filename_in, "r", encoding="utf8") as f_in, open(
-            filename_out, "w", encoding="utf8"
-        ) as f_out, open(filename_out_min, "w", encoding="utf8") as f_out_min:
-
+        with (
+            open(filename_in, "r", encoding="utf-8-sig") as f_in,
+            open(filename_out, "w", encoding="utf8") as f_out,
+            open(filename_out_min, "w", encoding="utf8") as f_out_min,
+        ):
             reader = csv.reader(f_in)
             fieldnames = next(reader)
             csv_cards = csv.DictReader(f_in, fieldnames)
