@@ -1,11 +1,12 @@
 # FIX
 - PT PDF export in br-pt
+- Store PDA list
 
 # FIX ON HOLD
 
 # FEATURES
 - Inventory target documentation
-- Translated card images
+- Translated card images - script to get from krcg
 
 # FEATURES ON HOLD
 - Draft Cube support -> when draft cube info is available
