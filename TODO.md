@@ -7,6 +7,7 @@
 # FEATURES
 - Inventory target documentation
 - Translated card images - script to get from krcg
+- ToC in pt reports
 
 # FEATURES ON HOLD
 - Draft Cube support -> when draft cube info is available
