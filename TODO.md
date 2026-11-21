@@ -1,12 +1,10 @@
 # FIX
-- PT PDF export in br-pt
 - Store PDA list
 
 # FIX ON HOLD
 
 # FEATURES
 - Inventory target documentation
-- Translated card images - script to get from krcg
 - ToC in pt reports
 
 # FEATURES ON HOLD

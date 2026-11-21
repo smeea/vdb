@@ -57,7 +57,7 @@ const PlaytestReportEntry = ({ value }) => {
             <div
               key={id}
               className={twMerge(
-                "group flex flex-col gap-2 sm:gap-3 print:break-inside-avoid",
+                "group flex flex-col gap-2 sm:gap-3",
                 username === id && "hidden print:flex",
               )}
             >
