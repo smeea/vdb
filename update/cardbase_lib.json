@@ -72214,7 +72214,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"In case of simultaneous ousts, all beneficiaries get the alternate amount.",
+                "refs":{
+                    "LSJ 20100116":"https://usenet.krcg.org/t/w6jOOcMIUbM/#m1",
+                    "LSJ 20010612":"https://usenet.krcg.org/t/z_kvG6T-DTQ/#m1"
+                }
+            }
+        ],
         "set":{
             "Jyhad":{
                 "C":true
@@ -92029,14 +92037,7 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[
-            {
-                "text":"This is an \"equip action\"",
-                "refs":{
-                    "TOM 19960130":"https://usenet.krcg.org/t/wF82VdVPlm0/#m13"
-                }
-            }
-        ],
+        "rulings":[],
         "set":{
             "FN":{
                 "R":true

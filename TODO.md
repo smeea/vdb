@@ -4,7 +4,6 @@
 
 # FEATURES
 - Inventory target documentation
-- Store PDA list in localStorage
 
 # FEATURES ON HOLD
 - Draft Cube support -> when draft cube info is available

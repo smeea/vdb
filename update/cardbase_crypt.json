@@ -52523,9 +52523,9 @@
                 }
             },
             {
-                "text":"If two are influenced in the same turn, the second is burned (self-contesting on the predator's end).",
+                "text":"If it enters contest when it enters play, control does not change and it stays contested on his owner's board. (reversal of LSJ 20010623-2)",
                 "refs":{
-                    "LSJ 20010623-2":"https://usenet.krcg.org/t/65IHHAii7ms/#m6"
+                    "LSJ 20030304":"https://usenet.krcg.org/t/OxPeShSy7dY/#m9"
                 }
             },
             {
@@ -53353,6 +53353,12 @@
                     "ANK 20200705-2":"https://www.vekn.net/forum/rules-questions/78716-cry-wolf-recruit-action-from-a-non-anarch-vampire-being-blocked#100264",
                     "LSJ 20070708":"https://usenet.krcg.org/t/vSOt2c1uRzQ/#m11",
                     "RTR 20070707":"https://usenet.krcg.org/t/vSOt2c1uRzQ/#m0"
+                }
+            },
+            {
+                "text":"The recruitment ability applies to non-standard recruitments (e.g. {101401|Piper}, {101902|The Summoning}).",
+                "refs":{
+                    "LSJ 20100413":"https://usenet.krcg.org/t/djRQ6PGuxZk/#m8"
                 }
             }
         ],
@@ -70073,6 +70079,12 @@
                     "ANK 20200705-2":"https://www.vekn.net/forum/rules-questions/78716-cry-wolf-recruit-action-from-a-non-anarch-vampire-being-blocked#100264",
                     "LSJ 20070708":"https://usenet.krcg.org/t/vSOt2c1uRzQ/#m11",
                     "RTR 20070707":"https://usenet.krcg.org/t/vSOt2c1uRzQ/#m0"
+                }
+            },
+            {
+                "text":"The recruitment ability applies to non-standard recruitments (e.g. {101401|Piper}, {101902|The Summoning}).",
+                "refs":{
+                    "LSJ 20100413":"https://usenet.krcg.org/t/djRQ6PGuxZk/#m8"
                 }
             }
         ],

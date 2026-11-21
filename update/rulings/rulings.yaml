@@ -3959,7 +3959,8 @@
   - His ability still applies when in torpor. [LSJ 20011022] [LSJ 20100902-2]
 201095|Parmenides:
   - He comes back as the unlock phase begins and unlocks as normal. [LSJ 20010622]
-  - If two are influenced in the same turn, the second is burned (self-contesting on the predator's end). [LSJ 20010623-2]
+  - If it enters contest when it enters play, control does not change and it stays contested on his owner's board. (reversal
+    of LSJ 20010623-2) [LSJ 20030304]
   - If the owner is ousted before Parmenides comes back, the predator keeps control of him indefinitely. [LSJ 20021111]
 201098|Patrizia Giovanni, Collector of Secrets:
   - When using her ability, the card to retrieve must be announced when declaring the action. [LSJ 20010627]
@@ -4801,3 +4802,5 @@ G00166|Action ended by an effect:
       101062|The Kiss of Ra: The action ends immediately, no other action modifier or reaction can be played afterwards.
     text: The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards. [RTR
       20180719] [ANK 20200207]
+G00167|Recruit an ally as if fulfilling requirements:
+  - The recruitment ability applies to non-standard recruitments (e.g. {101401|Piper}, {101902|The Summoning}). [LSJ 20100413]
