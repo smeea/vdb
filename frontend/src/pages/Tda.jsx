@@ -108,8 +108,6 @@ const Tda = () => {
   };
 
 
-  // OLD <---
-
   const getDeckOld = async (data) => {
     const deck = await importDeck(data, cryptCardBase, libraryCardBase);
     deck[TAGS] = await getTags(deck[CRYPT], deck[LIBRARY]);
@@ -164,8 +162,6 @@ const Tda = () => {
     setTdaDecks(tdaDecks);
   };
 
-  // OLD --->
-
   const handleCloseEvent = () => {
     clearTdaForm();
     setShowForm();
@@ -209,8 +205,6 @@ const Tda = () => {
       }
     }
   }, [params[EVENT], params[OLD_EVENT], cryptCardBase, libraryCardBase]);
-
-  console.log(params)
 
   return (
     <div className="twd-container mx-auto flex flex-col gap-2">

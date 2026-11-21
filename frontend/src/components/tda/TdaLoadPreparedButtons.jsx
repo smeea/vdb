@@ -39,7 +39,7 @@ const TdaLoadPreparedButtons = ({ setTempDecks, setTempArchon, setError }) => {
               <div className="flex w-full flex-col items-center gap-1">
                 <div className="flex items-center gap-1">
                   {loadingDeck === v[ID] ? <Spinner /> : v.isNC ? <StarFill /> : null}
-                  {v[TITLE]}
+                  <div className="inline max-w-[310px]">{v[TITLE]}</div>
                 </div>
                 <div className="flex w-full items-center justify-center gap-1 text-sm">
                   <div>

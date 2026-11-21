@@ -48,7 +48,7 @@ const TdaLoadPreparedButtons = ({ setError }) => {
               <div className="flex w-full flex-col items-center gap-1">
                 <div className="flex items-center gap-1">
                   {loadingEvent === id ? <Spinner /> : v.isNC ? <StarFill /> : null}
-                  {v[NAME]}
+                  <div className="flex justify-center max-w-[310px]">{v[NAME]}</div>
                 </div>
                 <div className="flex w-full items-center justify-center gap-1 text-sm">
                   <div>

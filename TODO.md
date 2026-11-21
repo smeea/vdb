@@ -1,11 +1,10 @@
 # FIX
-- Store PDA list
 
 # FIX ON HOLD
 
 # FEATURES
 - Inventory target documentation
-- ToC in pt reports
+- Store PDA list in localStorage
 
 # FEATURES ON HOLD
 - Draft Cube support -> when draft cube info is available
