@@ -60,7 +60,7 @@ const Requirements = ({ card }) => {
   );
 };
 
-const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
+const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover, noWarning }) => {
   const { isNarrow, isMobile } = useApp();
   const hasRequirements = !!(
     card[REQUIREMENT] ||
@@ -87,7 +87,7 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
             <div className="flex items-center gap-2">
               <ResultLibraryTypeImage value={card[TYPE]} />
               <div className="font-bold">
-                <ResultName card={card} />
+                <ResultName noWarning={noWarning} card={card} />
               </div>
             </div>
           </div>

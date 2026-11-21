@@ -26,7 +26,10 @@ const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, maxSameScor
               isPrecon ? "print:max-w-[320px]" : "print:max-w-[250px]",
             )}
           >
-            <div className="print:dark:text-fgPrimary flex flex-col gap-1 max-sm:w-full">
+            <div
+              id={product[ID]}
+              className="print:dark:text-fgPrimary flex flex-col gap-1 max-sm:w-full"
+            >
               {isPrecon ||
                 (showPlaytestImages && (
                   <div className="text-fgSecondary dark:text-fgSecondaryDark print:dark:text-fgSecondary flex font-bold">
@@ -44,12 +47,20 @@ const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, maxSameScor
                   className="max-sm:w-full sm:print:max-w-[250px] sm:print:min-w-[250px]"
                 />
               ) : product[ID] > 200000 ? (
-                <ResultCryptLayoutText card={product} noClose />
+                <ResultCryptLayoutText card={product} noWarning noClose />
               ) : (
-                <ResultLibraryLayoutText card={product} noClose />
+                <ResultLibraryLayoutText card={product} noWarning noClose />
               )}
             </div>
             {isPlaytestAdmin && <PlaytestScores report={report} maxSameScore={maxSameScore} />}
+            <div className="flex justify-center w-full p-4">
+              <a
+                className="print:text-fgSecondary"
+                href="#toc"
+              >
+                [ Back to Table of Content ]
+              </a>
+            </div>
           </FlexGapped>
         </div>
         {!isMobile && <Hr isThick className="print:hidden" />}

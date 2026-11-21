@@ -15,7 +15,7 @@ import {
 import { limitedStore, useApp } from "@/context";
 import { getLegality } from "@/utils";
 
-const ResultName = ({ card, isColored = true }) => {
+const ResultName = ({ card, isColored = true, noWarning }) => {
   const { limitedMode } = useApp();
   const limitedState = useSnapshot(limitedStore)[card[ID] > 200000 ? CRYPT : LIBRARY];
   const isLimited = limitedMode && !limitedState[card[ID]];
@@ -48,13 +48,17 @@ const ResultName = ({ card, isColored = true }) => {
           />
         </div>
       )}
-      {card[BANNED] && <ResultLegalIcon type={BANNED} value={card[BANNED]} />}
-      {isLimited && <ResultLegalIcon title="Limited" />}
-      {card[LEGAL_RESTRICTIONS] && !isReleasedPrerelease && (
-        <ResultLegalIcon
-          type={card[LEGAL_RESTRICTIONS] === PLAYTEST ? PLAYTEST : PRERELEASE}
-          value={card[LEGAL_RESTRICTIONS]}
-        />
+      {!noWarning && (
+        <>
+            {card[BANNED] && <ResultLegalIcon type={BANNED} value={card[BANNED]} />}
+            {isLimited && <ResultLegalIcon title="Limited" />}
+            {card[LEGAL_RESTRICTIONS] && !isReleasedPrerelease && (
+              <ResultLegalIcon
+                type={card[LEGAL_RESTRICTIONS] === PLAYTEST ? PLAYTEST : PRERELEASE}
+                value={card[LEGAL_RESTRICTIONS]}
+              />
+            )}
+        </>
       )}
     </div>
   );

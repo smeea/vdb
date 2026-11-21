@@ -31,7 +31,7 @@ import {
 } from "@/constants";
 import { useApp } from "@/context";
 
-const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose, inPopover }) => {
+const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose, inPopover, noWarning }) => {
   const { isNarrow, isMobile, cryptCardBase } = useApp();
 
   return (
@@ -53,7 +53,7 @@ const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose, inPopover 
               <div className="flex items-center gap-2">
                 <ResultClanImage value={card[CLAN]} />
                 <div className="flex gap-2 font-bold">
-                  <ResultName card={card} />
+                  <ResultName card={card} noWarning={noWarning} />
                   {card[ADV][1] && (
                     <ConditionalTooltip
                       overlay={<CardPopover card={cryptCardBase[card[ADV][1]]} />}
