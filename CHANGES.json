@@ -1,10 +1,10 @@
 [
   {
-    "version": "2026-11-22/1",
+    "version": "2026-11-22/2",
     "changes": [
       "Update TDA to use new Online Archon data, with a lot of new tournaments added. It means contributing decklists for event is super easy now, and don't require huge efforts from organizers to appear in TDA anymore. Thanks to Lionel Panhauleux for decent work on Online Archon, for VEKN/BCP to make it happen and for all future contirbutors - players and organizers.",
       "Update TWDA. It relies on manually approved \"official\" TWDA (http://www.vekn.fr/decks/twd.htm) meaning it may lag a bit vs Online Archon data), but there are efforts to minimize that lag.",
-      "Update French and Spanish card images, and French card text (Spanish text expected in the next update)",
+      "Update French and Spanish card images and card text",
       "Update Playtest reporting page to include Table of Content (cards are clickable to jump to their report) and fix export text overlaps",
     "Small fixes and improvements"
     ]

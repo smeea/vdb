@@ -1,7 +1,111 @@
 {
+    "200001":{
+        "name":"Aabt",
+        "text":"Independiente: Este vampiro no puede realizar acciones directas a no ser que /Nefertiti/ est\u00e9 preparada. Este vampiro puede prevenirse de 1 de da\u00f1o por combate. No \u00fanico."
+    },
+    "201733":{
+        "name":"Aaradhya, la Tirana Cruel",
+        "text":"Cardenal Sabbat: Aaradhya puede enderezarse tras realizar una acci\u00f3n pol\u00edtica exitosa (aunque el refer\u00e9ndum no prospere). +1 de sangrado."
+    },
+    "200003":{
+        "name":"Aaron Duggan, el Pelotilla de Cameron",
+        "text":"Sabbat."
+    },
+    "201663":{
+        "name":"Abaddon",
+        "text":"Independiente: Abaddon obtiene 1 maniobra opcional y 1 acoso opcional por combate."
+    },
+    "200004":{
+        "name":"Abd al-Rashid",
+        "text":"Independiente: De sangre maldita."
+    },
+    "200005":{
+        "name":"Abdelsobek",
+        "text":"Independiente: Abdelsobek puede enderezar a un vampiro o momia que controles con una acci\u00f3n con +1 de sigilo."
+    },
+    "201734":{
+        "name":"Abderrahim, el Brazo de la Muerte",
+        "text":"Sabbat: Durante una acci\u00f3n, Abderrahim puede quemar 1 de sangre para dar +1 de sigilo a un aliado o vampiro menor que controles. +1 de fuerza."
+    },
+    "201623":{
+        "name":"Abraham DuSable",
+        "text":"Camarilla: Durante una acci\u00f3n, Abraham puede descartarse de una carta que requiera Hechicer\u00eda de Sangre [tha] para obtener +1 de intercepci\u00f3n o +1 de sigilo."
+    },
+    "201634":{
+        "name":"Abraham Mellon",
+        "text":"Camarilla: Abraham puede jugar cartas que requieran a un Tremere como si fuera un Tremere. Mientras est\u00e9 preparado, obtienes +1 a la mano."
+    },
+    "200010":{
+        "name":"Accorri Giovanni",
+        "text":"Independiente."
+    },
+    "201787":{
+        "name":"Addison Payne",
+        "text":"Primog\u00e9nito Camarilla: Addison puede jugar cartas que requieran a un pr\u00edncipe como si fuera un pr\u00edncipe."
+    },
+    "201635":{
+        "name":"Adelino Da Silva",
+        "text":"Camarilla: Rescatar a un vampiro mayor del letargo le cuesta a Adelino -2 de sangre."
+    },
+    "200013":{
+        "name":"Adhiambo",
+        "text":"Laibon: Adhiambo obtiene +1 de sigilo durante acciones de equiparse con un arma de tu mano y acciones de entrar en combate con un siervo."
+    },
+    "201636":{
+        "name":"Adisa",
+        "text":"Camarilla: Adisa puede entrar en combate con un aliado o vampiro menor con una acci\u00f3n (D). Si caza con \u00e9xito, no se endereza normalmente durante su siguiente fase de enderezamiento."
+    },
+    "201664":{
+        "name":"Adrino Manauara",
+        "text":"Bar\u00f3n Anarquista de Manaus: Adrino obtiene 1 acoso (obligatorio) por combate, s\u00f3lo utilizable para continuar el combate."
+    },
+    "201735":{
+        "name":"Aelswith, la Irresistible",
+        "text":"Cardenal Sabbat: Si Aelswith es bloqueada, el controlador del siervo bloqueador quema 1 de reserva sangu\u00ednea antes de la resoluci\u00f3n del bloqueo."
+    },
+    "201736":{
+        "name":"Agnieszka, la Tentadora de Legiones",
+        "text":"Arzobispo Sabbat de Gdansk: Agnieszka puede quemar 1 de sangre para atacar terminando el combate. +1 de sangrado."
+    },
+    "200024":{
+        "name":"Ahmose Chambers",
+        "text":"Independiente."
+    },
     "200025":{
         "name":"Aidan Lyle",
         "text":"Camarilla: Aidan obtiene 1 acoso opcional por combate."
+    },
+    "200026":{
+        "name":"Aimee Laroux",
+        "text":"Independiente: Puedes quemar 1 de reserva sangu\u00ednea y usar 4 transferencias para dar a Aimee +1 nivel de Melp\u00f3mene [mel]. No puede jugar cartas de reacci\u00f3n."
+    },
+    "201708":{
+        "name":"Aintzane Arriaga",
+        "text":"Camarilla."
+    },
+    "200029":{
+        "name":"Aisha",
+        "text":"Independiente: Una vez por turno, Aisha puede quemar 1 de sangre para obtener +1 de intercepci\u00f3n durante la acci\u00f3n en curso."
+    },
+    "201788":{
+        "name":"Aisling Sturbridge",
+        "text":"Primog\u00e9nita Camarilla: Una vez por turno, despu\u00e9s de que Aisling realice una acci\u00f3n exitosa, puede descartarse de una carta que requiera Hechicer\u00eda de Sangre [tha] para enderezarse."
+    },
+    "201737":{
+        "name":"Aitana, la Imp\u00eda",
+        "text":"Sabbat."
+    },
+    "200035":{
+        "name":"Al-Ashrad, emir de Alamut",
+        "text":"Independiente: Al-Ashrad puede quemar un lugar que requiera un clan con una acci\u00f3n (D) que cuesta 2 de sangre. De sangre maldita. +1 de sangrado."
+    },
+    "200044":{
+        "name":"Alejandro Aguirre",
+        "text":"Sabbat: Si Alejandro est\u00e1 preparado, puede girarse antes de determinar la distancia en un combate en el que no est\u00e9 implicado para infligir 1 de da\u00f1o imprevenible a ambos combatientes."
+    },
+    "201717":{
+        "name":"Alek K\u00f6nig",
+        "text":"Independiente."
     },
     "201529":{
         "name":"Alexa Draper",
@@ -11,6 +115,26 @@
         "name":"Alexander Silverson",
         "text":"Pr\u00edncipe Camarilla de Birmingham: Los vampiros deben quemar 1 de sangre para emitir votos y papeletas contra referendos propuestos por Alexander."
     },
+    "200050":{
+        "name":"Alexis Sorokin",
+        "text":"Independiente: Una vez por combate, Alexis puede atacar esquivando. Puede robar un equipo con una acci\u00f3n (D). Obtiene +1 de sangrado contra un Matusal\u00e9n que controle a un Toreador preparado. Lista Roja."
+    },
+    "200051":{
+        "name":"Alfred Benezri",
+        "text":"Obispo Sabbat: Alfred obtiene -1 de fuerza en combate con un aliado."
+    },
+    "200052":{
+        "name":"Alfred Benezri",
+        "text":"Obispo Sabbat: Si Alfred est\u00e1 preparado, puede girarse antes de determinar la distancia para terminar el combate entre otros dos vampiros Sabbat.\n[MERGED] Arzobispo de Montreal: Durante la fase de votaci\u00f3n de un refer\u00e9ndum, puede quemar 1 de sangre para obtener +1 voto."
+    },
+    "201738":{
+        "name":"Algirdas, el Profeta del Sol",
+        "text":"Obispo Sabbat: Las cartas de ataque les cuestan +1 de sangre a los vampiros oponentes menores."
+    },
+    "200053":{
+        "name":"Ali Kar",
+        "text":"Independiente: De sangre maldita."
+    },
     "201531":{
         "name":"Alice Chen",
         "text":"Pr\u00edncipe Camarilla de Nairobi."
@@ -19,17 +143,149 @@
         "name":"Aline G\u00e4deke",
         "text":"Bar\u00f3n Anarquista de Mannheim: Una vez por turno, Aline puede quemar 1 de sangre para enderezarse despu\u00e9s de que otro Anarquista que controles realice una acci\u00f3n con \u00e9xito."
     },
+    "200059":{
+        "name":"Almodo Giovanni",
+        "text":"Independiente."
+    },
+    "200062":{
+        "name":"Alu",
+        "text":"Independiente: De sangre maldita."
+    },
     "201577":{
         "name":"Aluc Romas de Leon",
         "text":"Anarquista."
+    },
+    "200063":{
+        "name":"\u00c1lvaro, el V\u00e1stago de Ang\u00e9lica",
+        "text":"Arzobispo Sabbat de Pittsburgh: Tras la resoluci\u00f3n de una acci\u00f3n pol\u00edtica, si \u00c1lvaro se abstuvo (incluso en letargo), puede ganar 2 de sangre. +1 de sangrado."
+    },
+    "200065":{
+        "name":"Amaravati",
+        "text":"Independiente: Durante la fase de votaci\u00f3n de una acci\u00f3n pol\u00edtica, Amaravati puede quemar 2 de sangre para dar a cada Assamita preparado que controles +1 voto. De sangre maldita."
+    },
+    "200068":{
+        "name":"Ambrogino Giovanni",
+        "text":"Independiente. 1 voto (titulado): +1 de sangrado."
+    },
+    "200069":{
+        "name":"Ambrogino Giovanni",
+        "text":"Independiente: Durante tu fase de enderezamiento, Ambrogino puede retirar siete cartas de tu mont\u00f3n de ceniza de la partida para ganar 2 de sangre. Lista Roja. +1 de sangrado.\n[MERGED] +1 de sigilo."
+    },
+    "200070":{
+        "name":"Ambrosio Luis Mon\u00e7ada, Plenipotenciario",
+        "text":"Cardenal Sabbat: Mon\u00e7ada no puede bloquear. Las acciones directas contra \u00e9l cuestan +1 de reserva sangu\u00ednea. Si durante tu fase de descarte est\u00e1 preparado, puedes enderezar a otro Lasombra preparado."
+    },
+    "201624":{
+        "name":"Amelia Locke",
+        "text":"Camarilla."
+    },
+    "200073":{
+        "name":"Amenophobis",
+        "text":"Primog\u00e9nito Camarilla: Puedes robar 1 carta (desc\u00e1rtate despu\u00e9s) tras la resoluci\u00f3n de una acci\u00f3n exitosa que requiera Serpentis [ser]. Amenophobis obtiene +1 de sangrado contra el Matusal\u00e9n que tenga la Ventaja."
     },
     "201512":{
         "name":"America Johnson",
         "text":"Sabbat."
     },
+    "200074":{
+        "name":"Amisa",
+        "text":"Independiente. 2 votos (titulada): Amisa puede girar a un vampiro con capacidad 8 o m\u00e1s con una acci\u00f3n (D)."
+    },
+    "200075":{
+        "name":"Ana Rita Monta\u00f1a",
+        "text":"Sabbat."
+    },
+    "200076":{
+        "name":"Converso Anarquista",
+        "text":"Anarquista: Cuando el converso entra en juego, puedes retirarlo de la partida para convertir a un vampiro sin t\u00edtulo que controles en Anarquista y ganar 1 de reserva sangu\u00ednea o robar 1 carta de tu cripta."
+    },
     "201532":{
         "name":"Andi Liu",
         "text":"Pr\u00edncipe Camarilla de Taip\u00e9i."
+    },
+    "200081":{
+        "name":"Andr\u00e9, el Manipulador",
+        "text":"Camarilla: Mientras Andr\u00e9 est\u00e9 preparado, obtienes +2 a la mano."
+    },
+    "200082":{
+        "name":"Andrea Giovanni",
+        "text":"Independiente: Andrea obtiene +1 de sigilo durante acciones que requieran Nigromancia [nec]."
+    },
+    "200084":{
+        "name":"Andrei Puxon",
+        "text":"Independiente."
+    },
+    "200085":{
+        "name":"Andrew Emory",
+        "text":"Obispo Sabbat."
+    },
+    "201665":{
+        "name":"\u00c1ngel Guerrero",
+        "text":"Bar\u00f3n Anarquista de Ciudad Ju\u00e1rez."
+    },
+    "200090":{
+        "name":"Angela Decker",
+        "text":"Sabbat: Despu\u00e9s de que Angela se queme en combate, quema 2 de reserva sangu\u00ednea."
+    },
+    "200091":{
+        "name":"Angela Preston",
+        "text":"Camarilla: Durante tu fase de influencia, Angela puede girarse para enderezar a otro vampiro. Debe quemar 1 de sangre para intentar bloquear a un vampiro mayor."
+    },
+    "200092":{
+        "name":"Ang\u00e9lica, la Can\u00f3nigo",
+        "text":"Cardenal Sabbat: Durante una acci\u00f3n, Ang\u00e9lica puede descartarse de X cartas heriles para obtener +X de intercepci\u00f3n."
+    },
+    "201666":{
+        "name":"Aniel",
+        "text":"Independiente: Aniel puede quemar una carta que requiera una disciplina o 1 ficha de corrupci\u00f3n puesta en otro siervo preparado con una acci\u00f3n (D) con +1 de sigilo que cuesta 1 de sangre."
+    },
+    "201657":{
+        "name":"Anita Wainwright",
+        "text":"Anarquista."
+    },
+    "200097":{
+        "name":"Anjalika Underwood",
+        "text":"Independiente."
+    },
+    "200098":{
+        "name":"Anka, Sacerdotisa de las Espinas",
+        "text":"Sabbat: Anka puede entrar en combate con un Lasombra con una acci\u00f3n (D)."
+    },
+    "200099":{
+        "name":"Ankh-sen-Sutekh",
+        "text":"Independiente: +1 de sangrado."
+    },
+    "200100":{
+        "name":"Ankla Hotep",
+        "text":"Independiente: Rescatar a Ankla del letargo cuesta -2 de sangre. Obtiene 1 acoso opcional por combate."
+    },
+    "201693":{
+        "name":"Annabelle Triabell",
+        "text":"Primog\u00e9nita Camarilla: Mientras Anabelle est\u00e9 girada, los dem\u00e1s Toreadores que controles obtienen +1 de sigilo."
+    },
+    "200104":{
+        "name":"Annazir",
+        "text":"Independiente. 2 votos (titulado): Annazir puede quemar un lugar o robar un equipo con una acci\u00f3n (D). Infernal. +1 de sangrado."
+    },
+    "200105":{
+        "name":"Anne-Marie Bourgeois, Reclutadora del Inconnu",
+        "text":"Camarilla: El equipo le cuesta a Anne-Marie -1 de reserva sangu\u00ednea."
+    },
+    "201739":{
+        "name":"Anousha, la Man\u00edaca",
+        "text":"Obispo Sabbat: +1 de fuerza."
+    },
+    "200108":{
+        "name":"Antara",
+        "text":"Independiente: Antara obtiene +1 de intercepci\u00f3n contra vampiros Sabbat. \u00c9l quema 1 de sangre despu\u00e9s de que se juegue un evento de Gehenna. De sangre maldita."
+    },
+    "200111":{
+        "name":"Antoinette Dubois",
+        "text":"Independiente: Los Toreadores y Toreadores antitribu no pueden bloquear a Antoinette. -1 de intercepci\u00f3n."
+    },
+    "200113":{
+        "name":"Anton",
+        "text":"Sabbat: +1 de intercepci\u00f3n."
     },
     "200114":{
         "name":"Ant\u00f3n de Concepci\u00f3n",
@@ -37,23 +293,67 @@
     },
     "200116":{
         "name":"Antonio d'Erlette",
-        "text":"Sabbat: Mientras Antonio est\u00e9 preparado, puedes usar 4 transferencias para buscar en tu mano o biblioteca (baraja despu\u00e9s) un aliado mago que \u00e9l pudiera jugar. Pon ese aliado en juego con vida igual a la inicial y paga su costo normalmente."
+        "text":"Sabbat: Mientras Antonio est\u00e9 preparado, puedes usar 4 transferencias para buscar en tu mano o biblioteca (baraja despu\u00e9s) un aliado mago que \u00e9l pudiera jugar y ponerlo en juego con vida igual a la inicial pagando su costo normalmente."
+    },
+    "200117":{
+        "name":"Antonio Delgado",
+        "text":"Arzobispo Sabbat de Atlanta: Si Antonio realiza una acci\u00f3n pol\u00edtica cuyo refer\u00e9ndum prospere, puede enderezarse durante la siguiente fase de descarte."
+    },
+    "200121":{
+        "name":"Anwar",
+        "text":"Independiente: De sangre maldita."
+    },
+    "201740":{
+        "name":"Anxo Vilela",
+        "text":"Sabbat: Mientras tengas la Ventaja, Anxo obtiene +1 de fuerza."
     },
     "200123":{
         "name":"Apolonia Czarnecki",
         "text":"Camarilla: Apolonia puede robarle 1 de sangre a un vampiro m\u00e1s joven con una acci\u00f3n (D)."
     },
+    "200124":{
+        "name":"Appius Claudius Corvus",
+        "text":"Sabbat: Mano Negra. Seraf\u00edn. +1 de sigilo."
+    },
+    "201709":{
+        "name":"Araceli \"Celia\" Rivera",
+        "text":"Camarilla."
+    },
     "200132":{
         "name":"Ariane",
         "text":"Anarquista: Ariane obtiene -1 de sigilo en acciones indirectas."
+    },
+    "201789":{
+        "name":"Ar\u00edete",
+        "text":"Obispo Sabbat: Ar\u00edete puede entrar en combate con un vampiro que no sea Sabbat con una acci\u00f3n (D)."
+    },
+    "200136":{
+        "name":"Arishat",
+        "text":"Independiente. 1 voto (titulada): Durante la fase de votaci\u00f3n de un refer\u00e9ndum, Arishat puede quemar 1 de sangre para obligar a un vampiro a abstenerse. Infernal."
+    },
+    "201655":{
+        "name":"Arjun Shah",
+        "text":"Camarilla."
+    },
+    "200140":{
+        "name":"Arnulf Jormungandrsson",
+        "text":"Camarilla: Si Arnulf intenta bloquear, el siervo activo no puede jugar cartas modificadoras de acci\u00f3n que requieran Dementaci\u00f3n [dem], Dominaci\u00f3n [dom], Nigromancia [nec] o Presencia [pre] hasta el final de la acci\u00f3n."
     },
     "200144":{
         "name":"Arthur Denholm",
         "text":"Camarilla."
     },
+    "200146":{
+        "name":"Ash Harrison",
+        "text":"Sabbat: Una vez por asalto, s\u00f3lo de lejos, Ash puede atacar infligiendo 1 de da\u00f1o agravado a distancia. Mano Negra."
+    },
     "201533":{
         "name":"Ashley",
         "text":"Camarilla."
+    },
+    "201741":{
+        "name":"Assur Uballit, Hijo del Abismo",
+        "text":"Cardenal Sabbat: Mientras Assur Uballit est\u00e9 preparado, los zombis (aliados y criados) que reclutes o emplees obtienen +1 de vida inicial. +1 de sangrado."
     },
     "201578":{
         "name":"Asmin Kobane",
@@ -63,17 +363,81 @@
         "name":"Atiena",
         "text":"Bar\u00f3n Anarquista de Mombasa."
     },
+    "200149":{
+        "name":"Augustus Giovanni",
+        "text":"Independiente. 2 votos (titulado): Si un vampiro que controles se ha quemado desde tu \u00faltimo turno, Augustus puede pasarlo de tu mont\u00f3n de ceniza a tu zona preparada (sin sangre) con una acci\u00f3n que cuesta 1 de reserva sangu\u00ednea. +1 de sangrado."
+    },
     "201534":{
         "name":"T\u00eda Linda",
         "text":"Camarilla."
+    },
+    "200150":{
+        "name":"Aurora Van Brande, palad\u00edn",
+        "text":"Sabbat: Aurora puede atacar a distancia con 1 de da\u00f1o."
+    },
+    "200152":{
+        "name":"Ayelea, la Manipuladora",
+        "text":"Cardenal Sabbat: Ayelea puede darte el control de un Tremere antitribu hasta el final de tu siguiente turno con una acci\u00f3n (D)."
     },
     "201535":{
         "name":"Ayelech",
         "text":"Pr\u00edncipe Camarilla de Ad\u00eds Abeba."
     },
+    "201637":{
+        "name":"Ayse Dhanial",
+        "text":"Camarilla: Si Ayse est\u00e1 preparada, puedes usar una acci\u00f3n de fase de descarte para a\u00f1adirle 1 de sangre."
+    },
+    "200154":{
+        "name":"Azaneal",
+        "text":"Independiente: Las acciones que pongan vampiros en juego le cuestan a Azaneal -1 de sangre o reserva sangu\u00ednea. Infernal."
+    },
+    "200155":{
+        "name":"Aziz, Dammar de Estambul",
+        "text":"Independiente. 2 votos (titulado): Ponle 1 ficha de estatus a Aziz despu\u00e9s de que un vampiro en combate con \u00e9l se queme. Obtiene +1 voto por cada ficha de estatus que tenga. De sangre maldita. +1 de fuerza."
+    },
+    "201710":{
+        "name":"Azucena",
+        "text":"Camarilla: Azucena obtiene +1 de intercepci\u00f3n contra Lasombra menores y -1 de intercepci\u00f3n contra Lasombra mayores."
+    },
+    "200161":{
+        "name":"Badr al-Budur",
+        "text":"Independiente: De sangre maldita."
+    },
     "201536":{
         "name":"Baixinho",
         "text":"Camarilla."
+    },
+    "200162":{
+        "name":"Bajazet al-Nasir",
+        "text":"Independiente: Una vez por combate, Bajazet puede quemar 1 de sangre para convertir el da\u00f1o de sus ataques con la mano en agravado durante el asalto en curso. De sangre maldita."
+    },
+    "200163":{
+        "name":"Bakr",
+        "text":"Independiente: Bakr puede entrar en combate con un siervo con una acci\u00f3n (D) con +1 de sigilo que cuesta 1 de sangre. De sangre maldita."
+    },
+    "200164":{
+        "name":"Baldesar Rossellini",
+        "text":"Independiente: Una vez por turno, si Baldesar est\u00e1 preparado, puede reducir el costo de un lugar o de un equipo que juegues en 1 de sangre o reserva sangu\u00ednea. +1 de fuerza."
+    },
+    "200165":{
+        "name":"Banjoko",
+        "text":"Sabbat: Mano Negra. Seraf\u00edn."
+    },
+    "201781":{
+        "name":"Barachiel",
+        "text":"Independiente: Barachiel puede entrar en combate con un siervo con una acci\u00f3n (D)."
+    },
+    "200166":{
+        "name":"Barbaro Lucchese",
+        "text":"Independiente: Barbaro puede cambiarse de clan a Tremere antitribu con una acci\u00f3n con +1 de sigilo. Puede ponerle 1 ficha de m\u00e1cula a un siervo con una acci\u00f3n (D) con +1 de sigilo; si el siervo tiene 2 fichas de m\u00e1cula, qu\u00e9malas y el siervo se hace infernal. Infernal."
+    },
+    "200173":{
+        "name":"Basil",
+        "text":"Sabbat: Los vampiros mayores obtienen +1 de fuerza en combate con Basil."
+    },
+    "200175":{
+        "name":"Basir",
+        "text":"Independiente: Basir gana 1 de sangre despu\u00e9s de que uses una acci\u00f3n de fase heril para ponerle una carta heril de disciplina. No puede bloquear o jugar cartas de reacci\u00f3n. De sangre maldita."
     },
     "200185":{
         "name":"Escarabajo",
@@ -87,49 +451,209 @@
         "name":"Belinde",
         "text":"Pr\u00edncipe Camarilla de Copenhagen."
     },
+    "200188":{
+        "name":"Belle Equitone",
+        "text":"Independiente."
+    },
+    "200189":{
+        "name":"Benedict Giovanni, agente",
+        "text":"Independiente: Durante tu fase de enderezamiento, cada Giovanni mayor que el Giovanni preparado mayor que controles puede quemar 1 de sangre para robar a Benedict. No puede bloquear acciones indirectas."
+    },
     "200190":{
         "name":"Benjamin Rose",
         "text":"Pr\u00edncipe Camarilla de Washington, D.C.: Benjamin puede proponer un refer\u00e9ndum para darte +1 a la mano hasta el final de la partida con una acci\u00f3n pol\u00edtica con +1 de sigilo."
     },
+    "201742":{
+        "name":"Berenguela, la Viciosa",
+        "text":"Sabbat."
+    },
+    "200192":{
+        "name":"Bertrand d'Anjou",
+        "text":"Independiente: De sangre maldita."
+    },
     "201580":{
         "name":"Bijou",
+        "text":"Camarilla."
+    },
+    "200202":{
+        "name":"Loto Negro",
+        "text":"Sabbat."
+    },
+    "200203":{
+        "name":"Black Wallace",
+        "text":"Sabbat."
+    },
+    "200206":{
+        "name":"Blanche Hill",
+        "text":"Independiente: Una vez por turno, Blanche puede enderezarse tras cazar con \u00e9xito. Escasa."
+    },
+    "201528":{
+        "name":"Boles\u0142aw Gutowski",
+        "text":"Anarquista: Durante una acci\u00f3n que Boles\u0142aw realice, puede quemar 1 de sangre para revelar la carta superior de tu cripta, y luego barajar tu cripta. Si es un ejemplar de Boles\u0142aw, \u00e9l obtiene +1 de sigilo; si no, obtiene +1 de fuerza."
+    },
+    "201711":{
+        "name":"Braden White",
         "text":"Camarilla."
     },
     "201581":{
         "name":"Brandon Grime",
         "text":"Anarquista."
     },
+    "201667":{
+        "name":"Branimira",
+        "text":"Bar\u00f3n Anarquista de Sof\u00eda: Mientras tengas 9 o menos de reserva sangu\u00ednea, Branimira obtiene +1 de intercepci\u00f3n."
+    },
     "201538":{
         "name":"Bret Stryker",
         "text":"Camarilla: Bret obtiene -1 de intercepci\u00f3n contra vampiros titulados."
+    },
+    "200218":{
+        "name":"Brian Thompson",
+        "text":"Independiente."
     },
     "201539":{
         "name":"Brock Sterling",
         "text":"Camarilla."
     },
+    "200221":{
+        "name":"Brooke",
+        "text":"Sabbat."
+    },
+    "201790":{
+        "name":"Bruxa Branca",
+        "text":"Independiente: Una vez por turno, Bruxa Branca puede obtener +1 de intercepci\u00f3n durante la acci\u00f3n en curso."
+    },
+    "200225":{
+        "name":"Bryan Van Duesen",
+        "text":"Sabbat: +1 de sangrado."
+    },
+    "200228":{
+        "name":"Bupe Kuila",
+        "text":"Laibon: +1 de intercepci\u00f3n."
+    },
+    "201791":{
+        "name":"Ca\u00e7ador de Raposas",
+        "text":"Arzobispo Sabbat de Belo Horizonte."
+    },
+    "200231":{
+        "name":"Cagliostro, el Gran Copto",
+        "text":"Independiente: Si Cagliostro est\u00e1 preparado al inicio de tu fase de descarte, obtienes +1 acci\u00f3n de fase de descarte. Si es bloqueado y hay combate, puede ponerle 1 ficha de corrupci\u00f3n al siervo bloqueador tras terminarse ese combate."
+    },
+    "201792":{
+        "name":"Caique",
+        "text":"Anarquista: Despu\u00e9s de que Caique entre en combate, desc\u00e1rtate de 1 carta al azar."
+    },
+    "200236":{
+        "name":"Caliban",
+        "text":"Sabbat."
+    },
+    "200237":{
+        "name":"Callirus",
+        "text":"Independiente: Durante tu fase de enderezamiento, Callirus puede quemar 1 de sangre para quemar una carta que tenga encima."
+    },
+    "200239":{
+        "name":"Cameron",
+        "text":"Sabbat."
+    },
+    "200245":{
+        "name":"Carlotta Giovanni",
+        "text":"Independiente: Carlotta puede intercambiar una carta de tu mano por una carta de biblioteca de tu mont\u00f3n de ceniza con una acci\u00f3n con +1 de sigilo que cuesta 1 de sangre."
+    },
+    "201625":{
+        "name":"Carmelita Neillson",
+        "text":"Camarilla: Mientras Carmelita est\u00e9 preparada, obtienes +1 a la mano."
+    },
+    "200246":{
+        "name":"Carmen",
+        "text":"Sabbat: Los vampiros no Camarilla que controles obtienen +1 de sigilo durante acciones de equiparse. Mano Negra."
+    },
+    "200247":{
+        "name":"Carmine Giovanni",
+        "text":"Independiente. 2 votos (titulado): Los espectros entran en juego con +1 de vida. Carmine puede girarse para darle +1 de sigilo a un aliado."
+    },
     "200249":{
         "name":"Carolina V\u00e1lez",
         "text":"Arzobispo Sabbat de Montreal: Carolina es inmune al da\u00f1o de aliados o criados."
+    },
+    "200250":{
+        "name":"Caroline Bishops",
+        "text":"Sabbat: Caroline no puede bloquear a vampiros que no sean Camarilla."
+    },
+    "201793":{
+        "name":"Carter Vanderweyden",
+        "text":"Primog\u00e9nito Camarilla: Durante refer\u00e9ndums que \u00e9l proponga, Carter obtiene +1 voto por cada otro primog\u00e9nito que controles."
+    },
+    "201521":{
+        "name":"Casey Snyder",
+        "text":"Bar\u00f3n Anarquista de Columbus."
+    },
+    "201668":{
+        "name":"Castellan",
+        "text":"Independiente: Castellan obtiene +1 de intercepci\u00f3n durante acciones directas, y -1 de intercepci\u00f3n durante acciones indirectas."
     },
     "201540":{
         "name":"Catalina Vega",
         "text":"Pr\u00edncipe Camarilla de Buenos Aires: +1 de sangrado."
     },
+    "201626":{
+        "name":"Cedrick Calhoun",
+        "text":"Camarilla: Si el refer\u00e9ndum de una acci\u00f3n pol\u00edtica propuesta por Cedrick es cancelado o fracasa, \u00e9l entra en letargo tras su resoluci\u00f3n."
+    },
+    "200258":{
+        "name":"C\u00e9leste, la Voz de un Secreto",
+        "text":"Independiente: C\u00e9leste obtiene +1 de sangrado contra un Matusal\u00e9n que controle a un Toreador preparado. Obtiene -1 de intercepci\u00f3n durante acciones de sangrado."
+    },
+    "200260":{
+        "name":"Celine Chevalier",
+        "text":"Independiente."
+    },
     "201513":{
         "name":"Charles Delmare",
         "text":"Cardenal Sabbat: Charles obtiene 1 acoso opcional por combate."
+    },
+    "200268":{
+        "name":"Chas Giovanni Tello",
+        "text":"Independiente: Cuando Chas anuncie una acci\u00f3n, otro Matusal\u00e9n puede descartarse de una carta heril a modo de carta heril fuera de turno para hacer que la acci\u00f3n fracase. Obtiene +1 de fuerza en combate con un vampiro titulado."
+    },
+    "200270":{
+        "name":"Chavi Oraczko",
+        "text":"Independiente: Durante una acci\u00f3n, Chavi puede quemar 1 de sangre para obtener +1 de sigilo. Mientras est\u00e9 preparada, obtienes +1 a la mano. Lista Roja."
     },
     "201541":{
         "name":"Chelsea Blake",
         "text":"Camarilla."
     },
+    "200273":{
+        "name":"Christine Boscacci",
+        "text":"Sabbat: Christine obtiene -1 de intercepci\u00f3n durante acciones de sangrado."
+    },
     "201542":{
         "name":"Chrysanthemum",
         "text":"Primog\u00e9nita Camarilla."
     },
+    "201638":{
+        "name":"Chun Hei",
+        "text":"Camarilla: Una vez por combate, Chun Hei puede quemar 1 de sangre para obtener 1 ataque adicional que ignora el l\u00edmite. +1 de fuerza."
+    },
+    "201669":{
+        "name":"Clara Hjortsh\u00f8j",
+        "text":"Anarquista."
+    },
     "200280":{
         "name":"Claus Wegener",
         "text":"Camarilla."
+    },
+    "200282":{
+        "name":"Clea Auguste d'Holford",
+        "text":"Independiente."
+    },
+    "201661":{
+        "name":"\"Instructor\" Tyrone Soros",
+        "text":"Anarquista."
+    },
+    "201743":{
+        "name":"Coco Espina",
+        "text":"Sabbat."
     },
     "201543":{
         "name":"Colette",
@@ -139,6 +663,38 @@
         "name":"Conchita Morales",
         "text":"Sabbat."
     },
+    "201744":{
+        "name":"Concordia",
+        "text":"Obispo Sabbat."
+    },
+    "200288":{
+        "name":"Conrad Adoula",
+        "text":"Sabbat: Mientras Conrad est\u00e9 actuando, las cartas de reacci\u00f3n les cuestan a los vampiros menores +1 de sangre."
+    },
+    "200290":{
+        "name":"Corine Marc\u00f3n",
+        "text":"Sabbat: +1 de fuerza."
+    },
+    "200295":{
+        "name":"Conde Ormonde",
+        "text":"Independiente."
+    },
+    "200296":{
+        "name":"Conde Vladimir Rustovitch",
+        "text":"Sabbat: Despu\u00e9s de que reemplaces una carta de combate jugada por Vladimir, puedes robar 1 carta m\u00e1s (desc\u00e1rtate despu\u00e9s). Obtiene +1 de fuerza en combate con un hombre lobo. Vuelo [FLIGHT]."
+    },
+    "200300":{
+        "name":"Cristobal Ghiberti",
+        "text":"Independiente."
+    },
+    "200301":{
+        "name":"Cristofero Giovanni",
+        "text":"Independiente."
+    },
+    "201745":{
+        "name":"Rompecruces, El",
+        "text":"Obispo Sabbat: Una vez por asalto de combate, el Rompecruces puede quemar 1 de sangre para convertir en agravado el da\u00f1o de sus ataques con la mano en ese asalto."
+    },
     "200303":{
         "name":"Cuervo",
         "text":"Anarquista."
@@ -147,21 +703,141 @@
         "name":"Crystal Lynn",
         "text":"Anarquista."
     },
+    "201746":{
+        "name":"Delirio Azul",
+        "text":"Sabbat."
+    },
+    "200305":{
+        "name":"Cibeles",
+        "text":"Independiente: Si Cibeles est\u00e1 enderezada al inicio de tu fase heril, obtienes +1 acci\u00f3n de fase heril. Puede sangrar con +2 de sangrado con una acci\u00f3n (D) que le cuesta 1 de sangre. Infernal."
+    },
+    "200307":{
+        "name":"Cyscek",
+        "text":"Sabbat: Si Cyscek est\u00e1 preparado despu\u00e9s de que un Matusal\u00e9n juegue un evento de Gehenna, consigues la Ventaja y ese Matusal\u00e9n quema 1 de reserva sangu\u00ednea. +1 de sigilo."
+    },
+    "201729":{
+        "name":"Dafina Hanganu",
+        "text":"Pr\u00edncipe Camarilla de Constanza: Dafina puede entrar en combate con un siervo con una acci\u00f3n (D)."
+    },
+    "200308":{
+        "name":"Daliah",
+        "text":"Anarch: Despu\u00e9s de que Daliah entre en combate, puede ganar 1 de sangre."
+    },
+    "201747":{
+        "name":"Damian",
+        "text":"Arzobispo Sabbat de Pittsburgh: Mientras controles a un cardenal preparado, Damian obtiene +1 de sangrado."
+    },
+    "200318":{
+        "name":"Danny Larkshill",
+        "text":"Independiente: Danny obtiene +1 de fuerza en combate con un vampiro menor."
+    },
+    "201639":{
+        "name":"Daria",
+        "text":"Camarilla: Daria puede girarse para darle a otro Nosferatu +1 de sigilo. Las acciones directas le cuestan +1 de sangre."
+    },
     "201583":{
         "name":"Dario Ziggler",
         "text":"Anarquista."
+    },
+    "201640":{
+        "name":"Darius Shirazi",
+        "text":"Camarilla: Darius puede robar un equipo que no sea electr\u00f3nico, ni un veh\u00edculo, ni un arma, con una acci\u00f3n (D)."
+    },
+    "200320":{
+        "name":"Darius Styx",
+        "text":"Independiente: Darius puede mirar 1 carta al azar de la mano de otro Matusal\u00e9n con una acci\u00f3n (D); si es una carta de equipo o criado, p\u00f3nsela a Darius (ignora los requisitos y el costo)."
+    },
+    "200325":{
+        "name":"Darvag, el Carnicero de Rus",
+        "text":"Sabbat: Darvag puede quemar un lugar con una acci\u00f3n (D). Mano Negra."
+    },
+    "200328":{
+        "name":"Dedefra",
+        "text":"Independiente: Dedefra obtiene +1 de fuerza en combate con un vampiro Camarilla."
+    },
+    "200331":{
+        "name":"Delilah Monroe",
+        "text":"Independiente: Delilah obtiene -1 de intercepci\u00f3n contra vampiros mayores."
+    },
+    "200333":{
+        "name":"Demdemeh",
+        "text":"Laibon: Durante tu fase de enderezamiento, si hay alg\u00fan evento de Gehenna en juego, puedes pasar un criado animal de Demdemeh a tu zona preparada como aliado animal con 1 de fuerza y 1 de sangrado. Mientras tenga 3 o m\u00e1s de vida, ese animal obtiene +1 de fuerza."
+    },
+    "200339":{
+        "name":"Devin Bisley",
+        "text":"Sabbat."
+    },
+    "201748":{
+        "name":"Devorah",
+        "text":"Sabbat: Mientras tengas 5 de reserva sangu\u00ednea o menos, Devorah obtiene +1 de sigilo."
+    },
+    "200340":{
+        "name":"Devyn",
+        "text":"Sabbat."
+    },
+    "201694":{
+        "name":"Diana Iadanza",
+        "text":"Justicar Camarilla Toreador: Durante un refer\u00e9ndum propuesto por Diana, puede quemar 1 de sangre para cancelar una carta de reacci\u00f3n al ser jugada (cuyo costo se paga). +1 de sangrado."
+    },
+    "200344":{
+        "name":"Diego Giovanni",
+        "text":"Independiente: Diego puede quemar un lugar con una acci\u00f3n (D) que cuesta 2 de sangre."
+    },
+    "201782":{
+        "name":"Djeneba",
+        "text":"Independiente: En combate, las cartas de ataque le cuestan al siervo oponente +1 de sangre o vida. +1 de sigilo."
+    },
+    "200348":{
+        "name":"Djuhah, el Arco de Bronce",
+        "text":"Sabbat: Mano Negra. Seraf\u00edn."
+    },
+    "200350":{
+        "name":"Dmitri Borodin",
+        "text":"Independiente: Una vez por combate, Dmitri puede quemar 1 de sangre para prevenirse de todo el da\u00f1o del ataque de un siervo oponente. Durante una acci\u00f3n, puede quemar 1 de sangre para obtener +1 de sigilo. De sangre maldita."
+    },
+    "201670":{
+        "name":"Dra. Martina",
+        "text":"Anarquista: Rescatar a un vampiro del letargo le cuesta a la Dra. Martina -1 de sangre."
     },
     "201584":{
         "name":"Doctor Morocco",
         "text":"Anarquista."
     },
+    "201671":{
+        "name":"Dominica",
+        "text":"Independiente: Dominica puede buscar en tu biblioteca una carta heril de arquetipo, revelarla, y pasarla a tu mano con una acci\u00f3n con +1 de sigilo."
+    },
+    "200363":{
+        "name":"Don Michael Antonio Giovanni",
+        "text":"Independiente. 2 votos (titulado): Michael no puede atacar terminando el combate o acosar para terminar el combate. Obtiene +1 de fuerza en cualquier asalto del combate tras el primero."
+    },
+    "201695":{
+        "name":"D\u00f3nal O'Connor",
+        "text":"Pr\u00edncipe Camarilla de Dubl\u00edn: Durante tu fase servil, D\u00f3nal puede quemar 1 de sangre para enderezarse."
+    },
+    "200366":{
+        "name":"Donatello Giovanni",
+        "text":"Independiente: Durante la fase de enderezamiento de tu presa, puedes elegir a un vampiro controlado por un Matusal\u00e9n, salvo por tu depredador. Si el vampiro elegido intenta sangrarte antes de tu siguiente fase de enderezamiento, le pasa 1 de sangre de s\u00ed mismo a Donatello."
+    },
     "201544":{
         "name":"Donny Kowalczyk",
         "text":"Pr\u00edncipe Camarilla de Pittsburgh."
     },
+    "201794":{
+        "name":"Dorinha, a Confusa",
+        "text":"Anarquista: Las cartas de acci\u00f3n le cuestan a Dorinha +1 de sangre."
+    },
     "201545":{
         "name":"La Viuda",
         "text":"Primog\u00e9nita Camarilla: La Viuda obtiene +1 de intercepci\u00f3n contra acciones directas."
+    },
+    "200378":{
+        "name":"Dr. Julius Sutphen",
+        "text":"Obispo Sabbat: Los vampiros menores deben quemar 1 de sangre para intentar bloquear a Julius."
+    },
+    "200379":{
+        "name":"Dr. Julius Sutphen",
+        "text":"Sabbat: Durante una acci\u00f3n directa, Julius puede quemar 1 de sangre para obtener +1 de sigilo.\n[MERGED] Arzobispo de Atlanta: Julius obtiene +1 de fuerza en combate con un vampiro Camarilla."
     },
     "200381":{
         "name":"Dr. Morrow, el Desollador",
@@ -171,17 +847,65 @@
         "name":"Dr. Stephen Norton",
         "text":"Camarilla."
     },
+    "200385":{
+        "name":"El Dracon",
+        "text":"Independiente: Las cartas que requieran Vicisitud [vic] le cuestan al Dracon -1 de sangre. Inflige +1 de da\u00f1o o roba +1 de sangre o vida con ataques a distancia (incluso de cerca). Vuelo [FLIGHT]. +1 de sangrado. +2 de fuerza."
+    },
+    "200386":{
+        "name":"Dragos",
+        "text":"Sabbat: Dragos no quema sangre para pagar el costo de las cartas de combate que juegue."
+    },
+    "200388":{
+        "name":"Droescher el Tuerto",
+        "text":"Sabbat."
+    },
     "200391":{
         "name":"Dualidad",
-        "text":"Sabbat: Puedes robar 1 carta m\u00e1s tras reemplazar una carta que requiera Vicisitud [vic] jugada por Dualidad."
+        "text":"Sabbat: Tras reemplazar una carta que requiera Vicisitud [vic] jugada por Dualidad, puedes robar 1 carta m\u00e1s (desc\u00e1rtate despu\u00e9s)."
+    },
+    "200393":{
+        "name":"Durga Syn",
+        "text":"Independiente: Durga Syn puede quemar 1 de sangre para atacar robando equipo con primer golpe. No se gira por bloquear a un aliado o a un vampiro con capacidad 4 o menos."
+    },
+    "201795":{
+        "name":"Durok",
+        "text":"Anarquista: Durok obtiene +1 de intercepci\u00f3n durante acciones directas contra una carta que controles."
+    },
+    "201796":{
+        "name":"Eduardo, o Or\u00e1culo Mascarado",
+        "text":"Primog\u00e9nito Camarilla: Durante la fase de votaci\u00f3n de cualquier refer\u00e9ndum, si Eduardo est\u00e1 preparado, puede descartarse de 1 carta al azar para obtener +2 votos."
+    },
+    "201730":{
+        "name":"Egidia Arr\u00fa",
+        "text":"Camarilla: Despu\u00e9s de que un siervo en combate con Egidia deje la zona preparada, su controlador quema 1 de reserva sangu\u00ednea. +1 de fuerza."
+    },
+    "201749":{
+        "name":"El Monse\u00f1or",
+        "text":"Sabbat."
     },
     "201585":{
         "name":"Elen Kamjian",
         "text":"Anarquista: Si controlas a un siervo girado, Elen debe sangrar con +1 de sangrado con una acci\u00f3n (D), a no ser que deba cazar."
     },
+    "200408":{
+        "name":"Elena Mendoza Vasquez",
+        "text":"Sabbat."
+    },
+    "201797":{
+        "name":"Elie Sansaricq",
+        "text":"Anarquista: Una vez por combate, despu\u00e9s de que Elie inflija da\u00f1o con \u00e9xito al siervo oponente, ponle 1 ficha de corrupci\u00f3n a ese siervo."
+    },
+    "200409":{
+        "name":"Elihu",
+        "text":"Independiente: Elihu inflige +2 de da\u00f1o con armas blancas. Sus ataques con armas blancas no se pueden esquivar. Infernal."
+    },
     "201586":{
         "name":"Elisha Tucker",
         "text":"Bar\u00f3n Anarquista de Pittsburgh."
+    },
+    "200415":{
+        "name":"Elizabeth Westcott",
+        "text":"Sabbat."
     },
     "200418":{
         "name":"Ember Wright",
@@ -191,9 +915,65 @@
         "name":"Emily Carson",
         "text":"Primog\u00e9nita Camarilla: Durante tu fase de descarte, Emily puede quemar la Ventaja para enderezarse."
     },
+    "200425":{
+        "name":"Enzo Giovanni, directivo de la Pentex",
+        "text":"Independiente: Enzo ignora las restricciones habituales de presa y depredador para bloquear acciones mientras un vampiro controlado por otro Matusal\u00e9n realice una acci\u00f3n pol\u00edtica. Obtiene +1 de intercepci\u00f3n durante acciones pol\u00edticas no realizadas por un pr\u00edncipe, justicar, o miembro del C\u00edrculo Interior."
+    },
     "200427":{
         "name":"Epikasta Rigatos",
         "text":"Pr\u00edncipe Camarilla de Nueva York: Puedes pasar una carta de acci\u00f3n jugada por Epikasta de tu mont\u00f3n de ceniza a tu biblioteca tras resolverse (baraja despu\u00e9s)."
+    },
+    "200429":{
+        "name":"Eric Kressida",
+        "text":"Obispo Sabbat: Durante la fase de descarte de otro Matusal\u00e9n, si Eric est\u00e1 en letargo, puede quemar la ventaja para pasarse a tu zona preparada."
+    },
+    "200430":{
+        "name":"Eric Milliner",
+        "text":"Independiente."
+    },
+    "200435":{
+        "name":"Ermenegildo, el Vividor",
+        "text":"Sabbat: Mano Negra."
+    },
+    "200437":{
+        "name":"Esoara",
+        "text":"Sabbat."
+    },
+    "200438":{
+        "name":"Ethan Locke",
+        "text":"Arzobispo Sabbat de Toronto: Ethan puede robar una carta heril de disciplina si no tiene el nivel superior de esa disciplina con una acci\u00f3n (D)."
+    },
+    "200439":{
+        "name":"\u00c9tienne Fauberge",
+        "text":"Independiente: Las acciones directas contra \u00c9tienne cuestan +1 de sangre. El da\u00f1o de los ataques con la mano de \u00c9tienne es agravado en combate con un Baali o Seguidor de Set."
+    },
+    "201750":{
+        "name":"Eulogio S\u00e1nchez de los Reyes",
+        "text":"Sabbat: Eulogio puede mirar y reordenar las 5 cartas superiores de tu biblioteca, y enderezarse con una acci\u00f3n con +1 de sigilo que cuesta 1 de sangre."
+    },
+    "200443":{
+        "name":"Eurayle Gelasia Mylonas",
+        "text":"Independiente: Eurayle puede enderezar a un siervo con una acci\u00f3n. Esa acci\u00f3n obtiene +2 de sigilo si t\u00fa controlas al siervo. Escasa."
+    },
+    "201627":{
+        "name":"Evan Klein",
+        "text":"Camarilla: Cuando un siervo anuncie una acci\u00f3n directa contra Evan, lanza una moneda; si sale cruz, la acci\u00f3n fracasa."
+    },
+    "200445":{
+        "name":"Evan Rogers",
+        "text":"Independiente: De sangre maldita."
+    },
+    "200447":{
+        "name":"Jensen la Malvada",
+        "text":"Independiente: Jensen puede buscar en tu cripta un vampiro y pasarlo a tu zona incontrolada con una acci\u00f3n con +1 de sigilo que cuesta 2 de reserva sangu\u00ednea. Debe quemar 1 de sangre para intentar bloquear a vampiros mayores."
+    },
+    "200449":{
+        "name":"Ezekiel, Se\u00f1or de Montreal",
+        "text":"Sabbat: Mano Negra."
+    },
+    "200450":{
+        "name":"Ezmerelda",
+        "text":"Independiente. 2 votos (titulada): Durante tu fase de enderezamiento, si Ezmerelda est\u00e1 preparada, puedes retirarla de la partida para ganar 11 de reserva sangu\u00ednea. +1 de sangrado."
     },
     "201587":{
         "name":"Farah Sarroub",
@@ -201,15 +981,83 @@
     },
     "201588":{
         "name":"Faruq Abd al-Qadir",
-        "text":"Anarquista: Los siervos con alguna de tus fichas de corrupci\u00f3n que est\u00e9n en combate con Faruq no pueden atacar terminando el combate. +1 de fuerza."
+        "text":"Anarquista: Los siervos que tengan fichas de corrupci\u00f3n tuyas que est\u00e9n en combate con Faruq no pueden atacar terminando el combate. +1 de fuerza."
+    },
+    "200459":{
+        "name":"Fatima al-Faqadi",
+        "text":"Independiente: Una vez por combate, antes de determinar la distancia, Fatima puede equiparse con una carta de arma de tu mano (los requisitos y el costo se aplican normalmente). De sangre maldita."
+    },
+    "200462":{
+        "name":"Feo Ramos",
+        "text":"Sabbat: Durante tu fase de enderezamiento, los vampiros Sabbat mayores controlados por otros Matusalenes pueden quemar 1 de sangre para girar a Feo."
+    },
+    "200466":{
+        "name":"Fida'i",
+        "text":"Independiente: Este vampiro no se endereza normalmente. Durante tu fase de enderezamiento, cada Assamita preparado que controles con capacidad 7 o m\u00e1s puede quemar 1 de sangre para enderezar a este Fida'i. De sangre maldita. No \u00fanico."
+    },
+    "201616":{
+        "name":"Fiorenza Savona",
+        "text":"Camarilla: Si quemas la Ventaja para conseguir 1 voto, consigues +1 voto. Si quemas una carta de acci\u00f3n pol\u00edtica [POLITICALACTION] para conseguir 1 voto, consigues +1 voto."
     },
     "201547":{
         "name":"Fl\u00e1vio Gon\u00e7alves",
         "text":"Pr\u00edncipe Camarilla de S\u00e3o Paulo: Una vez por combate, Fl\u00e1vio puede atacar esquivando."
     },
+    "201751":{
+        "name":"Fotini Katsikaris",
+        "text":"Sabbat: Despu\u00e9s de que Fotini sangre con \u00e9xito (de 1 o m\u00e1s), obtienes +1 a la mano hasta tu siguiente fase de descarte."
+    },
+    "200474":{
+        "name":"Francesca Giovanni",
+        "text":"Independiente."
+    },
+    "200475":{
+        "name":"Francis Milliner",
+        "text":"Independiente: Francis obtiene +1 de fuerza en combate con un Toreador o Toreador antitribu."
+    },
+    "200476":{
+        "name":"Francisco Domingo de Polonia",
+        "text":"Arzobispo Sabbat de Nueva York: Una vez por turno, Francisco puede quemar 1 de sangre para obtener +1 de sangrado durante la acci\u00f3n en curso."
+    },
+    "201696":{
+        "name":"Fran\u00e7ois Villon",
+        "text":"Pr\u00edncipe Camarilla de Par\u00eds: Durante tu fase de enderezamiento, si Fran\u00e7ois est\u00e1 preparado, puede quemar 2 de sangre para girar a un vampiro menor. +1 de sangrado."
+    },
+    "201752":{
+        "name":"Frau Sch\u00e4del",
+        "text":"Sabbat: Frau Sch\u00e4del obtiene +1 de sigilo durante acciones de reclutar o de emplear."
+    },
     "200485":{
         "name":"Frondator",
-        "text":"Obispo Sabbat: Rescatar a un vampiro del letargo le cuesta a Frondator 1 menos de sangre."
+        "text":"Obispo Sabbat: Rescatar a un vampiro del letargo le cuesta a Frondator -1 de sangre."
+    },
+    "201527":{
+        "name":"Gabriel Tremblay",
+        "text":"Anarquista: Una vez por combate, Gabriel puede descartarse de una carta que requiera a un Anarquista para obtener +1 de fuerza en ese combate. -1 de sigilo."
+    },
+    "200490":{
+        "name":"Gabrin",
+        "text":"Independiente: Las cartas que requieran Quimerismo [chi] le cuestan a Gabrin -1 de sangre. Puede girar a un aliado o vampiro menor con una acci\u00f3n (D) con +1 de sigilo."
+    },
+    "200491":{
+        "name":"Ga\u00ebl Pilet",
+        "text":"Independiente: Ga\u00ebl nunca puede tener m\u00e1s de 1 de intercepci\u00f3n; la intercepci\u00f3n extra que gane se pierde."
+    },
+    "200492":{
+        "name":"Ganesh",
+        "text":"Independiente: Ganesh obtiene +1 de sangrado contra un Matusal\u00e9n que controle a un Giovanni preparado."
+    },
+    "200495":{
+        "name":"Gaspare Giovanni",
+        "text":"Independiente: Durante tu fase heril, Gaspare puede quemar 2 de sangre para pasar un vampiro de tu mont\u00f3n de ceniza a la parte superior de tu cripta. +1 de fuerza."
+    },
+    "201672":{
+        "name":"Gathii",
+        "text":"Anarquista: Durante una acci\u00f3n que Gathii realice, puedes revelar la carta superior de tu biblioteca. Si es una carta heril, \u00e9l quema 1 de sangre; si no lo es, obtiene +1 de sigilo."
+    },
+    "201718":{
+        "name":"Gebeyehu Abdu",
+        "text":"Independiente."
     },
     "201548":{
         "name":"Gelasia Fotiou",
@@ -219,9 +1067,85 @@
         "name":"Gem Ghastly",
         "text":"Primog\u00e9nita Camarilla: T\u00fa y Gem pueden jugar cartas que requieran Ventrue como si Gem fuera un Ventrue."
     },
+    "200507":{
+        "name":"Gerald FitzGerald",
+        "text":"Sabbat: Durante tu fase de enderezamiento, Gerald puede quemar 1 de sangre para convertir en Mano Negra a un vampiro Sabbat menor sin t\u00edtulo que controles. Mano Negra. Seraf\u00edn."
+    },
+    "200511":{
+        "name":"Gharston Roland",
+        "text":"Sabbat: Gharston no puede realizar acciones si alg\u00fan siervo ya ha realizado una acci\u00f3n (con \u00e9xito o no) en este turno."
+    },
+    "200513":{
+        "name":"Ghivran Dalaal, el Dios Difunto",
+        "text":"Independiente."
+    },
+    "200514":{
+        "name":"Giangaleazzo, el Traidor",
+        "text":"Pr\u00edncipe Camarilla de Mil\u00e1n: Cualquier Lasombra puede entrar en combate con Giangaleazzo con una acci\u00f3n (D). Durante tu fase de descarte, si hay alg\u00fan evento de Gehenna en juego, puede quemar 1 de sangre para enderezarse."
+    },
+    "200515":{
+        "name":"Gianmaria Giovanni",
+        "text":"Independiente."
+    },
+    "201798":{
+        "name":"Gianni D'Angelo",
+        "text":"Camarilla: Una vez por turno, Gianni puede quemar 1 de sangre para darle +1 de intercepci\u00f3n a otro vampiro Camarilla que controles."
+    },
+    "201617":{
+        "name":"Gilbert Duane",
+        "text":"Bar\u00f3n Anarquista de Miami: Durante tu fase de influencia, Gilbert puede quemar 1 de sangre para revelar y retirar del juego la carta superior de tu cripta. Si \u00e9sta es un Malkavian, un vampiro sin t\u00edtulo que controles se hace Anarquista."
+    },
+    "200518":{
+        "name":"Gillespi Giovanni",
+        "text":"Independiente: Gillespi obtiene +1 de sangrado contra un Matusal\u00e9n que controle a un vampiro Camarilla preparado."
+    },
+    "200519":{
+        "name":"Gillian Krader",
+        "text":"Sabbat: Gillian no puede realizar acciones pol\u00edticas."
+    },
+    "200520":{
+        "name":"Giotto Verducci",
+        "text":"Independiente: Durante la fase de descarte de otro Matusal\u00e9n, puedes descartarte de una carta (roba despu\u00e9s). Los vampiros deben quemar 1 de sangre para intentar bloquear a Giotto. Infernal."
+    },
+    "200521":{
+        "name":"Giovanni del Georgio",
+        "text":"Independiente: Del Georgio puede retirar de la partida dos ejemplares de la misma carta del mont\u00f3n de ceniza de tu presa para cazar con +2 a la caza con una acci\u00f3n con +1 de sigilo."
+    },
+    "201753":{
+        "name":"Glissando",
+        "text":"Sabbat."
+    },
+    "200525":{
+        "name":"Gloria Giovanni",
+        "text":"Independiente."
+    },
+    "201712":{
+        "name":"Gnaeus Aemilius Augustinus",
+        "text":"Pr\u00edncipe Camarilla de Lima: Durante tu fase de enderezamiento, si Aemilius est\u00e1 preparado, tu presa elige a un siervo preparado que controle, el cual recibe 1 de da\u00f1o imprevenible."
+    },
+    "200528":{
+        "name":"Goratrix",
+        "text":"Sabbat: Goratrix puede atacar a distancia robando 2 de sangre o vida (convirti\u00e9ndose en sangre). +1 de sangrado."
+    },
+    "200529":{
+        "name":"Goratrix",
+        "text":"Camarilla: Goratrix puede quemar a un Tremere antitribu con una acci\u00f3n (D).\n[MERGED] Durante una acci\u00f3n de sangrado, Goratrix puede quemar 1 de sangre para obtener +1 de sangrado."
+    },
+    "201754":{
+        "name":"Gostoso",
+        "text":"Sabbat: Despu\u00e9s de que Gostoso sangre a tu presa con \u00e9xito (de 1 o m\u00e1s), puede ganar 1 de sangre."
+    },
     "200533":{
         "name":"Graham Gottesman",
         "text":"Pr\u00edncipe Camarilla de Miami."
+    },
+    "200534":{
+        "name":"Gratiano",
+        "text":"Priscus Sabbat: Gratiano obtiene +1 papeleta. +1 de sangrado."
+    },
+    "201755":{
+        "name":"Gra\u017cyna \"Carnicera\" Olesi\u0144ska",
+        "text":"Obispo Sabbat."
     },
     "201589":{
         "name":"Greg Mazouni",
@@ -231,21 +1155,81 @@
         "name":"Grimgroth",
         "text":"Camarilla: Mientras Grimgroth est\u00e9 preparado, reclutar aliados magos les cuesta a los Tremere que controles 2 menos de reserva sangu\u00ednea. +2 de sangrado."
     },
+    "200542":{
+        "name":"Gualtiero Ghiberti",
+        "text":"Independiente: Una vez por turno, cuando otro Giovanni anuncie una acci\u00f3n o ataque que requiera Nigromancia [nec], Gualtiero puede quemar 1 de sangre para darle a esa acci\u00f3n +1 de sigilo, aunque el sigilo no sea necesario, o para aumentar en 1 el da\u00f1o infligido o la sangre quemada por esa acci\u00f3n o ataque."
+    },
+    "201641":{
+        "name":"Guardi\u00e1n, El",
+        "text":"Camarilla: El Guardi\u00e1n no puede realizar acciones directas, a no ser que controles a un Nosferatu \u00fanico, mayor y preparado. El Guardi\u00e1n puede girarse tras la resoluci\u00f3n de una acci\u00f3n de sangrado exitosa contra ti para entrar en combate con el siervo activo."
+    },
+    "200543":{
+        "name":"Guedado",
+        "text":"Laibon."
+    },
     "201515":{
         "name":"Guggenheim",
         "text":"Sabbat."
+    },
+    "200544":{
+        "name":"Guido Lucciano",
+        "text":"Sabbat."
+    },
+    "200545":{
+        "name":"Guillaume Giovanni",
+        "text":"Independiente: Mientras Guillaume est\u00e9 preparado, obtienes +1 a la mano por cada lugar que controles. Obtiene +1 de sigilo durante acciones de reclutar y de emplear."
     },
     "200549":{
         "name":"Gustaphe Brunnelle",
         "text":"Primog\u00e9nito Camarilla: Gustaphe puede entrar en combate con un siervo controlado por tu depredador o presa con una acci\u00f3n (D)."
     },
+    "200553":{
+        "name":"Gwen Brand",
+        "text":"Independiente: Durante tu fase de enderezamiento, si otro Matusal\u00e9n controla un evento de Gehenna, ponle 1 ficha de fundadora a Gwen. Mientras tenga 4 o m\u00e1s fichas de fundadora, ella obtiene [ANI][AUS][CHI][FOR], +1 de sangrado y +1 de capacidad."
+    },
     "200555":{
         "name":"Gwendolyn Fleming",
+        "text":"Camarilla."
+    },
+    "201642":{
+        "name":"Gwenllian Arwyn",
+        "text":"Camarilla: Durante una acci\u00f3n que Gwenllian realice, ella puede quemar 1 de sangre para darle a un vampiro bloqueador -1 de intercepci\u00f3n. +1 de fuerza."
+    },
+    "200558":{
+        "name":"Hadrian Garrick",
+        "text":"Independiente: +1 de fuerza."
+    },
+    "200559":{
+        "name":"Hafsa, la Observadora",
+        "text":"Camarilla: Los vampiros Camarilla deben quemar 1 de sangre para internar bloquear a Hafsa. Los Assamitas obtienen +1 de sangrado contra ti. De sangre maldita."
+    },
+    "201783":{
+        "name":"Hafthor Thorsteinsson",
+        "text":"Anarquista: +1 de intercepci\u00f3n."
+    },
+    "200561":{
+        "name":"Halim Bey",
+        "text":"Independiente: Mientras Halim est\u00e9 preparado, las momias que controles obtienen +1 de sigilo."
+    },
+    "200562":{
+        "name":"Hamid Mansour",
         "text":"Camarilla."
     },
     "201590":{
         "name":"Hanna Nokelainen",
         "text":"Anarquista."
+    },
+    "200567":{
+        "name":"Hannigan",
+        "text":"Sabbat."
+    },
+    "200569":{
+        "name":"Harika Guljan",
+        "text":"Independiente: De sangre maldita."
+    },
+    "200570":{
+        "name":"Harlan Graves",
+        "text":"Independiente: Si Harlan es diabolizado, no se puede convocar ninguna caza de sangre. Obtiene -1 de intercepci\u00f3n durante acciones que no sean de sangrado."
     },
     "200571":{
         "name":"Harold Tanner",
@@ -253,23 +1237,119 @@
     },
     "200575":{
         "name":"Hartmut Stover",
-        "text":"Arzobispo Sabbat de Berl\u00edn: Cualquier vampiro que emita votos o papeletas contra un refer\u00e9ndum propuesto por Hartmut quema 1 de sangre una vez se cuenten los resultados. Puedes quemar la Ventaja durante tu fase de descarte para ganar 1 de reserva sangu\u00ednea."
+        "text":"Arzobispo Sabbat de Berl\u00edn: Cualquier vampiro que emita votos o papeletas contra un refer\u00e9ndum propuesto por Hartmut quema 1 de sangre tras el recuento de votos. Puedes quemar la Ventaja durante tu fase de descarte para ganar 1 de reserva sangu\u00ednea."
+    },
+    "200578":{
+        "name":"Hazimel",
+        "text":"Independiente. 2 votos (titulado): Los vampiros que no sean Ravnos deben quemar 2 de sangre para anunciar una acci\u00f3n (si no es cancelada al ser jugada) directa contra Hazimel o una carta o ficha que \u00e9ste tenga encima. +1 de sangrado."
+    },
+    "200583":{
+        "name":"Heinrick Schlempt",
+        "text":"Sabbat."
+    },
+    "201756":{
+        "name":"Hekla \"Aplastahuesos\" J\u00f3nasd\u00f3ttir",
+        "text":"Sabbat."
+    },
+    "201731":{
+        "name":"Hel-Bl\u00e1",
+        "text":"Independiente: Hel-Bl\u00e1 puede pasar un aliado que requiera H\u00e9cata u Olvido [obl] de tu mont\u00f3n de ceniza a tu zona preparada, girado, con tanta vida como la inicial con una acci\u00f3n con +1 de sigilo que cuesta 1 de sangre."
+    },
+    "201799":{
+        "name":"Hellene Panhard",
+        "text":"Pr\u00edncipe Camarilla de Nueva York: Despu\u00e9s de que un refer\u00e9ndum propuesto por Hellene fracase, at\u00fardela."
+    },
+    "200589":{
+        "name":"Henri Lavenant",
+        "text":"Sabbat: Mientras Henri est\u00e9 en combate, obtienes +1 a la mano. Mano Negra."
+    },
+    "200594":{
+        "name":"Hesha Ruhadze",
+        "text":"Independiente: Hesha obtiene +1 de sigilo cuando caza. +1 a la caza."
     },
     "201591":{
         "name":"Hesha Ruhadze",
         "text":"Anarquista: Hesha obtiene +1 de sangrado por cada equipo \u00fanico adherido a s\u00ed."
     },
+    "200595":{
+        "name":"Hester Reed",
+        "text":"Sabbat."
+    },
+    "200597":{
+        "name":"Sumo sacerdote Angra Mainyu",
+        "text":"Independiente: Mientras Angra est\u00e9 preparado, tu presa obtiene -1 a la mano. Durante una acci\u00f3n que no sea de sangrado, puede quemar la Ventaja para obtener +1 de sigilo. Infernal."
+    },
+    "200598":{
+        "name":"Hillanvale",
+        "text":"Independiente: Durante una acci\u00f3n de sangrado, Hillanvale puede quemar 1 de sangre y descartarse de una carta que requiera Melp\u00f3mene [mel] para obtener +1 de sangrado. Obtiene -1 de intercepci\u00f3n contra vampiros que no sean ni Independientes ni Anarquistas."
+    },
+    "201719":{
+        "name":"Hiromitsu Asano",
+        "text":"Independiente."
+    },
+    "201720":{
+        "name":"Holliday \"Borgo\u00f1a\" Hall",
+        "text":"Independiente."
+    },
+    "201800":{
+        "name":"Hope",
+        "text":"Camarilla: Durante una acci\u00f3n de sangrado, Hope puede quemar 1 de sangre para obtener +1 de sigilo o +1 de sangrado."
+    },
     "201549":{
         "name":"Horace Radcliffe",
         "text":"Camarilla."
+    },
+    "200603":{
+        "name":"Horatio",
+        "text":"Sabbat."
+    },
+    "200605":{
+        "name":"La horda",
+        "text":"Independiente: Durante una acci\u00f3n de sangrado, este vampiro puede girarse para darle a otro siervo infernal activo +1 de sangrado. Infernal. No \u00fanico."
     },
     "201550":{
         "name":"Horst von Br\u00fchl",
         "text":"Pr\u00edncipe Camarilla de Mannheim."
     },
+    "200609":{
+        "name":"Huang, hemat\u00f3latra",
+        "text":"Sabbat: Cualquier Gangrel antitribu puede entrar en combate con Huang con una acci\u00f3n (D)."
+    },
+    "200611":{
+        "name":"Huitzilopochtli",
+        "text":"Independiente: Durante tu fase heril, si Huitzilopochtli est\u00e1 preparado, puedes quemar 1 de reserva sangu\u00ednea para obtener +1 acci\u00f3n de fase heril. Infernal. +1 de sangrado."
+    },
+    "201757":{
+        "name":"Huldu, la Profanadora",
+        "text":"Sabbat: Una vez en cada combate de otro siervo que controles, Huldu puede, si est\u00e1 preparada, quemar 1 de sangre para prevenirle 1 de da\u00f1o a ese siervo. +1 de sangrado."
+    },
+    "200614":{
+        "name":"Husamettin",
+        "text":"Independiente: Despu\u00e9s de que Husamettin queme a un vampiro que tenga un contrato, puedes buscar en tu biblioteca una carta heril de disciplina para pon\u00e9rsela encima (baraja despu\u00e9s). De sangre maldita."
+    },
+    "201697":{
+        "name":"Ian Carfax",
+        "text":"Justicar Camarilla Tremere: Una vez por turno, despu\u00e9s de que un combate de Ian termine, puede enderezarse si el siervo oponente no est\u00e1 preparado. +1 de intercepci\u00f3n."
+    },
+    "200616":{
+        "name":"Ian Forestal",
+        "text":"Sabbat: Ian puede jugar cartas que requieran una disciplina como si tuviera el nivel b\u00e1sico de esa disciplina. Cada carta heril de disciplina que tenga encima le da el nivel superior de esa disciplina."
+    },
+    "200622":{
+        "name":"Ignacio, el Sacerdote Negro",
+        "text":"Sabbat."
+    },
+    "200624":{
+        "name":"Ignazio Giovanni",
+        "text":"Independiente: Ignazio puede entrar en combate con un vampiro con capacidad 6 o menos controlado por tu depredador o presa con una acci\u00f3n (D). +1 de fuerza."
+    },
     "200627":{
         "name":"Ilias cel Frumos",
         "text":"Sabbat."
+    },
+    "201673":{
+        "name":"Ilonka",
+        "text":"Independiente: Una vez por turno, si Ilonka est\u00e1 preparada tras un sangrado exitoso contra ti, puede mirar la mano del controlador del siervo activo, luego puede descartar de ella 1 carta al azar."
     },
     "201592":{
         "name":"Indira",
@@ -283,9 +1363,65 @@
         "name":"Ingrid Rossler",
         "text":"Pr\u00edncipe Camarilla de Ginebra: Si Ingrid est\u00e1 preparada al inicio de tu fase de influencia, obtienes +2 transferencias."
     },
+    "200637":{
+        "name":"Intisar",
+        "text":"Independiente: Durante tu fase de enderezamiento, si Intisar est\u00e1 preparada y controlas la Ventaja, puedes darle 1 de reserva sangu\u00ednea a otro Matusal\u00e9n para girar a un siervo que controle."
+    },
+    "200643":{
+        "name":"Isabel Giovanni",
+        "text":"Independiente."
+    },
+    "200648":{
+        "name":"Ivan Krenyenko",
+        "text":"Independiente: Durante tu fase de enderezamiento, si Ivan est\u00e1 preparado, puedes buscar en tu biblioteca una carta de equipo que no sea un lugar, revelarla y ponerla en tu mano. +1 de fuerza."
+    },
+    "200650":{
+        "name":"Izhim abd Azrael",
+        "text":"Sabbat: Las cartas que requieran Extinci\u00f3n [qui] le cuestan a Izhim -1 de sangre. Las armas le cuestan -1 de sangre o reserva sangu\u00ednea. Mano Negra. Seraf\u00edn."
+    },
+    "200661":{
+        "name":"Jacob, el Fracasado",
+        "text":"Sabbat: Tu depredador puede usar una acci\u00f3n de fase heril y descartarse de una carta heril para hacer que te descartes de la mano. +4 de capacidad."
+    },
+    "200665":{
+        "name":"Andy Dientes de Sierra",
+        "text":"Sabbat: Despu\u00e9s de que Andy entre en letargo, desc\u00e1rtate de 2 cartas al azar (roba despu\u00e9s)."
+    },
+    "200666":{
+        "name":"Jalal Sayad",
+        "text":"Independiente: Una vez por turno, despu\u00e9s de que termine un combate de Jalal, \u00e9ste puede quemar 1 de sangre para iniciar un nuevo combate con el siervo oponente. De sangre maldita."
+    },
+    "200668":{
+        "name":"Jamal",
+        "text":"Independiente. 2 votos (titulado): Jamal obtiene +1 de fuerza en combate con un aliado o un vampiro Camarilla. De sangre maldita. Lista Roja. +1 de sangrado."
+    },
+    "200671":{
+        "name":"Jane Sims",
+        "text":"Sabbat: Las cartas que no sean de combate le cuestan a Jane +1 de sangre."
+    },
+    "200672":{
+        "name":"Janet Langer",
+        "text":"Independiente: Janet debe quemar 1 de sangre para intentar bloquear."
+    },
     "200674":{
         "name":"Janine",
         "text":"Sabbat."
+    },
+    "200676":{
+        "name":"Janni",
+        "text":"Independiente: Janni inflige +1 de da\u00f1o con armas. Puede entrar en combate con un Seguidor de Set con una acci\u00f3n (D). De sangre maldita."
+    },
+    "201628":{
+        "name":"Jason \"Hijo\" Newberry",
+        "text":"Primog\u00e9nito Camarilla: Jason obtiene +2 votos cuando emite votos contra refer\u00e9ndums de caza de sangre. +1 de sangrado."
+    },
+    "200682":{
+        "name":"Jayakumar",
+        "text":"Independiente: Jayakumar puede robar un equipo con una acci\u00f3n (D) que cuesta 2 de sangre."
+    },
+    "201674":{
+        "name":"Jean-Fran\u00e7ois",
+        "text":"Anarquista."
     },
     "201593":{
         "name":"Jenny Silver",
@@ -295,6 +1431,10 @@
         "name":"Jeremy \"Wix\" Wyzchovsky",
         "text":"Camarilla: Jeremy puede sangrar con +1 de sangrado con una acci\u00f3n (D)."
     },
+    "200705":{
+        "name":"Jimmy Dunn",
+        "text":"Sabbat: Jimmy Dunn no puede ser disputado; si un segundo Jimmy fuera a entrar en juego, quema al primer Jimmy ya en juego en vez de disputarlo."
+    },
     "200707":{
         "name":"Jo\u00e3o Bil\u00e9",
         "text":"Camarilla: Mientras Jo\u00e3o no tenga t\u00edtulo, no puede bloquear vampiros titulados. \u00c9l obtiene +1 de sigilo en acciones para poner vampiros en juego."
@@ -303,25 +1443,109 @@
         "name":"Joaqu\u00edn de C\u00e1diz",
         "text":"Anarquista."
     },
+    "200709":{
+        "name":"Joaquina Amaya",
+        "text":"Independiente: Joaquina obtiene +1 de sigilo en acciones de equiparse."
+    },
+    "200710":{
+        "name":"Joe \"Cementerio\"",
+        "text":"Sabbat: Joe puede entrar en combate con un hombre lobo con una acci\u00f3n (D) con +1 de sigilo y obtiene 1 maniobra opcional durante ese combate. Mano Negra. +1 de fuerza."
+    },
+    "200712":{
+        "name":"Johann Matheson",
+        "text":"Independiente: Las cartas llamadas /\u00c9xtasis/, /Yonqui/ y /Sangre contaminada con MDMA/ no pueden elegir a Johann como objetivo."
+    },
+    "200714":{
+        "name":"Johannes Worringen",
+        "text":"Arzobispo Sabbat de \u00c1msterdam."
+    },
+    "200716":{
+        "name":"Juan Pale\u00f3logo",
+        "text":"Arzobispo Sabbat de Estambul: Durante tu fase de enderezamiento, si Juan est\u00e1 preparado, puede quemar 2 de sangre para quemar 1 de reserva sangu\u00ednea de tu presa."
+    },
     "200717":{
         "name":"Jonathan Gursel",
         "text":"Sabbat."
+    },
+    "201801":{
+        "name":"Julia Sowinski",
+        "text":"Primog\u00e9nita Camarilla: Si Julia sangra con \u00e9xito, obtienes +1 transferencia en este turno."
+    },
+    "201698":{
+        "name":"Juliet Parr",
+        "text":"Justicar Camarilla Malkavian: Tras prosperar un refer\u00e9ndum propuesto por Juliet, obtienes +2 a la mano hasta tu siguiente fase de enderezamiento. Obtiene 1 maniobra opcional por combate."
+    },
+    "201758":{
+        "name":"J\u00fcrgen, el Libertino",
+        "text":"Arzobispo Sabbat de Mannheim: Los siervos deben quemar 1 de sangre o vida para intentar bloquear a J\u00fcrgen."
     },
     "200740":{
         "name":"Justine Chen, la Inocente",
         "text":"Sabbat."
     },
+    "200741":{
+        "name":"Kabede Maru",
+        "text":"Magaji Laibon: Kabede obtiene +1 de intercepci\u00f3n durante acciones pol\u00edticas."
+    },
+    "200742":{
+        "name":"Kahina, la Hechicera",
+        "text":"Independiente. 1 voto (titulada): Kahina puede proponer un refer\u00e9ndum para infligir 1 de da\u00f1o a cada siervo que tenga fichas de corrupci\u00f3n tuyas con una acci\u00f3n pol\u00edtica con +1 de sigilo."
+    },
+    "200743":{
+        "name":"Kai Simmons",
+        "text":"Sabbat: Los vampiros Sabbat titulados controlados por otros Matusalenes pueden proponer un refer\u00e9ndum para robar a Kai con una acci\u00f3n pol\u00edtica con +1 de sigilo."
+    },
+    "201802":{
+        "name":"Kaiser",
+        "text":"Camarilla: Una vez por acci\u00f3n, si Kaiser est\u00e1 preparado, puede descartarse de una carta que requiera 1 o m\u00e1s disciplinas para reducir un sangrado contra ti en 1."
+    },
+    "201803":{
+        "name":"Kali",
+        "text":"Independiente: Una vez por turno, si Kali est\u00e1 preparada, puedes descartarte de 1 carta al azar para reducir el costo de una carta de lugar o de equipo que juegues en 1 de reserva sangu\u00ednea."
+    },
+    "200745":{
+        "name":"Kalinda",
+        "text":"Independiente: Kalinda puede sangrar con +1 de sangrado con una acci\u00f3n (D) con +1 de sigilo que cuesta 2 de sangre. De sangre maldita."
+    },
     "201596":{
         "name":"Kalinda",
         "text":"Primog\u00e9nita Camarilla: Durante tu turno, puedes quemar la Ventaja para enderezar a Kalinda."
+    },
+    "201759":{
+        "name":"Kalyani, Heraldo de la Muerte",
+        "text":"Obispo Sabbat: Kalyani obtiene -1 de sigilo cuando caza. +1 de fuerza."
+    },
+    "201713":{
+        "name":"Kamaluddin",
+        "text":"Primog\u00e9nito Camarilla."
+    },
+    "200748":{
+        "name":"Kamau Jafari",
+        "text":"Laibon."
     },
     "201597":{
         "name":"Kamile Paukstys",
         "text":"Anarquista: +1 de sangrado."
     },
+    "200752":{
+        "name":"Kanya Akhtar",
+        "text":"Independiente: De sangre maldita."
+    },
+    "200754":{
+        "name":"Karif al Numair",
+        "text":"Sabbat: Durante tu turno, puedes girar o enderezar a otro vampiro Mano Negra preparado. Mano Negra. +1 de sangrado. +1 de fuerza."
+    },
+    "201621":{
+        "name":"Karl Schrekt",
+        "text":"Camarilla. 2 votos (titulado): Karl puede jugar cartas que requieran a un justicar como si lo fuera. +1 de intercepci\u00f3n."
+    },
+    "200759":{
+        "name":"Kashan",
+        "text":"Independiente. 1 voto (titulado): De sangre maldita."
+    },
     "201598":{
         "name":"Kasim Bayar",
-        "text":"Justicar Camarilla Banu Haqim: Una vez por combate, Kasim puede descartarse de una carta de acci\u00f3n pol\u00edtica antes de determinar la distancia para obtener +2 de fuerza en ese combate. +1 de sangrado."
+        "text":"Justicar Camarilla Assamita: Una vez por combate, Kasim puede descartarse de una carta de acci\u00f3n pol\u00edtica [POLITICALACTION] antes de determinar la distancia para obtener +2 de fuerza en ese combate. +1 de sangrado."
     },
     "201604":{
         "name":"Kassandra Tassaki",
@@ -331,45 +1555,205 @@
         "name":"Kateline Nadasdy",
         "text":"Camarilla: Durante la fase de votaci\u00f3n del refer\u00e9ndum de una acci\u00f3n pol\u00edtica, Kateline puede quemar 1 de sangre para obligar a un vampiro inactivo a abstenerse."
     },
+    "201804":{
+        "name":"Katherine Wiese",
+        "text":"Camarilla: Una vez por turno, Katherine puede quemar 2 de sangre al anunciar una acci\u00f3n directa para girar a un vampiro menor controlado por el Matusal\u00e9n objetivo. +1 de sangrado."
+    },
     "201552":{
         "name":"Kathy Glens",
         "text":"Camarilla."
     },
+    "200765":{
+        "name":"Kay Polerno",
+        "text":"Independiente."
+    },
+    "200766":{
+        "name":"Kazimir Savostin",
+        "text":"Sabbat: Si Kazimir bloquea, obtiene 1 acoso opcional durante el combate resultante. Mano Negra. Seraf\u00edn."
+    },
+    "201699":{
+        "name":"Kazuki Hanabira",
+        "text":"Camarilla."
+    },
+    "201659":{
+        "name":"Keegan",
+        "text":"Anarquista: Una vez por turno, Keegan puede enderezarse tras realizar una acci\u00f3n con \u00e9xito que requiera a un Gangrel."
+    },
     "200767":{
         "name":"Keith Moody",
-        "text":"Sabbat: Tu presa puede quemar la Ventaja durante tu fase de enderezamiento para quemar 1 de sangre de Keith."
+        "text":"Sabbat: Durante tu fase de enderezamiento, tu presa puede quemar la Ventaja para quemar 1 de sangre de Keith."
+    },
+    "200769":{
+        "name":"Kemintiri",
+        "text":"Independiente: Kemintiri obtiene +1 de sangrado y +1 de sigilo cuando sangre a un Matusal\u00e9n que controle a un Ventrue. Los Ventrue pueden entrar en combate con ella con una acci\u00f3n (D). Puede entrar en combate con un Ventrue con una acci\u00f3n (D) con +1 de sigilo."
+    },
+    "200770":{
+        "name":"Kemintiri",
+        "text":"Independiente: Lista Roja. +1 de sigilo.\n[MERGED] 3 votos (titulada): Kemintiri puede jugar cartas serviles que requieran a un vampiro Camarilla, un Ventrue y/o el t\u00edtulo de justicar como si cumpliera tales requisitos."
+    },
+    "200773":{
+        "name":"Kephamos, sumo sacerdote de Marrakech",
+        "text":"Independiente. 2 votos (titulado): +1 de sangrado."
+    },
+    "201629":{
+        "name":"Kevin Jackson",
+        "text":"Pr\u00edncipe Camarilla de Chicago: Kevin obtiene +1 de fuerza en combate con un Brujah. Los Brujah obtienen +1 de fuerza en combate con \u00e9l."
     },
     "201599":{
         "name":"Khadija Al-Kindi",
         "text":"Primog\u00e9nita Camarilla."
     },
+    "200777":{
+        "name":"Khalil Anvari",
+        "text":"Independiente."
+    },
+    "200778":{
+        "name":"Khalil Ravana",
+        "text":"Independiente: Khalil obtiene +1 de sigilo durante acciones de Diablerie."
+    },
+    "200780":{
+        "name":"Khay'tall, Serpiente del Ed\u00e9n",
+        "text":"Independiente: Khay'tall obtiene +1 de sigilo durante acciones pol\u00edticas. Los vampiros que tengan alguna ficha de corrupci\u00f3n no pueden emitir votos o papeletas contra refer\u00e9ndums propuestos por Khay'tall."
+    },
+    "201760":{
+        "name":"Khin Aye",
+        "text":"Priscus Sabbat: Mientras tu depredador controle a m\u00e1s vampiros preparados que t\u00fa, obtienes +1 a la mano."
+    },
+    "200782":{
+        "name":"Kij Dansky",
+        "text":"Priscus Sabbat."
+    },
+    "200784":{
+        "name":"Kiradin",
+        "text":"Independiente: Una vez por asalto, Kiradin puede quemar 1 de sangre para obtener 1 ataque adicional (limitado)."
+    },
     "200787":{
         "name":"Klaus Konrecht",
         "text":"Cardenal Sabbat."
     },
+    "200792":{
+        "name":"Kostantin, baro de la caravana",
+        "text":"Independiente: Kostantin puede robar un equipo con una acci\u00f3n (D) con +1 de sigilo."
+    },
+    "200796":{
+        "name":"Kurt Strauss",
+        "text":"Sabbat."
+    },
+    "201574":{
+        "name":"Kuy\u00e9n",
+        "text":"Bar\u00f3n Anarquista de Santiago: Los animales (aliados o criados) le cuestan a Kuy\u00e9n -1 de sangre o reserva sangu\u00ednea."
+    },
+    "200800":{
+        "name":"L'\u00c9puisette",
+        "text":"Sabbat: L'\u00c9puisette obtiene +1 de sangrado contra un Matusal\u00e9n que controle a un Toreador preparado."
+    },
+    "200803":{
+        "name":"Ladislas Toth, la Antorcha",
+        "text":"Arzobispo Sabbat de Fr\u00e1ncfort."
+    },
+    "200804":{
+        "name":"Dama Constancia",
+        "text":"Independiente. 2 votos (titulada): Puedes quemar la Ventaja y usar una acci\u00f3n de fase de descarte para descartarte de 1 carta al azar y robar su reemplazo de entre las dem\u00e1s cartas de biblioteca de tu mont\u00f3n de ceniza."
+    },
+    "201643":{
+        "name":"Lady Scarlett Churchill",
+        "text":"Camarilla: T\u00fa y lady Scarlett pueden jugar cartas que requieran a un Toreador como si ella fuera un Toreador."
+    },
     "201516":{
-        "name":"Lady Vadislava",
-        "text":"Priscus Sabbat: Una vez por asalto, Lady Vadislava puede quemar 1 de sangre para convertir el da\u00f1o de sus ataques con la mano en agravado ese asalto."
+        "name":"Dama Vadislava",
+        "text":"Priscus Sabbat: Una vez por asalto, Vadislava puede quemar 1 de sangre para convertir el da\u00f1o de sus ataques con la mano en agravado en ese asalto."
+    },
+    "200805":{
+        "name":"Dama Zara Slatikov",
+        "text":"Obispo Sabbat: Zara obtiene 1 acoso opcional por combate. Puede entrar en combate con un Baali con una acci\u00f3n (D)."
+    },
+    "200807":{
+        "name":"Laika",
+        "text":"Sabbat: Laika puede quemar 1 de sangre para atacar a distancia infligiendo 2 de da\u00f1o."
+    },
+    "200809":{
+        "name":"Lalitha",
+        "text":"Independiente."
+    },
+    "200810":{
+        "name":"Lambach",
+        "text":"Cardenal Sabbat: Una vez por combate, puede quemar 1 de sangre para convertir el da\u00f1o de sus ataques con la mano en agravado en el asalto en curso. +1 de fuerza."
+    },
+    "200811":{
+        "name":"Lambach",
+        "text":"Independiente. 2 votos (titulado): Puede buscar en tu biblioteca una carta llamada /Ojo de Hazimel/ y equip\u00e1rsela sin costo alguno con una acci\u00f3n con +1 de sigilo (baraja despu\u00e9s).\n[MERGED] Puede enderezarse tras realizar con \u00e9xito una acci\u00f3n que ponga a un vampiro en juego."
     },
     "201553":{
         "name":"Larissa Moreira",
         "text":"Primog\u00e9nita Camarilla: Durante una acci\u00f3n de sangrado, Larissa puede descartarse de una carta que requiera Animalismo [ani] para obtener +1 de sangrado."
     },
+    "200816":{
+        "name":"Laura Goldman",
+        "text":"Anarquista."
+    },
     "201554":{
         "name":"Lauren",
         "text":"Camarilla."
+    },
+    "201761":{
+        "name":"Justiciero",
+        "text":"Sabbat."
+    },
+    "200818":{
+        "name":"Layla bint-Nadr",
+        "text":"Independiente: De sangre maldita."
+    },
+    "200819":{
+        "name":"L\u00e1z\u00e1r Dobrescu",
+        "text":"Independiente: L\u00e1z\u00e1r puede pasar 1 de sangre de una carta de cripta de la zona incontrolada de tu presa a un vampiro de tu zona incontrolada con una acci\u00f3n (D)."
     },
     "200827":{
         "name":"Lectora",
         "text":"Sabbat."
     },
+    "200829":{
+        "name":"Leila Monroe",
+        "text":"Sabbat: Leila puede cambiar la secta de un Anarquista sin sangre a Sabbat con una acci\u00f3n (D) con +1 de sigilo."
+    },
+    "200830":{
+        "name":"Lena Rowe",
+        "text":"Sabbat: Lena no puede recibir ning\u00fan t\u00edtulo."
+    },
+    "201721":{
+        "name":"Lenelle, Mambo de Birmingham",
+        "text":"Independiente: Lenelle puede intercambiar una carta de tu mano por una carta de biblioteca de tu mont\u00f3n de ceniza con una acci\u00f3n con +1 de sigilo que cuesta 1 de sangre."
+    },
     "201555":{
         "name":"Lenny Burkhead",
         "text":"Primog\u00e9nito Camarilla: +1 de sangrado."
     },
-    "200800":{
-        "name":"L'\u00c9puisette",
-        "text":"Sabbat: L'\u00c9puisette obtiene +1 de sangrado contra un Matusal\u00e9n que controle a un Toreador preparado."
+    "200833":{
+        "name":"Lernean",
+        "text":"Cardenal Sabbat: Una vez por asalto, Lernean puede quemar 1 de sangre para obtener 1 ataque adicional (limitado)."
+    },
+    "201526":{
+        "name":"Leumeah",
+        "text":"Bar\u00f3n Anarquista de Canberra."
+    },
+    "200834":{
+        "name":"Lia Milliner",
+        "text":"Independiente."
+    },
+    "201762":{
+        "name":"Lika, la Purificadora",
+        "text":"Sabbat."
+    },
+    "200842":{
+        "name":"Lisette Vizquel",
+        "text":"Obispo Sabbat: Lisette obtiene +1 de intercepci\u00f3n durante acciones de Diablerie."
+    },
+    "200844":{
+        "name":"Sastrecillo de Praga",
+        "text":"Sabbat: Los aliados y criados que requieran a un Tzimisce o Vicisitud [vic] le cuestan al Sastrecillo -1 de sangre o reserva sangu\u00ednea. +1 de sangrado."
+    },
+    "200847":{
+        "name":"Lizette",
+        "text":"Independiente: Lizette puede prevenirse de 1 de da\u00f1o por combate. Durante una acci\u00f3n de sangrado, puede quemar 1 de sangre para obtener +1 de sangrado."
     },
     "201556":{
         "name":"Lloyd Brooks",
@@ -379,6 +1763,10 @@
         "name":"Lodin (Olaf Holte)",
         "text":"Pr\u00edncipe Camarilla de Chicago: Lodin puede prevenirse de 1 de da\u00f1o del ataque del siervo oponente una vez por combate."
     },
+    "200850":{
+        "name":"Lolita Houston",
+        "text":"Sabbat."
+    },
     "200851":{
         "name":"Loonar",
         "text":"Sabbat."
@@ -387,29 +1775,177 @@
         "name":"Lord Leopold Valdemar",
         "text":"Priscus Sabbat: Leopold puede atacar a distancia robando 2 de sangre o vida (convirti\u00e9ndose en sangre)."
     },
+    "200857":{
+        "name":"Lord Vauxhall",
+        "text":"Sabbat."
+    },
+    "200858":{
+        "name":"Lorenzo Detuono",
+        "text":"Independiente: Si Lorenzo est\u00e1 preparado al final del combate y el siervo oponente no fuera a estarlo, Lorenzo puede quemar 5 de sangre para pasar el siervo oponente a tu zona preparada, con 1 de vida si se trata de un aliado sin vida. Lista Roja."
+    },
+    "201763":{
+        "name":"Loyiso, el Despiadado",
+        "text":"Sabbat."
+    },
+    "201805":{
+        "name":"Luana do Lago",
+        "text":"Pr\u00edncipe Camarilla de Brasilia: +1 a la mano."
+    },
     "200867":{
         "name":"Luca Italicus",
-        "text":"Arzobispo Sabbat de Filadelfia: Una ver por asalto despu\u00e9s del primero, Luca puede atacar a distancia infligiendo 2 de da\u00f1o."
+        "text":"Arzobispo Sabbat de Filadelfia: Una vez por asalto despu\u00e9s del primero, Luca puede atacar a distancia infligiendo 2 de da\u00f1o."
+    },
+    "201675":{
+        "name":"Luciano Carvalho",
+        "text":"Anarquista: Durante tu fase de descarte, puedes pasar un criado animal de un vampiro que controles a otro vampiro que controles."
+    },
+    "201700":{
+        "name":"Lucinde, Alastor",
+        "text":"Justicar Camarilla Ventrue: Durante tu fase heril, Lucinde puede quemar 1 de sangre para elegir a un vampiro; en este turno, los vampiros Camarilla que controles pueden entrar en combate con el vampiro elegido con una acci\u00f3n (D). +1 de sangrado."
+    },
+    "200874":{
+        "name":"Lucita",
+        "text":"Independiente: Los vampiros Sabbat menores obtienen -1 de intercepci\u00f3n contra Lucita."
+    },
+    "200875":{
+        "name":"Lucita",
+        "text":"Sabbat: Una vez por acci\u00f3n que Lucita realice, puede quemar 2 de sangre para cancelar una carta de reacci\u00f3n al ser jugada por un vampiro con capacidad 5 o menos, y su costo no se paga.\n[MERGED] Arzobispo de Arag\u00f3n."
+    },
+    "200877":{
+        "name":"Lucubratio",
+        "text":"Arzobispo Sabbat de Bruselas: Una vez por turno, si Lucubratio fuera a girarse por bloquear, puede descartarse de una carta que requiera Auspex [aus] para no girarse."
+    },
+    "200878":{
+        "name":"Lucy Markowitz",
+        "text":"Sabbat."
     },
     "200879":{
         "name":"Ludmijla Rakoczy",
-        "text":"Obispo Sabbat: Las cartas que requieren Animalismo [ani] le cuestan a Ludmijla 1 menos de sangre."
+        "text":"Obispo Sabbat: Las cartas que requieran Animalismo [ani] le cuestan a Ludmijla -1 de sangre."
+    },
+    "201806":{
+        "name":"Lu\u00edza",
+        "text":"Independiente."
+    },
+    "200885":{
+        "name":"Luna Giovanni",
+        "text":"Independiente. 1 voto (titulada): Durante la fase de votaci\u00f3n de cualquier refer\u00e9ndum, Luna puede retirar de la partida X cartas de acci\u00f3n pol\u00edtica [POLITICALACTION] de cualesquiera montones de ceniza para obtener +X votos."
+    },
+    "201764":{
+        "name":"Lyyli Y\u00f6syd\u00e4n",
+        "text":"Sabbat."
+    },
+    "201784":{
+        "name":"M\u00e1ddji, Se\u00f1ora de los Szlachtas",
+        "text":"Anarquista: Los aliados y criados que requieran a un Tzimisce le cuestan a M\u00e1ddji -1 de sangre o reserva sangu\u00ednea."
     },
     "201557":{
         "name":"Madison",
         "text":"Camarilla."
     },
+    "201633":{
+        "name":"Maila",
+        "text":"Primog\u00e9nita Camarilla: Durante tu turno, si Maila est\u00e1 preparada, puedes descartarte de una carta de acci\u00f3n pol\u00edtica [POLITICALACTION] para darle a un siervo que controles +1 de sigilo durante la acci\u00f3n en curso."
+    },
+    "201676":{
+        "name":"Malachi",
+        "text":"Independiente."
+    },
+    "200905":{
+        "name":"Malgorzata",
+        "text":"Priscus Sabbat: Malgorzata puede retirar de la partida a un vampiro de tu zona incontrolada para a\u00f1adir 4 de sangre a otro vampiro de tu zona incontrolada con una acci\u00f3n con +1 de sigilo."
+    },
     "201600":{
         "name":"Marcel",
         "text":"Anarquista."
     },
+    "201807":{
+        "name":"Marcela",
+        "text":"Arzobispo Sabbat de S\u00e3o Jos\u00e9."
+    },
+    "200911":{
+        "name":"March Halcyon",
+        "text":"Sabbat: Si March es diabolizada, no se puede convocar ninguna caza de sangre."
+    },
+    "201722":{
+        "name":"Marchesa Liliana",
+        "text":"Independiente: Durante una acci\u00f3n de sangrado, Liliana puede retirar del juego 7 cartas de tu mont\u00f3n de ceniza para obtener otro +1 de sangrado. +1 de sangrado."
+    },
+    "200912":{
+        "name":"Marcia Felicia Licinia",
+        "text":"Independiente. 2 votos (titulada): Una vez por combate, Marcia puede quemar 1 de sangre para atacar esquivando."
+    },
+    "200913":{
+        "name":"Marciana Giovanni, investigadora",
+        "text":"Independiente: Las acciones de sangrado le cuestan a Marciana +1 de sangre. Durante una acci\u00f3n, puedes girarla y elegir a un vampiro que no sea Sabbat para que \u00e9ste pueda quemar 1 de sangre para obtener +1 de intercepci\u00f3n."
+    },
+    "201702":{
+        "name":"Marcos Belegrad",
+        "text":"Pr\u00edncipe Camarilla de Bogot\u00e1: Los Matusalenes que emitan (incluso que controlen a un siervo que emita) votos o papeletas contra un refer\u00e9ndum propuesto por Marcos queman 1 de reserva sangu\u00ednea tras el recuento de votos."
+    },
+    "200916":{
+        "name":"Marcus Vitel",
+        "text":"Sabbat: Cualquier Brujah puede entrar en combate con Marcus con una acci\u00f3n (D).\n[MERGED] Mientras est\u00e9 preparado y sea Sabbat, los vampiros Sabbat que controles obtienen +1 de sangrado contra un Matusal\u00e9n que controle a un vampiro Camarilla preparado."
+    },
+    "200917":{
+        "name":"Margaret Milliner",
+        "text":"Independiente: Mientras /Francis Milliner/ est\u00e9 preparado, Margaret obtiene +1 de sangrado. Las cartas que requieran Fortaleza [for] le cuestan +1 de sangre."
+    },
+    "200918":{
+        "name":"Margarite",
+        "text":"Sabbat: Los Tzimisce pueden entrar en combate con Margarite con una acci\u00f3n (D)."
+    },
+    "201714":{
+        "name":"Mar\u00eda del Toro",
+        "text":"Pr\u00edncipe Camarilla de Barcelona."
+    },
+    "201808":{
+        "name":"Maria Quit\u00e9ria",
+        "text":"Sabbat: Maria obtiene 1 ataque adicional (limitado) opcional por combate."
+    },
+    "201677":{
+        "name":"Marialena",
+        "text":"Anarquista: Si Marialena es bloqueada, quema 1 de sangre antes de la resoluci\u00f3n del bloqueo."
+    },
+    "200925":{
+        "name":"Marianna",
+        "text":"Independiente: Mientras Marianna est\u00e9 preparada, los dem\u00e1s Matusalenes que controlen a un Giovanni preparado queman 1 de reserva sangu\u00ednea durante sus respectivas fases de enderezamiento. Obtiene +1 de fuerza en combate con un Giovanni."
+    },
+    "200931":{
+        "name":"Marino Reymundo V\u00e1squez",
+        "text":"Arzobispo Sabbat de Barcelona: +1 de sangrado."
+    },
+    "200932":{
+        "name":"Mario Giovanni",
+        "text":"Independiente."
+    },
+    "200933":{
+        "name":"Marion French",
+        "text":"Independiente."
+    },
     "200937":{
         "name":"Mark Decker",
-        "text":"Pr\u00edncipe Camarilla de Milwaukee: Mark obtiene +1 de fuerza adicional en combate con un hombre lobo. +1 de fuerza."
+        "text":"Pr\u00edncipe Camarilla de Milwaukee: Mark obtiene otro +1 de fuerza en combate con un hombre lobo. +1 de fuerza."
+    },
+    "200938":{
+        "name":"Marla Kenyon",
+        "text":"Independiente."
     },
     "201601":{
         "name":"Martina Srnankova",
         "text":"Anarquista: Martina obtiene +1 de intercepci\u00f3n durante acciones de sangrado."
+    },
+    "200947":{
+        "name":"Mary Johnson",
+        "text":"Sabbat: Los vampiros mayores con Presencia [pre] pueden robar a Mary con una acci\u00f3n (D)."
+    },
+    "200948":{
+        "name":"Mar\u00eda la Negra",
+        "text":"Independiente: Una vez por asalto, Mar\u00eda puede quemar 1 de sangre para convertir en agravado el da\u00f1o de sus ataques con la mano en ese asalto. Infernal."
+    },
+    "201630":{
+        "name":"Mason Ha",
+        "text":"Camarilla."
     },
     "201602":{
         "name":"Massimiliano",
@@ -419,13 +1955,65 @@
         "name":"Massimo Falconi",
         "text":"Camarilla."
     },
+    "200955":{
+        "name":"Mata Hari",
+        "text":"Independiente. 2 votos (titulada): Mata Hari y su controlador pueden jugar cartas que requieran una secta y/o clan como si ella fuera de la secta y/o clan requeridos. Lista Roja."
+    },
+    "201631":{
+        "name":"Mateo Garc\u00eda",
+        "text":"Camarilla."
+    },
+    "200961":{
+        "name":"Matthew",
+        "text":"Independiente: Durante tu fase heril, si Matthew est\u00e1 preparado, puede reducir el costo de una carta heril que juegues en 1 de reserva sangu\u00ednea. Escaso."
+    },
+    "200962":{
+        "name":"Matthew Romans",
+        "text":"Sabbat: Durante tu fase de enderezamiento, Matthew puede quemar 1 de sangre para girar a un vampiro menor que no sea ni Independiente ni Anarquista controlado por tu presa."
+    },
+    "200963":{
+        "name":"Matthias",
+        "text":"Independiente: Mientras Matthias est\u00e9 preparado, los Baali y Seguidores de Set obtienen -1 de sangrado contra ti. Escaso. +1 de intercepci\u00f3n."
+    },
+    "200964":{
+        "name":"Maureen, Sacerdotisa Oscura",
+        "text":"Independiente. 1 voto (titulada): Una vez por turno, puedes ganar 1 de reserva sangu\u00ednea despu\u00e9s de que Maureen realice una acci\u00f3n con \u00e9xito que requiera a un Baali o Daimoinon [dai]. Infernal."
+    },
     "201559":{
         "name":"Meaghan",
         "text":"Camarilla."
     },
+    "201809":{
+        "name":"Mel, a Guerreira Vibrante",
+        "text":"Pr\u00edncipe Camarilla de Campina Grande: Mel no puede bloquear a vampiros que tengan un t\u00edtulo de ciudad."
+    },
     "201603":{
         "name":"Melech",
         "text":"Anarquista."
+    },
+    "200969":{
+        "name":"Melek",
+        "text":"Independiente: Una vez por combate, Melek puede atacar esquivando. De sangre maldita."
+    },
+    "200970":{
+        "name":"Melinda Galbraith",
+        "text":"Cardenal Sabbat."
+    },
+    "200971":{
+        "name":"Melinda Galbraith",
+        "text":"Obispo Sabbat: Durante tu fase de enderezamiento, Melinda puede girar a un vampiro Sabbat con capacidad 6 o menos.\n[MERGED] Regente Sabbat: +2 de sangrado."
+    },
+    "200980":{
+        "name":"Meshenka",
+        "text":"Priscus Sabbat: Las cartas que requieran Vicisitud [vic] le cuestan a Meshenka -1 de sangre."
+    },
+    "200981":{
+        "name":"Michael diCarlo",
+        "text":"Sabbat: Si Michael realiza una acci\u00f3n con \u00e9xito para entrar en combate con un siervo, puede fijar la distancia del primer asalto del combate resultante para que sea de lejos."
+    },
+    "201644":{
+        "name":"Mickey Wheeler",
+        "text":"Anarquista: Mickey obtiene +1 de fuerza en combate con un vampiro mayor."
     },
     "201605":{
         "name":"Milton Fox",
@@ -435,13 +2023,49 @@
         "name":"Min-seo",
         "text":"Camarilla."
     },
+    "200995":{
+        "name":"Miriam Benyona",
+        "text":"Independiente: Rescatar a un vampiro del letargo le cuesta a Miriam -1 de sangre. Durante tu fase de enderezamiento, puedes pasar 1 de sangre de ella a un vampiro preparado. Escasa."
+    },
+    "201000":{
+        "name":"Mitchell, el Cazacabezas",
+        "text":"Sabbat: Rescatar a Mitchell del letargo cuesta +1 de sangre."
+    },
+    "201645":{
+        "name":"Mitra",
+        "text":"Independiente: Los vampiros menores deben quemar 1 de sangre para intentar bloquear a Mitra o para emitir votos o papeletas contra un refer\u00e9ndum propuesto por \u00e9l. +2 de sangrado. +1 de fuerza. +2 votos."
+    },
     "201561":{
         "name":"Mkhokheli",
         "text":"Pr\u00edncipe Camarilla de Ciudad del Cabo."
     },
+    "201703":{
+        "name":"Modius",
+        "text":"Pr\u00edncipe Camarilla de Gary: Durante la fase de votaci\u00f3n de un refer\u00e9ndum, Modius puede descartarse de una carta heril para obtener +1 voto."
+    },
+    "201704":{
+        "name":"Molly MacDonald",
+        "text":"Justicar Camarilla Nosferatu: Molly obtiene +1 voto y +1 de sangrado si tu presa controla a un vampiro no Camarilla. +1 de fuerza."
+    },
+    "201723":{
+        "name":"Monica Giovanni",
+        "text":"Independiente."
+    },
     "201005":{
         "name":"Monique Kim",
         "text":"Sabbat."
+    },
+    "201006":{
+        "name":"Montano",
+        "text":"Independiente. 2 votos (titulado): Las cartas que requieran Obtenebraci\u00f3n [obt] le cuestan a Montano -1 de sangre. Durante una acci\u00f3n, puede quemar 1 de sangre para darle a un siervo que controles +1 de sigilo. +1 de sangrado."
+    },
+    "201008":{
+        "name":"Monty Coven",
+        "text":"Sabbat: Despu\u00e9s de que Monty queme a un vampiro titulado, puede hacerse obispo. Si el t\u00edtulo del vampiro quemado val\u00eda 3 votos o m\u00e1s, puede hacerse priscus."
+    },
+    "201724":{
+        "name":"Mora, la Profeta de la Muerte",
+        "text":"Independiente: Durante tu fase de descarte, si Mora est\u00e1 preparada, puedes pasar una carta de biblioteca de tu mont\u00f3n de ceniza al fondo de tu biblioteca. +1 de sangrado."
     },
     "201010":{
         "name":"Morel",
@@ -451,13 +2075,41 @@
         "name":"Mosfair",
         "text":"Sabbat: Mano Negra."
     },
+    "201725":{
+        "name":"\"Madre\" Anja Giovanni",
+        "text":"Independiente: Una vez por turno, si Anja est\u00e1 preparada, puede quemar 1 de sangre despu\u00e9s de que otro H\u00e9cata que controles realice una acci\u00f3n exitosa que requiera H\u00e9cata u Olvido [obl] para enderezar a ese H\u00e9cata."
+    },
+    "201016":{
+        "name":"Sr. Noir",
+        "text":"Independiente: Despu\u00e9s de que el Sr. Noir se queme en combate, ganas 2 de reserva sangu\u00ednea. Escaso."
+    },
     "201020":{
         "name":"Muhsin Samir",
         "text":"Camarilla."
     },
+    "201025":{
+        "name":"Musa",
+        "text":"Sabbat: -1 de intercepci\u00f3n."
+    },
     "201026":{
         "name":"Mustafa, el Heredero",
         "text":"Pr\u00edncipe Camarilla de Estambul: Durante la fase de votaci\u00f3n de una acci\u00f3n pol\u00edtica, cualquier Toreador mayor controlado por otro Matusal\u00e9n puede pasarle 1 de sangre de s\u00ed mismo a Mustafa para obligarlo a emitir sus votos y papeletas como elija el controlador de ese Toreador."
+    },
+    "201765":{
+        "name":"Nadezhda",
+        "text":"Sabbat."
+    },
+    "201030":{
+        "name":"Nahir",
+        "text":"Sabbat: Si Nahir est\u00e1 preparada, puedes usar una acci\u00f3n de fase heril y quemar 1 de reserva sangu\u00ednea para ponerle 1 ficha de investigaci\u00f3n. Obtienes +1 a la mano por cada ficha de investigaci\u00f3n que tenga. +1 de sangrado."
+    },
+    "201031":{
+        "name":"Nahum Enosh",
+        "text":"Independiente: Durante tu fase de enderezamiento, si Nahum est\u00e1 preparado, otro vampiro preparado que controles puede ganar 1 de sangre. Escaso. +1 de sangrado."
+    },
+    "201033":{
+        "name":"Nakhthorheb",
+        "text":"Independiente: Durante tu fase servil, Nakhthorheb puede enderezarse. Los siervos que tengan fichas de corrupci\u00f3n tuyas no pueden bloquearlo. +1 de fuerza."
     },
     "201562":{
         "name":"Naomi Stewart",
@@ -467,53 +2119,405 @@
         "name":"Nassir",
         "text":"Camarilla."
     },
+    "201037":{
+        "name":"Natalia",
+        "text":"Independiente: +1 de sangrado."
+    },
     "201606":{
         "name":"Nathan Turner",
         "text":"Anarquista."
+    },
+    "201632":{
+        "name":"Nathaniel Bordruff",
+        "text":"Camarilla: Nathaniel puede entrar en combate con un vampiro girado con una acci\u00f3n (D)."
     },
     "201607":{
         "name":"Nayarana",
         "text":"Camarilla."
     },
+    "201041":{
+        "name":"Neel Ramanathan",
+        "text":"Independiente."
+    },
+    "201042":{
+        "name":"Nefertiti",
+        "text":"Independiente: Nefertiti puede ponerle 1 ficha de corrupci\u00f3n a un siervo controlado por tu presa con una acci\u00f3n (D) con +1 de sigilo que cuesta 1 de sangre. +1 de sangrado."
+    },
+    "201520":{
+        "name":"Nefertiti",
+        "text":"Independiente: Nefertiti puede buscar en tu cripta una carta llamada /Aabt/ (baraja despu\u00e9s), revelarla y pasarla a tu zona incontrolada con una acci\u00f3n con +1 de sigilo.\n[MERGED] Durante tu fase servil, Nefertiti puede enderezarse."
+    },
+    "201043":{
+        "name":"Neferu",
+        "text":"Independiente. 2 votos (titulada): Durante la fase de votaci\u00f3n de cualquier refer\u00e9ndum, Neferu puede quemar 1 de sangre para cambiar a tu elecci\u00f3n el sentido de los votos y papeletas de un vampiro que tenga fichas de corrupci\u00f3n tuyas."
+    },
+    "201045":{
+        "name":"Nehsi",
+        "text":"Independiente. 2 votos (titulado): Nehsi obtiene 1 maniobra opcional por combate."
+    },
+    "201047":{
+        "name":"Nepata",
+        "text":"Independiente."
+    },
+    "201048":{
+        "name":"Nergal",
+        "text":"Independiente: Una vez por turno, Nergal puede reducir el costo de una carta que juegue en 1 de sangre. Infernal. +2 de sangrado."
+    },
+    "201049":{
+        "name":"Nergal",
+        "text":"Independiente: Mientras Nergal est\u00e9 actuando, las cartas de reacci\u00f3n cuestan +1 de sangre. Durante una acci\u00f3n, puede quemar 1 de sangre para obtener +1 de sigilo. Infernal."
+    },
+    "201678":{
+        "name":"Neserian",
+        "text":"Anarquista: Mientras no controles lugares, Neserian obtiene -1 de sangrado. Mientras controles 1 o m\u00e1s lugares, Neserian obtiene +1 voto."
+    },
+    "201056":{
+        "name":"Nickolai, el Superviviente",
+        "text":"Sabbat: Nickolai puede obtener +1 nivel de una disciplina que otro vampiro preparado que controles tenga a nivel superior con una acci\u00f3n con +1 de sigilo que cuesta 1 de sangre."
+    },
     "201564":{
         "name":"Nik Sikko",
         "text":"Camarilla."
     },
+    "201705":{
+        "name":"Nikolaus Vermeulen",
+        "text":"Pr\u00edncipe Camarilla de Bruselas: Durante tu fase de influencia, puedes quemar la Ventaja para a\u00f1adir 1 de sangre a un Nosferatu de tu zona incontrolada."
+    },
+    "201062":{
+        "name":"Nizzam al-Latif",
+        "text":"Sabbat: El da\u00f1o de los ataques con la mano de Nizzam es agravado. Mano Negra."
+    },
+    "201785":{
+        "name":"Noluthando",
+        "text":"Anarquista: Noluthando inflige +1 de da\u00f1o con ataques a distancia (incluso de cerca)."
+    },
     "201608":{
         "name":"Nonu Dis",
-        "text":"Anarquista: Si Nonu Dis est\u00e1 preparado durante tu fase heril, puedes a\u00f1adir 1 de sangre a un Ministro preparado que controles tras jugar una carta heril. +1 de sangrado."
+        "text":"Anarquista: Durante tu fase heril, si Nonu Dis est\u00e1 preparado, puedes a\u00f1adir 1 de sangre a un Seguidor de Set preparado que controles tras jugar una carta heril. +1 de sangrado."
+    },
+    "201068":{
+        "name":"Nunzio Giovanni",
+        "text":"Independiente."
+    },
+    "201810":{
+        "name":"O Encourado",
+        "text":"Primog\u00e9nito Camarilla: O Encourado puede prevenirse de 1 de da\u00f1o agravado por asalto."
+    },
+    "201811":{
+        "name":"O Grande Arquiteto",
+        "text":"Sabbat: Una vez por turno, despu\u00e9s de que O Grande Arquiteto realice una acci\u00f3n directa exitosa, puede ponerle 1 ficha de corrupci\u00f3n a un siervo controlado por el Matusal\u00e9n objetivo."
+    },
+    "201070":{
+        "name":"Obaluaye",
+        "text":"Laibon: Obaluaye obtiene +1 de sigilo cuando caza. Si controlas a 4 o m\u00e1s Salubri, qu\u00e9malo. Escaso."
     },
     "201609":{
         "name":"Octano",
         "text":"Anarquista."
     },
+    "201072":{
+        "name":"Ogwon",
+        "text":"Independiente: Los aliados y vampiros menores que intenten bloquear a Ogwon y fracasen queman 1 de sangre o vida antes de la resoluci\u00f3n de la acci\u00f3n."
+    },
+    "201618":{
+        "name":"Okulos",
+        "text":"Independiente: Una vez por turno, Okulos puede quemar 1 de sangre para robar 1 carta (desc\u00e1rtate despu\u00e9s)."
+    },
+    "201679":{
+        "name":"Oleg Kaprizov",
+        "text":"Anarquista."
+    },
+    "201075":{
+        "name":"Olga Triminov",
+        "text":"Sabbat: Los vampiros Mano Negra pueden robar a Olga con una acci\u00f3n (D) que cuesta 1 de reserva sangu\u00ednea."
+    },
+    "201078":{
+        "name":"Olugbenga",
+        "text":"Magaji Laibon: Si est\u00e1s disputando un vampiro, puedes usar la sangre de ese vampiro o de Olugbenga como reserva sangu\u00ednea para pagar dicha disputa. Obtiene +1 de intercepci\u00f3n durante acciones de sangrado."
+    },
+    "201656":{
+        "name":"Oluwafunmilayo",
+        "text":"Pr\u00edncipe Camarilla de Lagos: Oluwafunmilayo obtiene +1 de intercepci\u00f3n durante acciones pol\u00edticas."
+    },
+    "201082":{
+        "name":"Onaedo",
+        "text":"Laibon: Mientras /Otieno/ est\u00e9 preparado, Onaedo obtiene +1 de sigilo durante acciones de Diablerie."
+    },
+    "201766":{
+        "name":"Onkabetse, Arribista",
+        "text":"Sabbat."
+    },
+    "201680":{
+        "name":"Opikun",
+        "text":"Independiente: Una vez por combate de un vampiro que controles, Opikun puede quemar 1 de sangre para prevenir a ese vampiro hasta 2 de da\u00f1o no agravado del ataque del siervo oponente."
+    },
+    "201084":{
+        "name":"Orlando Oriundus",
+        "text":"Obispo Sabbat: Si Orlando est\u00e1 preparado durante un refer\u00e9ndum, los votos de tus vampiros de duplican cuando se recuenten los votos, y no se les pueden jugar m\u00e1s multiplicadores a tus vampiros. +1 de sangrado."
+    },
     "201565":{
         "name":"Oshri Dahan",
         "text":"Camarilla."
+    },
+    "201646":{
+        "name":"Oskar Anasov",
+        "text":"Camarilla: Durante una acci\u00f3n, Oskar puede quemar 1 de sangre para darle a un vampiro que controles +1 de intercepci\u00f3n. +1 de sigilo."
     },
     "201085":{
         "name":"Osric Vladislav",
         "text":"Camarilla: Osric puede quemar un lugar que controles para obtener +1 de sigilo en la acci\u00f3n en curso."
     },
+    "201767":{
+        "name":"Osvaldo K\u00fchnemann",
+        "text":"Sabbat: Osvaldo obtiene +1 de sangrado contra un Matusal\u00e9n que controle a un Toreador o Ventrue."
+    },
+    "201086":{
+        "name":"Otieno",
+        "text":"Laibon: Otieno obtiene +1 de sangrado contra un Matusal\u00e9n que controle a un Guruhi preparado."
+    },
+    "201812":{
+        "name":"Padraic Conroy",
+        "text":"Anarquista: Si Padraic bloquea a un vampiro mayor, desc\u00e1rtate de 1 carta al azar antes de determinar la distancia durante el primer asalto del combate resultante."
+    },
+    "201092":{
+        "name":"Paolo Sardenzo",
+        "text":"Independiente: Despu\u00e9s de que un espectro entre en juego, Paolo puede ganar 1 de sangre. Los Giovanni obtienen +1 de intercepci\u00f3n contra \u00e9l."
+    },
+    "201093":{
+        "name":"Papa Legba",
+        "text":"Independiente: Durante una acci\u00f3n de sangrado, Legba puede quemar 1 de sangre para obtener +1 de sangrado."
+    },
+    "201726":{
+        "name":"Parijat, el Or\u00e1culo Oscuro",
+        "text":"Independiente: Mientras Parijat est\u00e9 preparada, los siervos deben quemar la carta superior de su biblioteca para intentar bloquear a aliados espectros o zombis."
+    },
+    "201095":{
+        "name":"Parmenides",
+        "text":"Independiente: Cuando Parmenides entra en juego, tu depredador toma su control hasta tu siguiente fase de enderezamiento. De sangre maldita. +1 de fuerza."
+    },
+    "201096":{
+        "name":"Parnassus",
+        "text":"Independiente: De sangre maldita. +1 de fuerza."
+    },
     "201566":{
         "name":"Patrik S\u00f6derberg",
         "text":"Camarilla."
+    },
+    "201098":{
+        "name":"Patrizia Giovanni, Coleccionista de Secretos",
+        "text":"Independiente: Patrizia puede emplear a un criado de tu mont\u00f3n de ceniza con una acci\u00f3n que cuesta +1 de sangre (los requisitos y el costo se aplican normalmente)."
+    },
+    "201100":{
+        "name":"Paul Cordwood",
+        "text":"Obispo Sabbat: Durante una acci\u00f3n, Paul puede retirar de la partida la carta superior de tu cripta para obtener +1 de intercepci\u00f3n o +1 de sigilo."
+    },
+    "201101":{
+        "name":"Paul DiCarlo, el Capo",
+        "text":"Independiente."
+    },
+    "201102":{
+        "name":"Paul Forrest, el Falso Profeta",
+        "text":"Independiente: Durante una acci\u00f3n de sangrado, Paul puede quemar 1 de sangre para darle +1 de sangrado al Ravnos activo que controles."
+    },
+    "201104":{
+        "name":"Paulo de Castille",
+        "text":"Sabbat: Despu\u00e9s de que Paulo entre en juego durante tu fase de influencia, puedes pasar 1 de sangre de \u00e9l a un Lasombra de tu zona incontrolada."
+    },
+    "201109":{
+        "name":"Pentweret",
+        "text":"Independiente: En combate con un aliado que cueste 3 o menos de sangre o reserva sangu\u00ednea, o un vampiro con capacidad 3 o menos, Pentweret puede quemar 2 de sangre para atacar robando ese siervo."
     },
     "201518":{
         "name":"Percival",
         "text":"Arzobispo Sabbat de Guadalajara."
     },
+    "201112":{
+        "name":"Petaniqua",
+        "text":"Camarilla: Una vez por asalto tras el primero, los siervos en combate con Petaniqua reciben 2 de da\u00f1o antes de determinar la distancia. Los aliados y criados le cuestan -1 de sangre o reserva sangu\u00ednea. Infernal. Lista Roja. +1 de sangrado."
+    },
+    "201113":{
+        "name":"Petaniqua",
+        "text":"Independiente: Una vez por combate, Petaniqua puede quemar 1 de sangre para obtener 1 acoso. Puede reclutar a un aliado hombre lobo como si cumpliera los requisitos de jugar esa carta. Infernal. Lista Roja. +1 de fuerza."
+    },
+    "201727":{
+        "name":"Peter St. John",
+        "text":"Independiente."
+    },
     "201116":{
         "name":"Petra",
         "text":"Camarilla: El da\u00f1o que Petra inflige a los Baali es agravado. Un vampiro quema 1 de sangre tras usar un acoso para continuar el combate con ella."
+    },
+    "201117":{
+        "name":"Petru Sipos",
+        "text":"Independiente: Petru puede robarle 1 de sangre a un vampiro en letargo con una acci\u00f3n (D)."
+    },
+    "201118":{
+        "name":"Phaedyme",
+        "text":"Independiente: Phaedyme obtiene +1 de sigilo cuando sangre a un Matusal\u00e9n que controle a un vampiro Camarilla preparado. +1 de fuerza."
+    },
+    "201681":{
+        "name":"Phaibun",
+        "text":"Anarquista: Una vez por combate, Phaibun puede descartarse de una carta al azar para atacar esquivando."
+    },
+    "201126":{
+        "name":"Piotr Andreikov",
+        "text":"Sabbat: Mano Negra."
+    },
+    "201127":{
+        "name":"Pochtli",
+        "text":"Independiente: Pochtli puede pasar hasta dos cartas de biblioteca de tu mont\u00f3n de ceniza a tu biblioteca con una acci\u00f3n con +1 de sigilo (baraja despu\u00e9s)."
+    },
+    "201129":{
+        "name":"Porphyrion",
+        "text":"Independiente: Cuando Porphyrion entre en juego, puedes buscar en tu biblioteca una carta llamada /Tratado de Liubliana/, revelarla, y pasarla a tu mano (baraja y desc\u00e1rtate despu\u00e9s). +1 de sigilo."
+    },
+    "201682":{
+        "name":"Prentis Derby",
+        "text":"Anarquista."
+    },
+    "201134":{
+        "name":"Primo Giovanni",
+        "text":"Independiente."
+    },
+    "201768":{
+        "name":"Przemys\u0142aw, Bestia de Guerra",
+        "text":"Obispo Sabbat."
+    },
+    "201813":{
+        "name":"Qadir al-Asmai",
+        "text":"Camarilla: Una vez por partida, durante tu fase de enderezamiento, Qadir puede equiparse con una carta de arma de tu mano."
+    },
+    "201137":{
+        "name":"Qadir ul-Ghani",
+        "text":"Independiente: Qadir puede hacerse de cualquier otro clan con una acci\u00f3n con +1 de sigilo que cuesta 1 de sangre. De sangre maldita. +1 de sangrado."
+    },
+    "201647":{
+        "name":"Reina Ana",
+        "text":"Pr\u00edncipe Camarilla de Londres: Durante la fase de votaci\u00f3n de un refer\u00e9ndum propuesto por Ana, ella puede quemar 1 de sangre para obligar a un vampiro Camarilla menor a abstenerse. Despu\u00e9s de que Ana diabolice a un vampiro, puede enderezarse. +1 de sangrado."
+    },
+    "201143":{
+        "name":"Qufur am-Heru",
+        "text":"Independiente: Si Qufur se quema estando en juego, puedes pasarlo de tu mont\u00f3n de ceniza a tu zona incontrolada durante tu siguiente fase de influencia."
+    },
+    "201150":{
+        "name":"Radu Bistri",
+        "text":"Cardenal Sabbat: Durante tu fase de enderezamiento, si la carta llamada /Pacto de la compra/ est\u00e1 en juego, Radu puede ganar 1 de sangre."
+    },
+    "201152":{
+        "name":"Rafaele Giovanni",
+        "text":"Independiente: Rafaele puede sangrar a tu depredador con una acci\u00f3n (D). +1 de sangrado."
+    },
+    "201660":{
+        "name":"Ragnar Nordstrom",
+        "text":"Anarquista: Las cartas que requieran Protean [pro] le cuestan a Ragnar -1 de sangre. Ragnar obtiene +1 de fuerza en combate con un aliado o vampiro menor."
+    },
+    "201157":{
+        "name":"Ramiro",
+        "text":"Sabbat."
+    },
+    "201165":{
+        "name":"Raphaela Giovanni",
+        "text":"Independiente."
+    },
+    "201769":{
+        "name":"Rasha Tarabzouni",
+        "text":"Obispo Sabbat."
     },
     "201610":{
         "name":"Rayne",
         "text":"Anarquista."
     },
+    "201648":{
+        "name":"Regina Blake",
+        "text":"Camarilla: Cada vez que juegues una carta de lugar, puedes usar hasta 1 de sangre de Regina para pagar parcial o totalmente su costo de sangre o reserva sangu\u00ednea."
+    },
+    "201175":{
+        "name":"Regina Giovanni, mano derecha de Augustus",
+        "text":"Independiente. 2 votos (titulada): Los aliados y criados le cuestan a Regina -1 de sangre o reserva sangu\u00ednea."
+    },
+    "201179":{
+        "name":"Renenet",
+        "text":"Independiente."
+    },
+    "201182":{
+        "name":"Reverendo Blackwood",
+        "text":"Obispo Sabbat: Los ataques da\u00f1inos que requieran Hechicer\u00eda de Sangre [tha] efectuados por el Reverendo Blackwood infligen +1 de da\u00f1o."
+    },
+    "201183":{
+        "name":"Reverendo Djoser Jones",
+        "text":"Independiente."
+    },
+    "201184":{
+        "name":"Rex, el Necr\u00f3nomo",
+        "text":"Sabbat: Las cartas de combate le cuestan a Rex +1 de sangre."
+    },
+    "201770":{
+        "name":"Rexton \"Salvaje\" Abernathy",
+        "text":"Arzobispo Sabbat de Ginebra: Los aliados y vampiros con capacidad 3 o menos no pueden bloquear a Rexton."
+    },
+    "201814":{
+        "name":"Rey, o Mentor",
+        "text":"Pr\u00edncipe Camarilla de Juiz de Fora: +1 de fuerza."
+    },
+    "201185":{
+        "name":"Reza Fatir, el \u00c1ngel Oscuro",
+        "text":"Sabbat: Mano Negra."
+    },
+    "201649":{
+        "name":"Richard de Worde",
+        "text":"Camarilla: Despu\u00e9s de que Richard sangre con \u00e9xito, puede mirar la mano del Matusal\u00e9n objetivo, y seguidamente puede quemar 1 de sangre para descartar 1 carta de ella."
+    },
+    "201186":{
+        "name":"Richard Tauber, el T\u00edtere de Ayelea",
+        "text":"Sabbat: Richard obtiene -1 de intercepci\u00f3n contra los Lasombra y los Tzimisce."
+    },
+    "201191":{
+        "name":"Justo Empe\u00f1o",
+        "text":"Priscus Sabbat: Obtiene +1 de intercepci\u00f3n contra siervos infernales y +1 de fuerza en combate con un siervo infernal."
+    },
+    "201715":{
+        "name":"Rinaldo Albizzi",
+        "text":"Primog\u00e9nito Camarilla: +1 de intercepci\u00f3n."
+    },
+    "201683":{
+        "name":"Roberto Rivamonte",
+        "text":"Anarquista."
+    },
+    "201732":{
+        "name":"Roger de Camden",
+        "text":"Pr\u00edncipe Camarilla de Edimburgo: Las cartas que requieran H\u00e9cata y/u Olvido [obl] le cuestan a Roger -1 de sangre. Una vez por turno, si Roger est\u00e1 preparado durante un combate de un siervo que controles, puede descartarse de una carta que requiera Olvido [obl] para darle 1 maniobra a ese siervo."
+    },
     "201567":{
         "name":"Rosalina Cortez",
         "text":"Camarilla."
+    },
+    "201205":{
+        "name":"La Rosa",
+        "text":"Sabbat."
+    },
+    "201650":{
+        "name":"Rose Abawi",
+        "text":"Camarilla: Rose obtiene +1 de sangrado mientras controles a /Mitra/."
+    },
+    "201206":{
+        "name":"Rosemarie",
+        "text":"Camarilla: Las cartas de combate que no requieran Fortaleza [for] le cuestan a Rosemarie +1 de sangre."
+    },
+    "201651":{
+        "name":"Rowena",
+        "text":"Camarilla: Rowena puede prevenirse de 1 de da\u00f1o no agravado por asalto. Puede atacar terminando el combate cuando est\u00e9 en combate con un hombre lobo."
+    },
+    "201684":{
+        "name":"Roy",
+        "text":"Anarquista: Durante tu fase de descarte, si Roy est\u00e1 enderezado, g\u00edralo. Obtiene +1 de fuerza en combate con vampiros titulados."
+    },
+    "201208":{
+        "name":"Royce",
+        "text":"Sabbat: Royce obtiene -1 de sigilo cuando sangra."
+    },
+    "201209":{
+        "name":"Rudolfo Giovanni",
+        "text":"Independiente."
     },
     "201519":{
         "name":"Rurik Rakoczy",
@@ -531,37 +2535,337 @@
         "name":"Ryan",
         "text":"Camarilla."
     },
+    "201786":{
+        "name":"Saankal\u00e1xt",
+        "text":"Anarquista: Saankal\u00e1xt puede robar un equipo con una acci\u00f3n (D) que cuesta 1 de sangre."
+    },
+    "201221":{
+        "name":"Sahira Siraj",
+        "text":"Independiente."
+    },
     "201222":{
         "name":"Saiz",
         "text":"Sabbat."
+    },
+    "201223":{
+        "name":"Sajid al Misbah",
+        "text":"Independiente: Las cartas que requieran Extinci\u00f3n [qui] le cuestan a Sajid -1 de sangre. No puede bloquear a vampiros mayores. De sangre maldita."
+    },
+    "201685":{
+        "name":"Sakhar",
+        "text":"Independiente: Sakhar puede buscar en tu biblioteca una carta de equipo, revelarla, y pasarla a tu mano con una acci\u00f3n con +1 de sigilo."
+    },
+    "201658":{
+        "name":"Saku Pihlajam\u00e4ki",
+        "text":"Bar\u00f3n Anarquista de Helsinki: Saku obtiene 1 maniobra opcional por combate."
+    },
+    "201771":{
+        "name":"Sakura, la Incompasiva",
+        "text":"Sabbat: Durante tu turno, Sakura puede quemar 1 de sangre para enderezarse tras realizar una acci\u00f3n exitosa que requiera la Senda de la Muerte y el Alma."
+    },
+    "201224":{
+        "name":"Salbatore Bokkengro",
+        "text":"Independiente."
+    },
+    "201229":{
+        "name":"Samat Ramal-Ra, arconte",
+        "text":"Camarilla: No se pueden convocar cazas de sangre contra Samat."
+    },
+    "201815":{
+        "name":"Samira",
+        "text":"Primog\u00e9nita Camarilla: Samira no puede emitir votos o papeletas contra refer\u00e9ndums propuestos por un pr\u00edncipe."
+    },
+    "201236":{
+        "name":"Saqqaf, guardi\u00e1n del Gran Templo de Set",
+        "text":"Independiente: Una vez por turno, puedes ganar 1 de reserva sangu\u00ednea despu\u00e9s de que Saqqaf realice una acci\u00f3n con \u00e9xito que requiera Serpentis [ser]."
+    },
+    "201240":{
+        "name":"Sarg\u00f3n",
+        "text":"Independiente: Despu\u00e9s de que Sarg\u00f3n realice una acci\u00f3n con \u00e9xito, obtienes la Ventaja. Infernal. +1 de fuerza."
+    },
+    "201241":{
+        "name":"Sarisha Veliku",
+        "text":"Independiente."
+    },
+    "201242":{
+        "name":"Sarrasine",
+        "text":"Independiente: Durante tu fase heril, si Sarrasine est\u00e1 preparado, puedes quemar la Ventaja para obtener +1 acci\u00f3n de fase heril."
+    },
+    "201243":{
+        "name":"Sarrasine",
+        "text":"Pr\u00edncipe Camarilla de Sydney.\n[MERGED] Durante tu fase de enderezamiento, si Sarrasine est\u00e1 preparado, puedes ponerle 1 ficha de corrupci\u00f3n a un siervo controlado por tu presa."
+    },
+    "201244":{
+        "name":"Sascha Vykos, el \u00c1ngel de Ca\u00edn",
+        "text":"Priscus Sabbat: Una vez por turno, despu\u00e9s de que un vampiro en combate con Sascha entre en letargo, puedes obtener +2 a la mano hasta el final del turno."
+    },
+    "201245":{
+        "name":"Sascha Vykos, el \u00c1ngel de Ca\u00edn",
+        "text":"Arzobispo Sabbat de Washington, D.C.: Si Sascha est\u00e1 preparada, puedes robar 1 carta despu\u00e9s de que otro Matusal\u00e9n juegue una carta heril.\n[MERGED] Cardenal Sabbat."
+    },
+    "201246":{
+        "name":"Sasha Miklos",
+        "text":"Independiente."
+    },
+    "201247":{
+        "name":"Saul Meira",
+        "text":"Sabbat: Durante tu fase de descarte, Saul puede quemar 1 de sangre para enderezar a otro vampiro Mano Negra preparado. Mano Negra."
+    },
+    "201248":{
+        "name":"Saulot, el Vagabundo",
+        "text":"Independiente: El da\u00f1o que los Baali le inflijan a Saulot se reduce a 0. Durante tu fase de enderezamiento, puedes pasar 2 de sangre de \u00e9l a un vampiro en juego o de tu zona incontrolada. Escaso. +1 de sangrado. +1 de fuerza."
+    },
+    "201250":{
+        "name":"Sayshila",
+        "text":"Independiente: Durante la fase de votaci\u00f3n de un refer\u00e9ndum, si Sayshila est\u00e1 preparada, puede girarse para darle +2 votos a otro vampiro titulado que controles. Los siervos en combate con ella no pueden acosar para continuar el combate."
+    },
+    "201252":{
+        "name":"Schuyler",
+        "text":"Sabbat: Si Schuyler es bloqueado, tu presa puede pasar una carta de biblioteca de su mont\u00f3n de ceniza a la parte superior de su biblioteca antes de la resoluci\u00f3n del bloqueo."
+    },
+    "201253":{
+        "name":"Scout Youngwood",
+        "text":"Independiente. 2 votos (titulada): Durante tu fase de enderezamiento, Scout puede quemar 2 de sangre para girar a un aliado o vampiro menor controlado por tu presa. Las cartas de reacci\u00f3n le cuestan +1 de sangre."
+    },
+    "201261":{
+        "name":"Selena",
+        "text":"Sabbat: El da\u00f1o que los hombres lobo le infligen a Selena es agravado. Mano Negra."
+    },
+    "201264":{
+        "name":"Sennuwy, la Promotora",
+        "text":"Independiente."
+    },
+    "201686":{
+        "name":"Seraphina",
+        "text":"Independiente: Seraphina puede a\u00f1adir 2 de sangre o vida a un siervo que controles con una acci\u00f3n con +1 de sigilo, sin exceder su vida inicial."
+    },
+    "201265":{
+        "name":"Seren Sukardi",
+        "text":"Independiente: Si en el asalto anterior se combati\u00f3 de lejos y no se le infligi\u00f3 da\u00f1o con \u00e9xito a Seren, \u00e9ste puede atacar enviando al letargo al vampiro oponente."
+    },
+    "201266":{
+        "name":"Serenna, la Blanca",
+        "text":"Independiente: Una vez por turno, si Serenna est\u00e1 preparada, puede quemar 1 de sangre para reducir un sangrado contra ti en 2. Escasa."
+    },
+    "201662":{
+        "name":"Sergio Bueno",
+        "text":"Bar\u00f3n Anarquista de Santo Domingo: Los siervos que tengan fichas de corrupci\u00f3n tuyas deben quemar 1 de sangre o vida para intentar bloquear a Sergio."
+    },
+    "201772":{
+        "name":"Serhat Gunde, Adicto al Combate",
+        "text":"Sabbat: Serhat obtiene 1 acoso opcional por combate."
+    },
+    "201269":{
+        "name":"Seterpenre",
+        "text":"Independiente: Cuando Seterpenre entre en juego, ponle hasta cuatro cartas heriles de disciplina de tu mano, mont\u00f3n de ceniza y/o biblioteca (baraja despu\u00e9s). Las cartas de disciplina no afectan su capacidad."
+    },
+    "201270":{
+        "name":"Sha-Ennu",
+        "text":"Regente Sabbat: Los vampiros con capacidad 3 o menos no pueden bloquear a Sha-Ennu. +2 de sangrado."
+    },
+    "201282":{
+        "name":"Shemti",
+        "text":"Independiente. 1 voto (titulado): Mientras Shemti est\u00e9 preparado y enderezado, los siervos reciben 1 de da\u00f1o ambiental tras realizar con \u00e9xito una acci\u00f3n directa contra ti (o una carta que controles)."
     },
     "201612":{
         "name":"Siarhei Levchenko",
         "text":"Anarquista."
     },
+    "201288":{
+        "name":"Silvia Giovanni",
+        "text":"Independiente: Silvia obtiene 1 acoso opcional por combate. +1 de fuerza."
+    },
+    "201706":{
+        "name":"Silvian Popescu",
+        "text":"Camarilla: Durante tu fase de enderezamiento, puedes pasar 1 de sangre de un pr\u00edncipe que controles a Silvian."
+    },
+    "201290":{
+        "name":"Sir Marriot D'Urban",
+        "text":"Independiente."
+    },
+    "201293":{
+        "name":"Sisocharis",
+        "text":"Independiente."
+    },
+    "201309":{
+        "name":"Asesino de Sabandijas",
+        "text":"Independiente: +1 de sigilo."
+    },
+    "201311":{
+        "name":"Bazo, Gamberro de Alcantarilla",
+        "text":"Independiente: Si es bloqueado por un vampiro mayor, Bazo quema 1 de sangre antes de la resoluci\u00f3n del bloqueo."
+    },
+    "201687":{
+        "name":"Sreelekha",
+        "text":"Anarquista: Si Sreelekha est\u00e1 preparada al inicio de tu fase de descarte, obtienes +1 acci\u00f3n de fase de descarte. +1 de sangrado."
+    },
+    "201652":{
+        "name":"Sri Sansa",
+        "text":"Camarilla: Durante tu fase de enderezamiento, puedes pasar 1 de sangre o vida entre Sri y un aliado mortal o mago que controles, sin exceder su vida inicial."
+    },
     "201312":{
         "name":"Stanislava",
         "text":"C\u00edrculo Interior Camarilla Gangrel: Los criados empleados por siervos que se opongan a Stanislava en combate pierden sus habilidades. Los aliados no pueden bloquearla. +2 de sangrado."
+    },
+    "201314":{
+        "name":"Stefano Giovanni",
+        "text":"Independiente: Durante la fase de votaci\u00f3n de una acci\u00f3n pol\u00edtica, Stefano puede quemar 1 de sangre para obtener +1 voto."
+    },
+    "201315":{
+        "name":"Stephen Bateson",
+        "text":"Sabbat: Stephen obtiene +1 de sangrado contra un Matusal\u00e9n que controle a un Tremere preparado. +1 de sigilo."
+    },
+    "201316":{
+        "name":"Stephen Milliner",
+        "text":"Independiente."
+    },
+    "201319":{
+        "name":"Stravinsky",
+        "text":"Arzobispo Sabbat de Ciudad de M\u00e9xico: Stravinsky obtiene otro +1 de sangrado contra un Matusal\u00e9n que controle a un Tzimisce preparado menor. +1 de sangrado."
+    },
+    "201323":{
+        "name":"Sukainah",
+        "text":"Independiente: De sangre maldita."
     },
     "201569":{
         "name":"Sully",
         "text":"Camarilla."
     },
+    "201324":{
+        "name":"Sundervere, el Brahm\u00e1n Malvado",
+        "text":"Independiente: Despu\u00e9s de que Sundervere se queme, quemas 1 de reserva sangu\u00ednea. Durante una acci\u00f3n, puede quemar 1 de sangre para obtener +1 de sangrado. Lista Roja. +1 de sangrado."
+    },
+    "201773":{
+        "name":"Surapong",
+        "text":"Sabbat."
+    },
+    "201688":{
+        "name":"Susie Kano",
+        "text":"Anarquista."
+    },
+    "201327":{
+        "name":"Sutekh, el Dios Oscuro",
+        "text":"Independiente. 2 votos (titulado): Ganas 1 de reserva sangu\u00ednea tras la resoluci\u00f3n de una acci\u00f3n exitosa de reclutar a un aliado momia. Durante tu fase de enderezamiento, puedes pasar 1 de sangre entre Sutekh y otro Seguidor de Set que controles. +1 de sangrado."
+    },
+    "201774":{
+        "name":"Suwira",
+        "text":"Sabbat."
+    },
     "201570":{
         "name":"Sybren van Oosten",
         "text":"Pr\u00edncipe Camarilla de R\u00f3terdam: Puedes enderezar a Sybren despu\u00e9s de que un refer\u00e9ndum propuesto por \u00e9l prospere."
+    },
+    "201816":{
+        "name":"Sydnelson",
+        "text":"Pr\u00edncipe Camarilla de S\u00e3o Jo\u00e3o de Meriti: Si Sydnelson est\u00e1 preparado, puede girarse antes de determinar la distancia para terminar un combate entre dos vampiros controlados por otros Matusalenes."
+    },
+    "201333":{
+        "name":"Szechenyi Jol\u00e1n, Madre de Horrores",
+        "text":"Obispo Sabbat: Si Jol\u00e1n realiza con \u00e9xito una acci\u00f3n de reclutar o de contratar, puede enderezarse durante la siguiente fase de descarte."
+    },
+    "201335":{
+        "name":"Tabitha Fisk",
+        "text":"Sabbat: Durante tu fase de enderezamiento, un arzobispo que controles puede pasar 1 de sangre de s\u00ed mismo a Tabitha."
+    },
+    "201337":{
+        "name":"Talley, el Sabueso",
+        "text":"Sabbat: Talley obtiene +1 de intercepci\u00f3n durante acciones directas contra otro siervo que controles."
     },
     "201571":{
         "name":"Tamoszius",
         "text":"Camarilla."
     },
+    "201340":{
+        "name":"Tansu Bekir",
+        "text":"Independiente: De sangre maldita."
+    },
+    "201344":{
+        "name":"Tariq, el Silencioso",
+        "text":"Independiente: Puede entrar en combate con un vampiro con una acci\u00f3n (D). No se pueden convocar cazas de sangre contra \u00e9l. -4 de capacidad."
+    },
+    "201345":{
+        "name":"Tariq, el Silencioso",
+        "text":"Sabbat: Puede atacar a distancia robando 1 de sangre o vida (convirti\u00e9ndose en sangre). Mano Negra. Lista Roja. -4 de capacidad.\n[MERGED] Independiente: La capacidad de Tariq no se ve reducida por su texto."
+    },
+    "201348":{
+        "name":"Tatiana Stepanova, alastor",
+        "text":"Camarilla: Tatiana y su controlador pueden jugar cartas que requieran a un Brujah o Gangrel como si ella fuera del clan requerido."
+    },
+    "201352":{
+        "name":"Tegyrius, visir",
+        "text":"Camarilla: Si Tegyrius est\u00e1 preparado, cualquier Assamita puede ponerse 1 ficha de lealtad con una acci\u00f3n con +1 de sigilo. Los Assamitas que tengan tales fichas se consideran Camarilla. De sangre maldita. +1 de fuerza."
+    },
+    "201353":{
+        "name":"Tegyrius, visir",
+        "text":"Camarilla: Mientras Tegyrius est\u00e9 preparado, cada Assamita Camarilla puede quemar 1 de sangre para obtener +1 voto durante la fase de votaci\u00f3n de un refer\u00e9ndum. De sangre maldita.\n[MERGED] Justicar Assamita."
+    },
+    "201654":{
+        "name":"Tegyrius, visir",
+        "text":"Camarilla. 2 votos (titulado): Mientras /Victoria Ash/ est\u00e9 en tu zona preparada, Tegyrius obtiene +2 votos. +1 de fuerza."
+    },
+    "201817":{
+        "name":"Tereza Rossi",
+        "text":"Arzobispo Sabbat de Curitiba: +1 de fuerza."
+    },
+    "201355":{
+        "name":"Tereza Rostas",
+        "text":"Independiente: Tereza puede robarle la Ventaja a otro Matusal\u00e9n con una acci\u00f3n (D) que cuesta 2 de sangre."
+    },
+    "201356":{
+        "name":"Terrell Harding",
+        "text":"Sabbat: Terrell puede robarle 1 de sangre a un vampiro menor con una acci\u00f3n (D) con +1 de sigilo."
+    },
+    "201357":{
+        "name":"Terrence",
+        "text":"Sabbat."
+    },
+    "201358":{
+        "name":"Terrifisto",
+        "text":"Arzobispo Sabbat de Detroit: Durante un refer\u00e9ndum propuesto por Terrifisto, \u00e9ste puede quemar 1 de sangre tras el recuento de votos para infligir 2 de da\u00f1o a un vampiro preparado que haya emitido votos o papeletas contra el refer\u00e9ndum."
+    },
+    "201818":{
+        "name":"Tharmas",
+        "text":"Independiente: Una vez por combate, Tharmas puede quemar 1 de sangre para obtener 1 maniobra opcional."
+    },
+    "201360":{
+        "name":"Thelonius",
+        "text":"Sabbat."
+    },
     "201613":{
         "name":"Theo Bell",
         "text":"Anarquista: Theo puede entrar en combate con un siervo con una acci\u00f3n (D). +1 de fuerza."
     },
+    "201365":{
+        "name":"Thetmes, califa de Alamut",
+        "text":"Independiente. 2 votos (titulado): El da\u00f1o de los ataques con la mano de Thetmes es agravado. De sangre maldita."
+    },
+    "201819":{
+        "name":"Thomas Arturo",
+        "text":"Primog\u00e9nito Camarilla: Thomas puede girar a un vampiro titulado controlado por otro Matusal\u00e9n con una acci\u00f3n (D) con +1 de sigilo que cuesta 1 de sangre."
+    },
     "201366":{
         "name":"Thomas De Lutrius",
         "text":"Primog\u00e9nito Camarilla: Quema 1 de reserva sangu\u00ednea despu\u00e9s de que Thomas entre en letargo."
+    },
+    "201369":{
+        "name":"Thomasso Ghiberti",
+        "text":"Independiente: Durante tu fase de enderezamiento, puedes pasar 1 de sangre de un Laibon que controles a Thomasso."
+    },
+    "201370":{
+        "name":"Thucimia",
+        "text":"Independiente. 1 voto (titulada): Durante una acci\u00f3n de sangrado, Thucimia puede darte -2 a la mano hasta tu siguiente fase de enderezamiento para obtener +1 de sangrado. De sangre maldita. +1 a la mano."
+    },
+    "201375":{
+        "name":"Tobias Smith",
+        "text":"Sabbat: Tobias puede darle a otro vampiro Sabbat sin t\u00edtulo que controles con capacidad 6 o m\u00e1s el t\u00edtulo de obispo con una acci\u00f3n."
+    },
+    "201728":{
+        "name":"Tommaso Sforza",
+        "text":"Independiente: Una vez por turno, si Tommaso est\u00e1 preparado, puede quemar 1 de sangre antes de determinar la distancia en un combate de un aliado espectro o zombi que controles para terminar ese combate."
+    },
+    "201820":{
+        "name":"Torque",
+        "text":"Bar\u00f3n Anarquista de Nueva York: Torque obtiene 1 ataque adicional (limitado) opcional por combate. Los vampiros titulados pueden entrar en combate con \u00e9l con una acci\u00f3n (D)."
     },
     "201572":{
         "name":"Trevon Parker",
@@ -571,29 +2875,137 @@
         "name":"Troius",
         "text":"Pr\u00edncipe Camarilla de Ginebra: Troius no puede emitir votos o papeletas contra referendos de caza de sangre. +1 de fuerza."
     },
+    "201689":{
+        "name":"Trung Chau Pham",
+        "text":"Anarquista."
+    },
+    "201392":{
+        "name":"Tsunda",
+        "text":"Magaji Laibon."
+    },
+    "201821":{
+        "name":"Tubar\u00e3o",
+        "text":"Bar\u00f3n Anarquista de Recife: Durante la fase de votaci\u00f3n de cualquier refer\u00e9ndum, puedes revelar la carta superior de tu cripta, pasarla luego al fondo; si es un vampiro mayor, Tubar\u00e3o obtiene +1 voto."
+    },
     "201398":{
         "name":"Tyler McGill",
         "text":"Camarilla: En un refer\u00e9ndum, Tyler obtiene +1 voto despu\u00e9s de que un Matusal\u00e9n queme la Ventaja para conseguir un voto. \u00c9l no puede bloquear a los Nosferatu."
     },
     "201407":{
         "name":"Una",
-        "text":"Arzobispo Sabbat de Dubl\u00edn: Las cartas de combate que requieran Fortaleza [for] le cuestan a Una 1 menos de sangre."
+        "text":"Arzobispo Sabbat de Dubl\u00edn: Las cartas de combate que requieran Fortaleza [for] le cuestan a Una -1 de sangre."
+    },
+    "201411":{
+        "name":"El innominado",
+        "text":"Independiente: El innominado puede quemar 1 de sangre para atacar a distancia con 2 de da\u00f1o agravado. Despu\u00e9s de que sangre con \u00e9xito, puedes ganar 2 de reserva sangu\u00ednea. Infernal."
+    },
+    "201413":{
+        "name":"Ur-Shulgi, el Pastor",
+        "text":"Independiente. 2 votos (titulado): Durante tu fase de enderezamiento, si Ur-Shulgi est\u00e1 preparado, puedes buscar en tu biblioteca una carta llamada /Tajdid/, revelarla, y pasarla a tu mano. De sangre maldita. +1 de sangrado."
+    },
+    "201775":{
+        "name":"\u00dcress\u00e9g",
+        "text":"Arzobispo Sabbat de Budapest: Mientras tu presa tenga 10 de reserva sangu\u00ednea o menos, \u00dcress\u00e9g obtiene +1 voto y +1 de sangrado."
+    },
+    "201418":{
+        "name":"Uta Kovacs",
+        "text":"Sabbat: Uta puede entrar en combate con un siervo con una acci\u00f3n (D). Las cartas que requieran Hechicer\u00eda de Sangre [tha] le cuestan -1 de sangre."
+    },
+    "201420":{
+        "name":"Vaclav Petalengro",
+        "text":"Independiente: Vaclav obtiene +1 de intercepci\u00f3n contra los Gangrel."
+    },
+    "201707":{
+        "name":"Valentina Osako",
+        "text":"Camarilla."
+    },
+    "201822":{
+        "name":"Valerie Duval",
+        "text":"Camarilla: Valerie puede entrar en combate con un vampiro menor que no sea Camarilla con una acci\u00f3n (D)."
+    },
+    "201653":{
+        "name":"Valerius",
+        "text":"Camarilla: Si Valerius es Camarilla y no es pr\u00edncipe, puede robar el t\u00edtulo ostentado por un pr\u00edncipe con una acci\u00f3n (D). +1 de sangrado."
+    },
+    "201421":{
+        "name":"Valerius Maior, Buf\u00f3n del Infierno",
+        "text":"Camarilla: Si Valerius efect\u00faa un ataque que requiera Hechicer\u00eda de Sangre [tha], puede obtener 1 ataque adicional (limitado), s\u00f3lo utilizable para efectuar un ataque que requiera Hechicer\u00eda de Sangre. Infernal. Lista Roja."
+    },
+    "201422":{
+        "name":"Valerius Maior, Buf\u00f3n del Infierno",
+        "text":"Sabbat: Si Valerius intenta bloquear, el siervo activo no puede jugar cartas de combate o modificadoras de acci\u00f3n que requieran Ofuscaci\u00f3n [obf] o Quimerismo [chi] (hasta el final de la acci\u00f3n). Infernal. Lista Roja.\n[MERGED] Independiente: Valerius deja de ser infernal y Lista Roja al fusionarse. -2 de capacidad."
     },
     "201614":{
         "name":"Valeriya Zinovieva",
         "text":"Bar\u00f3n Anarquista de Mosc\u00fa. +1 de fuerza."
     },
+    "201426":{
+        "name":"Vardar Vardarian",
+        "text":"Independiente: Los Seguidores de Set obtienen -1 de fuerza en combate con Vardar. De sangre maldita."
+    },
+    "201429":{
+        "name":"Vasiliy Vasilevich",
+        "text":"Independiente: Vasiliy puede enderezarse tras sangrar a tu presa con \u00e9xito. +1 de sangrado."
+    },
     "201430":{
         "name":"Vasily",
-        "text":"Pr\u00edncipe Camarilla de Praga: Disputar un t\u00edtulo le cuesta a Vasily 1 m\u00e1s de sangre a no ser que tengas la Ventaja."
+        "text":"Pr\u00edncipe Camarilla de Praga: Disputar un t\u00edtulo le cuesta a Vasily +1 de sangre a no ser que tengas la Ventaja."
+    },
+    "201431":{
+        "name":"Vassily Taltos",
+        "text":"Independiente: Vassily puede quemar una zona de caza o una carta llamada /Mu\u00f1eca de sangre/ con una acci\u00f3n (D)."
+    },
+    "201432":{
+        "name":"Vedel Esbreno",
+        "text":"Independiente."
+    },
+    "201434":{
+        "name":"Velya, el Vivisector",
+        "text":"Cardenal Sabbat: Una vez por combate, Velya puede descartarse de una carta que requiera \u00c1uspex [aus] para obtener 1 acoso."
+    },
+    "201776":{
+        "name":"V\u011bnceslava, la Implacable",
+        "text":"Arzobispo Sabbat de Ostrava: Una vez por turno, tras la resoluci\u00f3n de una acci\u00f3n de V\u011bnceslava durante la que tu presa haya quemado 1 o m\u00e1s de reserva sangu\u00ednea, puedes ganar 1 de reserva sangu\u00ednea."
+    },
+    "201777":{
+        "name":"Verrix, el Travieso",
+        "text":"Obispo Sabbat: Verrix obtiene +1 de sigilo durante acciones de sangrado."
     },
     "201438":{
         "name":"Victor Donaldson",
         "text":"Pr\u00edncipe Camarilla de Atlanta: Si una /Golconda: Paz interior/ que juegues es cancelada, puedes pasar esa carta de tu mont\u00f3n de ceniza a tu biblioteca (baraja despu\u00e9s)."
     },
+    "201619":{
+        "name":"Victoria Ash",
+        "text":"Camarilla: Mientras Victoria est\u00e9 preparada, puedes descartarte de 1 carta durante una acci\u00f3n de sangrado para darle a un Assamita activo +1 de sangrado. +1 de sangrado."
+    },
+    "201449":{
+        "name":"Violet Tremain",
+        "text":"Obispo Sabbat: Si Violet le inflige con \u00e9xito 2 o m\u00e1s de da\u00f1o mediante un ataque con la mano a un vampiro oponente en combate, ese vampiro obtiene -1 de capacidad al final del combate."
+    },
+    "201452":{
+        "name":"Virginie, Prodigio",
+        "text":"Obispo Sabbat: Durante una acci\u00f3n de sangrado, Virginia puede quemar 1 de sangre para obtener +1 de sangrado."
+    },
+    "201455":{
+        "name":"Vittorio Giovanni",
+        "text":"Independiente."
+    },
     "201615":{
         "name":"Vivian VI",
         "text":"Bar\u00f3n Anarquista de Johannesburgo."
+    },
+    "201456":{
+        "name":"Vlad Tepes",
+        "text":"Independiente: Vlad usa y puede jugar cartas que requieran un t\u00edtulo o una secta como si tuviera ese t\u00edtulo requerido o fuera de la secta requerida. +1 de sangrado."
+    },
+    "201823":{
+        "name":"Vritra",
+        "text":"Independiente: Si un Matusal\u00e9n controla m\u00e1s lugares que t\u00fa, Vritra puede robar uno de esos lugares con una acci\u00f3n (D) que cuesta 1 de sangre. +1 de fuerza."
+    },
+    "201463":{
+        "name":"Wamukota",
+        "text":"Laibon: Si otro Laibon que controles es bloqueado mientras se equipaba, reclutaba, o empleaba, puedes girar a Wamukota antes de la resoluci\u00f3n del bloqueo para girar al siervo bloqueador y hacer que ese Laibon contin\u00fae la acci\u00f3n como si no hubiera sido bloqueado. +1 de sangrado."
     },
     "201594":{
         "name":"Warmaksan",
@@ -603,16 +3015,92 @@
         "name":"Wauneka",
         "text":"Camarilla."
     },
+    "201465":{
+        "name":"Weirich Waldburg",
+        "text":"Camarilla: Mientras Weirich est\u00e9 preparado, los primog\u00e9nitos que controles obtienen +1 de sigilo."
+    },
+    "201466":{
+        "name":"Wendy Wade",
+        "text":"Sabbat."
+    },
+    "201690":{
+        "name":"Susurro",
+        "text":"Anarquista."
+    },
     "201478":{
         "name":"Xaviar",
         "text":"Justicar Camarilla Gangrel: Puedes enderezar a Xaviar despu\u00e9s de que un refer\u00e9ndum propuesto por \u00e9l prospere."
+    },
+    "201480":{
+        "name":"Xeper, Sult\u00e1n de los Leprosos",
+        "text":"Independiente: Xeper obtiene +1 voto por cada vampiro infernal \u00fanico preparado que controles. Puede robar un aliado controlado por otro Matusal\u00e9n con una acci\u00f3n (D). Infernal."
+    },
+    "201778":{
+        "name":"Ximena",
+        "text":"Sabbat."
+    },
+    "201482":{
+        "name":"Xipe Totec",
+        "text":"Arzobispo Sabbat de Ciudad de Guatemala: Xipe puede robar un aliado o un criado con una acci\u00f3n (D) con +1 de sigilo que cuesta 1 de sangre. +1 de fuerza."
+    },
+    "201691":{
+        "name":"Yael",
+        "text":"Independiente."
+    },
+    "201483":{
+        "name":"Yasmin la Negra",
+        "text":"Sabbat: Mano Negra."
+    },
+    "201485":{
+        "name":"Yazid Tamari",
+        "text":"Sabbat: Mano Negra. +1 de sangrado."
+    },
+    "201486":{
+        "name":"Yazid Tamari",
+        "text":"Sabbat: Yazid obtiene +1 de sigilo durante acciones directas. Mano Negra.\n[MERGED] Anarquista."
+    },
+    "201716":{
+        "name":"Yewon Ong",
+        "text":"Pr\u00edncipe Camarilla de Singapur: Durante la fase de votaci\u00f3n de un refer\u00e9ndum, Yewon puede descartarse de una carta que requiera Olvido [obl] para obtener +1 voto."
+    },
+    "201492":{
+        "name":"Yseult",
+        "text":"Sabbat: Tras reemplazar una carta que requiera Melp\u00f3mene [mel] jugada por Yseult, puedes robar una carta m\u00e1s. No puede bloquear a vampiros con capacidad 5 o m\u00e1s."
+    },
+    "201779":{
+        "name":"Yurena, la Bruta",
+        "text":"Sabbat."
     },
     "201494":{
         "name":"Yuri Kerezenski",
         "text":"Obispo Sabbat."
     },
+    "201495":{
+        "name":"Yusuf, escriba de Alamut",
+        "text":"Independiente: Si Yusuf realiza una acci\u00f3n exitosa de equiparse con un equipo que requiera a un Assamita, puede enderezarse durante la siguiente fase de descarte. De sangre maldita."
+    },
+    "201692":{
+        "name":"Zafira",
+        "text":"Anarquista."
+    },
+    "201500":{
+        "name":"Zahir, Mano de los Silsila",
+        "text":"Independiente: Zahir puede buscar en tu biblioteca una carta de contrato, revelarla, y pasarla a tu mano con una acci\u00f3n con +1 de sigilo (baraja y desc\u00e1rtate despu\u00e9s). De sangre maldita."
+    },
     "201501":{
         "name":"Zane",
         "text":"Primog\u00e9nito Camarilla: Si Zane no es pr\u00edncipe, \u00e9l puede proponer un refer\u00e9ndum para recibir (y disputar) el t\u00edtulo que tenga un pr\u00edncipe con una acci\u00f3n pol\u00edtica con +1 de sigilo."
+    },
+    "201780":{
+        "name":"Zbigniew, el Cazador de Mekhet",
+        "text":"Sabbat."
+    },
+    "201506":{
+        "name":"Zhenga",
+        "text":"Laibon: Cuando Zhenga anuncie una acci\u00f3n de reclutar o emplear, puede quemar X de sangre. Si la acci\u00f3n tiene \u00e9xito, puede reclutar y emplear hasta +X aliados y criados de tu mano (los requisitos y el costo se aplican normalmente)."
+    },
+    "201507":{
+        "name":"Zip",
+        "text":"Sabbat."
     }
 }
