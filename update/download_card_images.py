@@ -10,6 +10,7 @@ def download_file(value):
 
     for lang in urls:
         url = urls[lang]
+        print(lang, url)
 
         image_path = f"../frontend/public/images/cards/{lang}/{filename}"
         meta_path = f"./images_meta/{lang}/{filename}.meta"
@@ -85,7 +86,7 @@ with open("cardbase_crypt.json", "r") as crypt_file, open("cardbase_lib.json", "
             (
                 filename,
                 {
-                    "en-EN": f"{url_prefix}/{filename.replace('gany.jpg', 'any.jpg')}",
+                    # "en-EN": f"{url_prefix}/{filename.replace('gany.jpg', 'any.jpg')}",
                     "fr-FR": f"{url_prefix}/fr/{filename.replace('gany.jpg', 'any.jpg')}",
                     "es-ES": f"{url_prefix}/es/{filename.replace('gany.jpg', 'any.jpg')}",
                 },
