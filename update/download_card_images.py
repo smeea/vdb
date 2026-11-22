@@ -10,7 +10,6 @@ def download_file(value):
 
     for lang in urls:
         url = urls[lang]
-        print(lang, url)
 
         image_path = f"../frontend/public/images/cards/{lang}/{filename}"
         meta_path = f"./images_meta/{lang}/{filename}.meta"
@@ -43,7 +42,7 @@ def download_file(value):
             proc = subprocess.run(cmd, check=True, timeout=60, capture_output=True, text=True)
             http_code = proc.stdout.strip()
 
-            if http_code == "304":
+            if http_code in ["304", "404"]:
                 return
 
             if not os.path.exists(image_tmp) or os.path.getsize(image_tmp) == 0:
@@ -86,7 +85,7 @@ with open("cardbase_crypt.json", "r") as crypt_file, open("cardbase_lib.json", "
             (
                 filename,
                 {
-                    # "en-EN": f"{url_prefix}/{filename.replace('gany.jpg', 'any.jpg')}",
+                    "en-EN": f"{url_prefix}/{filename.replace('gany.jpg', 'any.jpg')}",
                     "fr-FR": f"{url_prefix}/fr/{filename.replace('gany.jpg', 'any.jpg')}",
                     "es-ES": f"{url_prefix}/es/{filename.replace('gany.jpg', 'any.jpg')}",
                 },
