@@ -1,5 +1,5 @@
 import { getMany, set, setMany, update } from "idb-keyval";
-import React, { useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { useImmer } from "use-immer";
 import { useSnapshot } from "valtio";
 import limitedV5 from "@/assets/data/limitedV5.json";
@@ -94,7 +94,7 @@ import { useWindowSize } from "@/hooks";
 import { cardServices, playtestServices, userServices } from "@/services";
 import { byTimestamp, deepClone, getClan, getLegality, parseDeck } from "@/utils";
 
-export const AppContext = React.createContext();
+export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const screenSize = useWindowSize();
@@ -603,9 +603,7 @@ export const AppProvider = ({ children }) => {
 
         // CARDBASE Context
         cryptCardBase,
-        setCryptCardBase,
         libraryCardBase,
-        setLibraryCardBase,
         localizedCrypt,
         localizedLibrary,
         nativeCrypt,

@@ -1,4 +1,4 @@
-import React from "react";
+import { Fragment } from "react";
 import reactStringReplace from "react-string-replace";
 import { CardPopover, ConditionalTooltip, ResultMiscImage, ResultName } from "@/components";
 import { NAME, TEXT } from "@/constants";
@@ -62,14 +62,14 @@ const ResultLayoutTextText = ({ cardid }) => {
               </span>
             );
           }
-          return <React.Fragment key={counter}>/{match}/</React.Fragment>;
+          return <Fragment key={counter}>/{match}/</Fragment>;
         });
 
         return (
-          <React.Fragment key={idxText}>
+          <Fragment key={idxText}>
             {replacedText}
             <br />
-          </React.Fragment>
+          </Fragment>
         );
       })}
     </>

@@ -1,4 +1,4 @@
-import React from "react";
+import {Fragment} from "react";
 import { Link } from "react-router";
 import reactStringReplace from "react-string-replace";
 
@@ -8,10 +8,10 @@ const TextWithLinks = ({ children }) => {
     const url = `https://${match.replace(ending, "")}`;
 
     return (
-      <React.Fragment key={idx}>
+      <Fragment key={idx}>
         <Link to={url}>{url}</Link>
         {ending}
-      </React.Fragment>
+      </Fragment>
     );
   });
 };

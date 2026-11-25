@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import { createContext, useEffect } from "react";
 import { useSnapshot } from "valtio";
 import { AUTO, DARK, LIGHT, THEME } from "@/constants";
 import { settings } from "@/context";
 
-export const ThemeContext = React.createContext();
+export const ThemeContext = createContext();
 
 export const ThemeProvider = (props) => {
   const { [THEME]: theme } = useSnapshot(settings);

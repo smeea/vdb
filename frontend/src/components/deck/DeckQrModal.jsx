@@ -1,11 +1,11 @@
 import Snow from "@icons/snow.svg?react";
-import React, { Suspense } from "react";
+import { lazy, Suspense } from "react";
 import { Modal } from "@/components";
 import { IS_NON_EDITABLE, NAME } from "@/constants";
 import { useApp } from "@/context";
 
 const DeckQrModal = ({ qrUrl, setQrUrl, deck }) => {
-  const QRCode = React.lazy(() => import("react-qr-code"));
+  const QRCode = lazy(() => import("react-qr-code"));
   const { setShowMenuButtons, setShowFloatingButtons } = useApp();
 
   const handleClose = () => {

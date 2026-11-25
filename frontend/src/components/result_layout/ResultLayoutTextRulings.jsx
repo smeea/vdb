@@ -1,4 +1,4 @@
-import React from "react";
+import { Fragment } from "react";
 import reactStringReplace from "react-string-replace";
 import { CardPopover, ConditionalTooltip, ResultMiscImage, ResultName } from "@/components";
 import { TEXT } from "@/constants";
@@ -50,7 +50,7 @@ const Text = ({ text }) => {
         </ConditionalTooltip>
       );
     }
-    return <React.Fragment key={idx}>&#123;{match}&#125;</React.Fragment>;
+    return <Fragment key={idx}>&#123;{match}&#125;</Fragment>;
   });
 };
 

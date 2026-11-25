@@ -1,5 +1,4 @@
 # FIX
-- SoNY and NBr to V5
 
 # FIX ON HOLD
 
@@ -7,6 +6,7 @@
 - Inventory target documentation
 - Missing to show cards for decks in cart
 - Vtesdecks import
+- PT reports to omit empty reports
 
 # FEATURES ON HOLD
 - Draft Cube support -> when draft cube info is available

@@ -1,4 +1,4 @@
-import React from "react";
+import { Fragment } from "react";
 import { ResultClanImage } from "@/components";
 
 const ResultLibraryClan = ({ value }) => {
@@ -9,7 +9,7 @@ const ResultLibraryClan = ({ value }) => {
   return (
     <>
       {clans.map((clan, idx) => (
-        <React.Fragment key={idx}>
+        <Fragment key={idx}>
           {idx + 1 < clans.length ? (
             <>
               <ResultClanImage value={clan} />
@@ -18,7 +18,7 @@ const ResultLibraryClan = ({ value }) => {
           ) : (
             <ResultClanImage value={clan} />
           )}
-        </React.Fragment>
+        </Fragment>
       ))}
     </>
   );
