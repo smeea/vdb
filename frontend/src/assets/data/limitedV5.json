@@ -12,7 +12,8 @@
     "V5A": true,
     "V5C": true,
     "V5H": true,
-    "V5L": true
+    "V5L": true,
+    "V5SN": true
   },
   "allowed": {
     "crypt": {
