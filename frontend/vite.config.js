@@ -1,5 +1,5 @@
 import babel from '@rolldown/plugin-babel'
-import compression from 'vite-plugin-compression'
+import { compression } from 'vite-plugin-compression2'
 import react, { reactCompilerPreset } from '@vitejs/plugin-react'
 import svgr from "vite-plugin-svgr";
 import tailwindcss from "@tailwindcss/vite";
@@ -16,7 +16,7 @@ export default defineConfig({
 	},
 	plugins: [
 		tailwindcss(),
-    compression({ algorithm: 'brotliCompress', ext: '.br', threshold: 1024 }),
+    compression(),
 		svgr(),
 		react(),
     babel({

@@ -25,7 +25,6 @@
     "country-flag-icons": "^1.6.20",
     "date-fns": "^4.4.0",
     "derive-valtio": "^0.2.0",
-    "dotenv": "^18.0.10",
     "file-saver": "^2.0.5",
     "idb-keyval": "^6.3.0",
     "jspdf": "^4.2.1",
@@ -47,7 +46,7 @@
     "valtio": "^2.3.2",
     "valtio-persist": "^2.2.5",
     "vite": "^8.3.8",
-    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-compression2": "^2.5.4",
     "vite-plugin-pwa": "^2.0.0",
     "vite-plugin-svgr": "^5.2.0",
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
