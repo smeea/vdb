@@ -49,6 +49,7 @@ const MEDIAN_GW = "median_gw";
 const MEDIAN_VP = "median_vp";
 const TOTAL_GW = "total_gw";
 const TOTAL_VP = "total_vp";
+const MATCHES = "matches"
 
 const unzipAsync = (u8) =>
   new Promise((res, rej) => unzip(u8, (err, files) => (err ? rej(err) : res(files))));
@@ -101,14 +102,15 @@ const Tda = () => {
   };
 
   const getInfo = (value) => {
-    // TODO add matches info
+    const matches = value[INFO][MATCHES]
+
     return {
-      // avgMatchGw: 0.6,
-      // avgMatchVp: 4.1,
-      // matches: "16",
       date: value[INFO][DATE],
       event: value[INFO][NAME],
       location: `${value[INFO][CITY]}, ${getCountryName(value[INFO][COUNTRY])}`,
+      matches: matches,
+      avgMatchGw: matches ? Math.round((value[INFO][TOTAL_GW] / matches) * 10) / 10 : null,
+      avgMatchVp: matches ? Math.round((value[INFO][TOTAL_VP] / matches) * 10) / 10 : null,
       medianPlayerGw: value[INFO][MEDIAN_GW],
       medianPlayerVp: value[INFO][MEDIAN_VP],
       medianReportedRank: value[INFO][MEDIAN_RANK],
@@ -116,7 +118,7 @@ const Tda = () => {
       rounds: value[INFO][ROUNDS],
       totalGw: value[INFO][TOTAL_GW],
       totalVp: value[INFO][TOTAL_VP],
-    }
+    };
   };
 
 

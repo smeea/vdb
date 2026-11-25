@@ -155,7 +155,7 @@
         "text":"Unique mortal with 1 life. 1 strength, 1 bleed.\nPut up to three equipment cards from your hand and/or ash heap on Aaron, face down and out of play (you can look at the cards at any time). Minions you control can equip with one of those cards (face up) as a +1 stealth equip action.",
         "twd":0,
         "type":"Ally",
-        "v5":false
+        "v5":true
     },
     "100003":{
         "aka":"",
@@ -849,7 +849,7 @@
         "text":"Unique location.\nDuring your discard phase, you can lock this location to move up to two combat cards requiring Potence [pot] from your ash heap to the bottom of your library in any order.",
         "twd":0,
         "type":"Master",
-        "v5":false
+        "v5":true
     },
     "100015":{
         "aka":"",
@@ -5068,7 +5068,7 @@
         "text":"Unique location. Requires a ready primogen.\nAfter a primogen you control performs a successful action, you can lock this location to unlock that primogen. Titled Camarilla vampires can steal this location as a (D) action.",
         "twd":0,
         "type":"Master",
-        "v5":false
+        "v5":true
     },
     "100095":{
         "aka":"",
@@ -6566,7 +6566,7 @@
         "text":"Requires a ready primogen. Only one Backroom Deal can be played each action.\n[ACTION MODIFIER] +1 stealth.\n[ACTION MODIFIER] Only usable by a ready primogen other than the acting Camarilla vampire. The acting Camarilla vampire gets +1 stealth.",
         "twd":0,
         "type":"Action Modifier",
-        "v5":false
+        "v5":true
     },
     "100124":{
         "aka":"",
@@ -7196,7 +7196,7 @@
         "text":"Unique location.\nYou can lock this location if a minion you control successfully blocks; during the resulting combat, neither combatant can use equipment and during the first round of that combat, both combatants take 1R environmental damage during normal strike resolution.",
         "twd":0,
         "type":"Master",
-        "v5":false
+        "v5":true
     },
     "100134":{
         "aka":"",
@@ -14978,7 +14978,7 @@
         "text":"Unique animal with 2 life. 2 strength, 0 bleed.\nThis ally can steal 1 blood or life from a minion controlled by another Methuselah as a +1 stealth (D) action. This ally gets +1 bleed for each life above 2 it has. This ally gets 1 optional maneuver each combat.",
         "twd":0,
         "type":"Ally",
-        "v5":false
+        "v5":true
     },
     "100292":{
         "aka":"",
@@ -17427,7 +17427,7 @@
         "text":"Grapple.\n[pot] Strike: hand strike at +2 damage.\n[POT] As above, and at the end of the round, if the range is close and this vampire has successfully inflicted more damage than the opposing minion, put this card on the opposing minion. The attached minion gets -2 strength. They can burn 2 blood or 1 life to burn this card.",
         "twd":0,
         "type":"Combat",
-        "v5":false
+        "v5":true
     },
     "100336":{
         "aka":"",
@@ -18065,7 +18065,7 @@
         "text":"Unique location. Hunting ground.\nDuring your unlock phase, a ready vampire you control with no blood can gain 1 blood. A vampire can gain blood from only one hunting ground each turn. Vampires can steal this location as a (D) action.",
         "twd":0,
         "type":"Master",
-        "v5":false
+        "v5":true
     },
     "100350":{
         "aka":"",
@@ -21578,7 +21578,7 @@
         "text":"Unique location.\nDuring a political action, any Methuselah can lock this location to give an acting vampire they control +1 stealth; other Methuselahs must give you 1 pool to use this effect.",
         "twd":0,
         "type":"Master",
-        "v5":false
+        "v5":true
     },
     "100421":{
         "aka":"",
@@ -25299,7 +25299,7 @@
         "text":"[obf] Only usable during a bleed action. +1 bleed (limited).\n[OBF] Only usable during the polling step of a political action. Force another vampire to abstain. After action resolution, if the referendum was successful, you can draw 1 card.",
         "twd":0,
         "type":"Action Modifier",
-        "v5":false
+        "v5":true
     },
     "100506":{
         "aka":"",
@@ -26778,7 +26778,7 @@
         "text":"Unique location.\nDuring an action directed at you (or a card you control), you can lock this location to give a Nosferatu you control +1 intercept; if that Nosferatu blocks, you get +1 hand size during the resulting combat.",
         "twd":0,
         "type":"Master",
-        "v5":false
+        "v5":true
     },
     "100531":{
         "aka":"",
@@ -29389,7 +29389,7 @@
         "text":"Unique location.\nYou can lock this location to discard a card. During your influence phase, you can lock this location to get +1 transfer. Vampires can steal this location as a (D) action.",
         "twd":0,
         "type":"Master",
-        "v5":false
+        "v5":true
     },
     "100577":{
         "aka":"",
@@ -32230,7 +32230,7 @@
         "text":"Requires a primogen.\n[REACTION] +1 intercept.\n[REACTION] Only usable by a locked primogen. This primogen unlocks and attempts to block.",
         "twd":0,
         "type":"Reaction",
-        "v5":false
+        "v5":true
     },
     "100633":{
         "aka":"",
@@ -36432,7 +36432,7 @@
         "text":"Unique mortal with 2 life. 1 strength, 0 bleed.\nWhile Father Anthony is in combat with a vampire, cards requiring 1 or more Disciplines cost that vampire +1 blood. Once each combat, Father Anthony can strike: dodge or strike: stun the opposing minion.",
         "twd":0,
         "type":"Ally",
-        "v5":false
+        "v5":true
     },
     "100708":{
         "aka":"",
@@ -45055,7 +45055,7 @@
         "text":"[obl] or [tha] Strike: 2R damage on the opposing minion and 1R damage on all retainers on the opposing minion.\n[OBL] or [THA] Strike: 3R damage on the opposing minion and 2R damage on all retainers on the opposing minion.",
         "twd":0,
         "type":"Combat",
-        "v5":false
+        "v5":true
     },
     "100878":{
         "aka":"",
@@ -48746,7 +48746,7 @@
         "text":"Unique changeling with 3 life. 1 strength, 1 bleed.\nDuring an action performed by a minion you control, you can lock Iara to give a blocking minion -1 intercept; if that action is blocked, instead of resolving the block, Iara enters combat with and locks the blocking minion.",
         "twd":0,
         "type":"Ally",
-        "v5":false
+        "v5":true
     },
     "100948":{
         "aka":"",
@@ -50601,7 +50601,7 @@
         "text":"Allocate 3 points among one or more Methuselahs and choose one of those Methuselahs. Successful referendum means you look at the chosen Methuselah's hand and discard up to one card of your choice from it, and for each point allocated, each Methuselah burns 1 pool.",
         "twd":0,
         "type":"Political Action",
-        "v5":false
+        "v5":true
     },
     "100984":{
         "aka":"",
@@ -54962,7 +54962,7 @@
         "text":"Vehicle.\nIf the bearer is acting, you can lock this vehicle to give a blocking minion -1 intercept for the current action. A minion can have only one vehicle.",
         "twd":0,
         "type":"Equipment",
-        "v5":false
+        "v5":true
     },
     "101072":{
         "aka":"",
@@ -61030,7 +61030,7 @@
         "text":"[cel][pot] Strike: dodge or strike: hand strike at +1 damage.\n[CEL][POT] Strike: dodge, with 1 additional strike: hand strike at +2 damage (limited).",
         "twd":0,
         "type":"Combat",
-        "v5":false
+        "v5":true
     },
     "101195":{
         "aka":"",
@@ -63978,7 +63978,7 @@
         "text":"Unique wraith with 1 life. 0 strength, 0 bleed.\nBurn this ally unless you remove three cards in your ash heap from the game. After a minion successfully bleeds you (for 1 or more), you can shuffle this ally into your library to inflict 2 damage on the acting minion.",
         "twd":0,
         "type":"Ally",
-        "v5":false
+        "v5":true
     },
     "101251":{
         "aka":"",
@@ -69084,7 +69084,7 @@
         "text":"Unique location.\nDuring an action, you can lock a ready Caitiff you control to give another vampire you control +1 stealth or +1 intercept.",
         "twd":0,
         "type":"Master",
-        "v5":false
+        "v5":true
     },
     "101346":{
         "aka":"",
@@ -72582,7 +72582,7 @@
         "text":"Each Methuselah can play only one Porto de Santos in a game.\nGain 1 pool. Each Methuselah looks at up to 3 cards from the top of their crypt and moves one of those cards to their uncontrolled region and the others to the bottom of their crypt.",
         "twd":0,
         "type":"Master",
-        "v5":false
+        "v5":true
     },
     "101422":{
         "aka":"",
@@ -81722,7 +81722,7 @@
         "text":"Title.\nAdd 1 blood to a non-titled non-Caitiff Camarilla vampire with capacity 4 or more you control and put this card on them to represent the Camarilla title of primogen.",
         "twd":0,
         "type":"Master",
-        "v5":false
+        "v5":true
     },
     "101611":{
         "aka":"",
@@ -83812,7 +83812,7 @@
         "text":"Unique mortal with 2 life. 1 strength, 1 bleed. Government.\nRon can prevent 1 damage each combat. He can strike: 1R damage. If another minion you control is in combat, he can lock during the press step to inflict 1 unpreventable damage on the opposing minion.",
         "twd":0,
         "type":"Ally",
-        "v5":false
+        "v5":true
     },
     "101651":{
         "aka":"",
@@ -94828,7 +94828,7 @@
         "text":"Unique location.\nDuring your unlock phase, you can lock this location to look at and reorder the top 3 cards of your library. You can then move them to the bottom of your library (in the same order).",
         "twd":0,
         "type":"Master",
-        "v5":false
+        "v5":true
     },
     "101859":{
         "aka":"",
@@ -108080,7 +108080,7 @@
         "text":"Unique.\nChoose Animalism [ani], Obfuscate [obf] or Presence [pre]. This Ravnos gets +1 strength and +1 level of the chosen Discipline. This equipment cannot be moved or stolen. If this equipment is burned, send this vampire to torpor.",
         "twd":0,
         "type":"Equipment",
-        "v5":false
+        "v5":true
     },
     "102116":{
         "aka":"",

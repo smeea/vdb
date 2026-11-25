@@ -48,7 +48,7 @@ with (
             users[uuid] = obj["data"]["vekn_id"]
 
     for tuid in tournaments:
-        if tournaments[tuid]["multideck"]:
+        if tournaments[tuid]["multideck"] or tournaments[tuid]["format"] != "Standard":
             data.pop(tuid, None)
             decks.pop(tuid, None)
 
@@ -59,6 +59,10 @@ with (
         total_vp = 0
         median_vp = 0
         median_gw = 0
+        matches = 0
+
+        for table in t["rounds"]:
+            matches += len(table)
 
         e["players"] = [None] * len(t["standings"])
         for i, v in enumerate(t["standings"]):
@@ -89,6 +93,7 @@ with (
             "city": t.get("city"),
             "country": t["country"],
             "name": t["name"],
+            "matches": matches + 1 if matches else None,
             "total_vp": total_vp,
             "total_gw": total_gw,
             "median_gw": median_gw,
