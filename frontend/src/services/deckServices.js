@@ -1,4 +1,5 @@
 import { format } from "date-fns";
+import { zip, strToU8 } from "fflate";
 import ky from "ky";
 import { redirect } from "react-router";
 import {
@@ -47,6 +48,17 @@ import {
 } from "@/constants";
 import { deckStore } from "@/context";
 import { exportDeck, getIsPlaytest, getTags, getTextDisciplines } from "@/utils";
+
+const b64ToU8 = (b64) => {
+  const bin = atob(b64);
+  const out = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+  return out;
+};
+
+const zipAsync = (data) =>
+  new Promise((res, rej) => zip(data, (err, out) => (err ? rej(err) : res(out))));
+
 
 export const update = (deckid, field, value) => {
   const url = `${import.meta.env.VITE_API_URL}/deck/${deckid}`;
@@ -292,48 +304,37 @@ export const getDeckFromAmaranth = async (deckUrl) => {
 };
 
 export const exportDecks = async (decks, exportFormat) => {
-  const { default: JSzip } = await import("jszip");
-  const zip = JSzip();
   const date = format(new Date(), "yyyy-MM-dd");
+  const folder = `Decks ${date} [${exportFormat}]`;
+  const files = {};
+
+  const deckNameOf = (deck) => {
+    let deckName = deck[NAME];
+    if (deck[BRANCH_NAME] && (deck[MASTER] || deck[BRANCHES].length > 0)) {
+      deckName += ` [${deck[BRANCH_NAME]}]`;
+    }
+    return deckName;
+  };
 
   if (exportFormat === XLSX) {
-    const fetchPromises = Object.values(decks).map((deck) => {
-      let deckName = deck[NAME];
-      if (deck[BRANCH_NAME] && (deck[MASTER] || deck[BRANCHES].length > 0)) {
-        deckName += ` [${deck[BRANCH_NAME]}]`;
-      }
+    const deckExports = await Promise.all(
+      Object.values(decks).map(async (deck) => ({
+        [NAME]: deckNameOf(deck),
+        file: await exportXlsx(deck),
+      })),
+    );
 
-      return { [NAME]: deckName, file: exportXlsx(deck) };
-    });
-
-    const folder = zip.folder(`Decks ${date} [${exportFormat}]`);
-    Promise.all(fetchPromises).then((deckExports) => {
-      deckExports.forEach((d) => {
-        folder.file(`${d[NAME]}.xlsx`, d.file, {
-          base64: true,
-        });
-      });
-
-      zip
-        .generateAsync({ type: "blob" })
-        .then((blob) => saveFile(blob, `Decks ${date} [${exportFormat}].zip`));
+    deckExports.forEach((d) => {
+      files[`${folder}/${d[NAME]}.xlsx`] = b64ToU8(d.file);
     });
   } else {
     Object.values(decks).forEach((deck) => {
-      let deckName = deck[NAME];
-      if (deck[BRANCH_NAME] && (deck[MASTER] || deck[BRANCHES].length > 0)) {
-        deckName += ` [${deck[BRANCH_NAME]}]`;
-      }
-
-      zip
-        .folder(`Decks ${date} [${exportFormat}]`)
-        .file(`${deckName}.txt`, exportDeck(deck, exportFormat));
+      files[`${folder}/${deckNameOf(deck)}.txt`] = strToU8(exportDeck(deck, exportFormat));
     });
-
-    zip
-      .generateAsync({ type: "blob" })
-      .then((blob) => saveFile(blob, `Decks ${date} [${exportFormat}].zip`));
   }
+
+  const out = await zipAsync(files);
+  saveFile(new Blob([out], { type: "application/zip" }), `${folder}.zip`);
 };
 
 export const exportXlsx = async (deck) => {

@@ -1,7 +1,7 @@
 # FIX
 - SoNY and NBr to V5
 
-# FIX ON HOLD
+ FIX ON HOLD
 
 # FEATURES
 - Inventory target documentation

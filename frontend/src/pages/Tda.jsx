@@ -1,4 +1,5 @@
 import ky from "ky";
+import { unzip, strFromU8 } from 'fflate';
 import { Activity, useEffect, useState } from "react";
 import { useNavigate, useParams, useSearchParams } from "react-router";
 import { useSnapshot } from "valtio";
@@ -48,6 +49,17 @@ const MEDIAN_GW = "median_gw";
 const MEDIAN_VP = "median_vp";
 const TOTAL_GW = "total_gw";
 const TOTAL_VP = "total_vp";
+
+const unzipAsync = (u8) =>
+  new Promise((res, rej) => unzip(u8, (err, files) => (err ? rej(err) : res(files))));
+
+const u8ToB64 = (u8, chunk = 0x8000) => {
+  let s = '';
+  for (let i = 0; i < u8.length; i += chunk) {
+    s += String.fromCharCode.apply(null, u8.subarray(i, i + chunk));
+  }
+  return btoa(s);
+};
 
 
 const Tda = () => {
@@ -115,42 +127,32 @@ const Tda = () => {
   };
 
   const loadPrepared = async (id) => {
-    const { default: JSZip } = await import("jszip");
     setError(false);
-
     const url = `${import.meta.env.VITE_BASE_URL}/tournaments/${id}.zip`;
 
     ky.get(url)
       .then((response) => {
-        if (response.status === 200 || response.status === 0) {
-          return Promise.resolve(response.blob());
-        }
-        return Promise.reject(new Error(response.statusText));
+        if (response.status === 200 || response.status === 0) return response.blob();
+        throw new Error(response.statusText);
       })
-      .then(JSZip.loadAsync)
-      .then((zip) => {
-        Object.values(zip.files).forEach(async (f) => {
-          if (f[NAME].includes(".xlsx")) {
-            const archon = await f.async("base64");
-            setTempArchon(archon);
-          }
-        });
+      .then((blob) => blob.arrayBuffer())
+      .then((buf) => unzipAsync(new Uint8Array(buf)))
+      .then(async (files) => {
+        const entries = Object.entries(files).filter(([name]) => !name.endsWith('/'));
+        if (!entries.length) throw new Error('empty archive');
 
-        const fetchedDecks = Object.values(zip.files)
-          .filter((f) => !f[NAME].includes(".xlsx"))
-          .map(async (f) => {
-            const d = await f.async("string");
-            return getDeckOld(d);
-          });
+        const archon = entries.find(([name]) => name.toLowerCase().endsWith(".xlsx"));
+        if (archon) setTempArchon(u8ToB64(archon[1]));
 
-        Promise.all(fetchedDecks).then((v) => {
-          const d = {};
-          v.forEach((i) => {
-            d[i[AUTHOR]] = i;
-          });
+        const decks = {};
+        for (const [name, u8] of entries) {
+          if (name.toLowerCase().endsWith(".xlsx")) continue;
+          const deck = await getDeckOld(strFromU8(u8));
+          if (!deck) continue;
+          decks[deck[AUTHOR]] = deck;
+        }
 
-          setTempDecks(d);
-        });
+        setTempDecks(decks);
       })
       .catch(() => setError(id));
   };
