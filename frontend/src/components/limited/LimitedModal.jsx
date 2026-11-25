@@ -12,6 +12,7 @@ import {
 } from "@/components";
 import { ALLOWED, BANNED, CRYPT, LIBRARY, SETS } from "@/constants";
 import { limitedFullStore } from "@/context";
+import { saveFile } from "@/utils";
 
 const LimitedModal = ({ setShow, setFormat }) => {
   const limitedState = useSnapshot(limitedFullStore);
@@ -57,13 +58,9 @@ const LimitedModal = ({ setShow, setFormat }) => {
   });
 
   const exportFormat = async () => {
-    const { saveAs } = await import("file-saver");
     const fileName = `Limited Format [${format(new Date(), "yyyy-MM-dd")}].txt`;
     const formatText = JSON.stringify(minifiedFormat, null, "  ");
-    const file = new File([formatText], fileName, {
-      type: "text/plain;charset=utf-8",
-    });
-    saveAs(file, fileName);
+    saveFile(new File([formatText], fileName, { type: "text/plain;charset=utf-8"} ));
   };
 
   return (

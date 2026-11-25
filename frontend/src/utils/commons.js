@@ -246,4 +246,25 @@ export const getSortedKeysByValues = (obj) => {
 
 export const getCountryName = (code, locale = "en", style = "long") => {
   return new Intl.DisplayNames([locale], { type: "region", style }).of(code.toUpperCase());
+};
+
+
+export const saveFile = (data, filename) => {
+  const isFile = typeof File !== "undefined" && data instanceof File;
+
+  const name = filename || (isFile ? data.name : "");
+  const type = data.type || "application/octet-stream";
+
+  const blob = data instanceof Blob ? data : new Blob([data], { type });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = name;
+  a.rel = "noopener";
+  a.style.display = "none";
+
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
 }

@@ -47,7 +47,7 @@ import {
   XLSX,
 } from "@/constants";
 import { deckStore } from "@/context";
-import { exportDeck, getIsPlaytest, getTags, getTextDisciplines } from "@/utils";
+import { saveFile, exportDeck, getIsPlaytest, getTags, getTextDisciplines } from "@/utils";
 
 const b64ToU8 = (b64) => {
   const bin = atob(b64);
@@ -334,7 +334,7 @@ export const exportDecks = async (decks, exportFormat) => {
   }
 
   const out = await zipAsync(files);
-  saveFile(new Blob([out], { type: "application/zip" }), `${folder}.zip`);
+  saveFile(new File([out], `${folder}.zip`, { type: "application/zip" }));
 };
 
 export const exportXlsx = async (deck) => {
@@ -410,11 +410,6 @@ export const exportXlsx = async (deck) => {
   xlsx.utils.book_append_sheet(workbook, cryptSheet, "Crypt");
   xlsx.utils.book_append_sheet(workbook, librarySheet, "Library");
   return xlsx.write(workbook, { type: "array", bookType: XLSX });
-};
-
-const saveFile = async (file, name) => {
-  const { saveAs } = await import("file-saver");
-  saveAs(file, name);
 };
 
 export const deckLoader = ({ params }) => {

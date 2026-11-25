@@ -27,7 +27,7 @@ import {
 } from "@/constants";
 import { deckStore, inventoryStore, useApp, usedStore } from "@/context";
 import { deckServices } from "@/services";
-import { deepClone, exportDeck, getHardTotal, getSoftMax } from "@/utils";
+import { saveFile, deepClone, exportDeck, getHardTotal, getSoftMax } from "@/utils";
 
 const ExportDropdown = ({ action, title, format }) => {
   const formats = {
@@ -133,9 +133,7 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
       });
     }
 
-    const { saveAs } = await import("file-saver");
-    saveAs(file, name);
-
+    saveFile(file);
     setShowMenuButtons(false);
     setShowFloatingButtons(true);
   };

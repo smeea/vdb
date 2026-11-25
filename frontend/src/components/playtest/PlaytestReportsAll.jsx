@@ -30,7 +30,7 @@ import {
 import { useApp } from "@/context";
 import { useFetch } from "@/hooks";
 import { playtestServices } from "@/services";
-import { capitalize, getIsPlaytest } from "@/utils";
+import { saveFile, capitalize, getIsPlaytest } from "@/utils";
 
 const PlaytestReportsAll = () => {
   const {
@@ -87,12 +87,7 @@ const PlaytestReportsAll = () => {
               break;
             case CARDS:
               if (!Number.isInteger(Number.parseInt(id))) return;
-              try {
-                name = id > 200000 ? cryptCardBase[id][NAME] : libraryCardBase[id][NAME];
-              } catch {
-                console.log(`Skipping (not in this Round) - ${id}`);
-                break;
-              }
+              name = id > 200000 ? cryptCardBase[id][NAME] : libraryCardBase[id][NAME];
               exportText += `${id > 200000 ? "Crypt" : "Library"}: ${name}\n\n`;
               break;
             default:
@@ -125,8 +120,7 @@ const PlaytestReportsAll = () => {
         });
     }
 
-    const { saveAs } = await import("file-saver");
-    saveAs(file);
+    saveFile(file);
   };
 
   const urlReportsCrypt = `${import.meta.env.VITE_API_URL}/playtest/export/${CRYPT}/all`;

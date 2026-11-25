@@ -90,10 +90,6 @@ const parseArchon = async (file, decks) => {
     totalVp += score[VP];
   });
 
-  Object.keys(tdaDecks).forEach((deckid) => {
-    if (!archonIds.includes(deckid)) console.log(`Deck ${deckid} is not in Archon`);
-  });
-
   let medianReportedRank;
   reportedRanks.sort((a, b) => a > b);
   if (reportedRanks.length % 2) {

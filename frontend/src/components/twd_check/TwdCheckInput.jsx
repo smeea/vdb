@@ -5,7 +5,7 @@ import { useRef, useState } from "react";
 import { ButtonIconed, ErrorOverlay, Textarea } from "@/components";
 import { CRYPT, DATE, DECK, EVENT, FORMAT, ID, LIBRARY, LOCATION, PLAYERS } from "@/constants";
 import { useApp } from "@/context";
-import { importDeck } from "@/utils";
+import { saveFile, importDeck } from "@/utils";
 
 const TwdCheckInput = ({ deckData, setDeckData }) => {
   const { cryptCardBase, libraryCardBase } = useApp();
@@ -53,17 +53,9 @@ const TwdCheckInput = ({ deckData, setDeckData }) => {
 
   const saveDeck = async (text, name) => {
     setImportError(false);
-
+    setEmptyError(!text);
     if (text) {
-      setEmptyError(false);
-      const file = new File([text], `${name}.txt`, {
-        type: "text/plain;charset=utf-8",
-      });
-
-      const { saveAs } = await import("file-saver");
-      saveAs(file);
-    } else {
-      setEmptyError(true);
+      saveFile(new File([text]), `${name}.txt`, { type: "text/plain;charset=utf-8" });
     }
   };
 
