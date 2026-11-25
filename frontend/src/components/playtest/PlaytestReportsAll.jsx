@@ -30,7 +30,7 @@ import {
 import { useApp } from "@/context";
 import { useFetch } from "@/hooks";
 import { playtestServices } from "@/services";
-import { saveFile, capitalize, getIsPlaytest } from "@/utils";
+import { capitalize, getIsPlaytest, saveFile } from "@/utils";
 
 const PlaytestReportsAll = () => {
   const {

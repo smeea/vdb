@@ -53,11 +53,8 @@ const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, maxSameScor
               )}
             </div>
             {isPlaytestAdmin && <PlaytestScores report={report} maxSameScore={maxSameScore} />}
-            <div className="flex justify-center w-full p-4">
-              <a
-                className="print:text-fgSecondary"
-                href="#toc"
-              >
+            <div className="flex w-full justify-center p-4">
+              <a className="print:text-fgSecondary" href="#toc">
                 [ Back to Table of Content ]
               </a>
             </div>

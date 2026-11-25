@@ -50,14 +50,14 @@ const ResultName = ({ card, isColored = true, noWarning }) => {
       )}
       {!noWarning && (
         <>
-            {card[BANNED] && <ResultLegalIcon type={BANNED} value={card[BANNED]} />}
-            {isLimited && <ResultLegalIcon title="Limited" />}
-            {card[LEGAL_RESTRICTIONS] && !isReleasedPrerelease && (
-              <ResultLegalIcon
-                type={card[LEGAL_RESTRICTIONS] === PLAYTEST ? PLAYTEST : PRERELEASE}
-                value={card[LEGAL_RESTRICTIONS]}
-              />
-            )}
+          {card[BANNED] && <ResultLegalIcon type={BANNED} value={card[BANNED]} />}
+          {isLimited && <ResultLegalIcon title="Limited" />}
+          {card[LEGAL_RESTRICTIONS] && !isReleasedPrerelease && (
+            <ResultLegalIcon
+              type={card[LEGAL_RESTRICTIONS] === PLAYTEST ? PLAYTEST : PRERELEASE}
+              value={card[LEGAL_RESTRICTIONS]}
+            />
+          )}
         </>
       )}
     </div>

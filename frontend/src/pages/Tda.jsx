@@ -1,5 +1,5 @@
+import { strFromU8, unzip } from "fflate";
 import ky from "ky";
-import { unzip, strFromU8 } from 'fflate';
 import { Activity, useEffect, useState } from "react";
 import { useNavigate, useParams, useSearchParams } from "react-router";
 import { useSnapshot } from "valtio";
@@ -12,8 +12,8 @@ import {
   Hr,
   TdaCharts,
   TdaInfo,
-  TdaLoadPreparedButtons,
   TdaList,
+  TdaLoadPreparedButtons,
   TdaResult,
   TdaSearchForm,
 } from "@/components";
@@ -41,27 +41,26 @@ import {
   VP,
 } from "@/constants";
 import { clearTdaForm, setTdaDecks, setTdaInfo, setTdaResults, tdaStore, useApp } from "@/context";
-import { getCountryName, parseDeck, getTags, importDeck, parseArchon } from "@/utils";
 import { archiveServices } from "@/services";
+import { getCountryName, getTags, importDeck, parseArchon, parseDeck } from "@/utils";
 
 const MEDIAN_RANK = "median_rank";
 const MEDIAN_GW = "median_gw";
 const MEDIAN_VP = "median_vp";
 const TOTAL_GW = "total_gw";
 const TOTAL_VP = "total_vp";
-const MATCHES = "matches"
+const MATCHES = "matches";
 
 const unzipAsync = (u8) =>
   new Promise((res, rej) => unzip(u8, (err, files) => (err ? rej(err) : res(files))));
 
 const u8ToB64 = (u8, chunk = 0x8000) => {
-  let s = '';
+  let s = "";
   for (let i = 0; i < u8.length; i += chunk) {
     s += String.fromCharCode.apply(null, u8.subarray(i, i + chunk));
   }
   return btoa(s);
 };
-
 
 const Tda = () => {
   const { cryptCardBase, libraryCardBase, isMobile } = useApp();
@@ -80,7 +79,11 @@ const Tda = () => {
 
     Object.entries(value[PLAYERS]).forEach(([k, v]) => {
       if (v[DECK]) {
-        const { [CRYPT]: crypt, [LIBRARY]: library } = parseDeck(cryptCardBase, libraryCardBase, v[DECK]);
+        const { [CRYPT]: crypt, [LIBRARY]: library } = parseDeck(
+          cryptCardBase,
+          libraryCardBase,
+          v[DECK],
+        );
 
         d[k] = {
           [NAME]: v[NAME],
@@ -96,13 +99,13 @@ const Tda = () => {
           },
         };
       }
-    })
+    });
 
     return d;
   };
 
   const getInfo = (value) => {
-    const matches = value[INFO][MATCHES]
+    const matches = value[INFO][MATCHES];
 
     return {
       date: value[INFO][DATE],
@@ -120,7 +123,6 @@ const Tda = () => {
       totalVp: value[INFO][TOTAL_VP],
     };
   };
-
 
   const getDeckOld = async (data) => {
     const deck = await importDeck(data, cryptCardBase, libraryCardBase);
@@ -140,8 +142,8 @@ const Tda = () => {
       .then((blob) => blob.arrayBuffer())
       .then((buf) => unzipAsync(new Uint8Array(buf)))
       .then(async (files) => {
-        const entries = Object.entries(files).filter(([name]) => !name.endsWith('/'));
-        if (!entries.length) throw new Error('empty archive');
+        const entries = Object.entries(files).filter(([name]) => !name.endsWith("/"));
+        if (!entries.length) throw new Error("empty archive");
 
         const archon = entries.find(([name]) => name.toLowerCase().endsWith(".xlsx"));
         if (archon) setTempArchon(u8ToB64(archon[1]));

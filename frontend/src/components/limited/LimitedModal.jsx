@@ -60,7 +60,7 @@ const LimitedModal = ({ setShow, setFormat }) => {
   const exportFormat = async () => {
     const fileName = `Limited Format [${format(new Date(), "yyyy-MM-dd")}].txt`;
     const formatText = JSON.stringify(minifiedFormat, null, "  ");
-    saveFile(new File([formatText], fileName, { type: "text/plain;charset=utf-8"} ));
+    saveFile(new File([formatText], fileName, { type: "text/plain;charset=utf-8" }));
   };
 
   return (

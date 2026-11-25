@@ -5,7 +5,7 @@ import { useRef, useState } from "react";
 import { ButtonIconed, ErrorOverlay, Textarea } from "@/components";
 import { CRYPT, DATE, DECK, EVENT, FORMAT, ID, LIBRARY, LOCATION, PLAYERS } from "@/constants";
 import { useApp } from "@/context";
-import { saveFile, importDeck } from "@/utils";
+import { importDeck, saveFile } from "@/utils";
 
 const TwdCheckInput = ({ deckData, setDeckData }) => {
   const { cryptCardBase, libraryCardBase } = useApp();

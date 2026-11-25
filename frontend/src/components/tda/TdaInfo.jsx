@@ -2,8 +2,6 @@ import { Title, TwdResultDescriptionTextTr } from "@/components";
 import { DATE, EVENT, LOCATION, PLAYERS, ROUNDS } from "@/constants";
 
 const TdaInfo = ({ info, decks }) => {
-  console.log(info)
-
   return (
     <div className="flex flex-col gap-1">
       <Title className="max-sm:hidden">General Info</Title>

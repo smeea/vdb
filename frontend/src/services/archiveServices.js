@@ -33,11 +33,8 @@ export const getRandomDecks = (q, inPda = false) => {
 
 export const getAllTda = () => {
   const url = `${import.meta.env.VITE_API_URL}/tda`;
-  return ky
-    .get(url)
-    .json()
+  return ky.get(url).json();
 };
-
 
 export const getTda = (id) => {
   const url = `${import.meta.env.VITE_API_URL}/tda/${id}`;

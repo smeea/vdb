@@ -14,4 +14,5 @@
 # TECH IMPROVEMENTS
 - Refactor with useEffectEvent https://react.dev/learn/separating-events-from-effects#extracting-non-reactive-logic-out-of-effects
 - Migrate from use-immer
-- Dynamic import jspdf, xlsx, recharts
+- Migrate from unidecode to ???
+- Migrate from xlsx to read-excel-file + write-excel-file

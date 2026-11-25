@@ -248,7 +248,6 @@ export const getCountryName = (code, locale = "en", style = "long") => {
   return new Intl.DisplayNames([locale], { type: "region", style }).of(code.toUpperCase());
 };
 
-
 export const saveFile = (data, filename) => {
   const isFile = typeof File !== "undefined" && data instanceof File;
 
@@ -267,4 +266,4 @@ export const saveFile = (data, filename) => {
   document.body.appendChild(a);
   a.click();
   a.remove();
-}
+};

@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, createRoutesFromElements, Navigate, Route } from "react-router";
 import { PlaytestManage, PlaytestReportsAll } from "@/components";
-import { DECKID, DECKID_FROM, DECKID_TO, EVENT, OLD_EVENT, ID } from "@/constants";
+import { DECKID, DECKID_FROM, DECKID_TO, EVENT, ID, OLD_EVENT } from "@/constants";
 import { useApp } from "@/context";
 import { deckServices, miscServices } from "@/services";
 import About from "./pages/About.jsx";
@@ -210,7 +210,7 @@ const router = createBrowserRouter(
           }
         />
       </Route>
-    </Route>
+    </Route>,
   ),
 );
 

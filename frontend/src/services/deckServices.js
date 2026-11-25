@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import { zip, strToU8 } from "fflate";
+import { strToU8, zip } from "fflate";
 import ky from "ky";
 import { redirect } from "react-router";
 import {
@@ -47,7 +47,7 @@ import {
   XLSX,
 } from "@/constants";
 import { deckStore } from "@/context";
-import { saveFile, exportDeck, getIsPlaytest, getTags, getTextDisciplines } from "@/utils";
+import { exportDeck, getIsPlaytest, getTags, getTextDisciplines, saveFile } from "@/utils";
 
 const b64ToU8 = (b64) => {
   const bin = atob(b64);
@@ -58,7 +58,6 @@ const b64ToU8 = (b64) => {
 
 const zipAsync = (data) =>
   new Promise((res, rej) => zip(data, (err, out) => (err ? rej(err) : res(out))));
-
 
 export const update = (deckid, field, value) => {
   const url = `${import.meta.env.VITE_API_URL}/deck/${deckid}`;
